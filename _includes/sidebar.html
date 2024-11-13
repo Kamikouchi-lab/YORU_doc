@@ -1,0 +1,51 @@
+<!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" {% if page.title =="Home" %}checked{% endif %}>
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+    <!-- Sidebar logo -->
+    <div class="sidebar-logo" style="text-align: center;">
+      <img src="/YORU_doc/logos/YORU_logo_sns.png" width="60%">
+    </div>
+
+  <div class="sidebar-item">
+    <p>{{ site.description }}</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <!-- Home link always at the top -->
+    <a class="sidebar-nav-item{% if page.title == "Home" %} active{% endif %}" href="{{ '/' | absolute_url }}">Home</a>
+  
+    <!-- Dynamically generate other pages in specified order -->
+    {% assign ordered_pages = site.pages | where: "layout", "page" | sort: "order" %}
+    {% for node in ordered_pages %}
+      {% if node.title and node.title != "Home" %}
+        <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url | absolute_url }}">{{ node.title }}</a>
+      {% endif %}
+    {% endfor %}
+
+    <details>
+      <summary class="sidebar-nav-item">Tutorial</summary>
+      <a class="sidebar-nav-item" href="#subitem_tutorial1">1. Creating a model</a>
+      <a class="sidebar-nav-item" href="#subitem_tutorial2">2. Evaluating a model</a>
+      <a class="sidebar-nav-item" href="#subitem_tutorial3">3. Analyzing videos</a>
+      <a class="sidebar-nav-item" href="#subitem_tutorial4">4. Real-time analysis</a>
+    </details>
+
+    <details>
+      <summary class="sidebar-nav-item">Development notes</summary>
+      <a class="sidebar-nav-item" href="#subitem1">sub items 1</a>
+      <a class="sidebar-nav-item" href="#subitem2">sub items 2</a>
+    </details>
+  
+    <a class="sidebar-nav-item" href="{{ site.github.repo }}">GitHub project</a>
+    <span class="sidebar-nav-item">Currently {{ site.version }}</span>
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+      &copy;Copyright {{ site.time | date: '%Y' }} Hayato M. Yamanouchi
+    </p>
+  </div>
+</div>

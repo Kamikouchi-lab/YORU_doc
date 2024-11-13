@@ -1,0 +1,31 @@
+# Setup
+title:               YORU
+tagline:             'Your Optimal Recognition Utility'
+description:         '“YORU” is an open-source sftware for animal behavior detection using an object detection. YORU classifies animal behavior as "behavior objects."'
+url:                 "https://HMYamano.github.io"
+baseurl:             "/YORU_doc"
+paginate:            5
+permalink:           pretty
+markdown:            kramdown
+
+remote_theme: jekyll-theme-lanyon
+plugins:
+  - jekyll-remote-theme
+  - jekyll-paginate
+
+# About/contact
+author:
+  name:              Hayato M. Yamanouchi
+  url:               https://github.com/HMYamano
+  email:             haya.m.yamano.neuro@gmail.com
+
+
+# Custom vars
+version:             beta version
+google_analytics_id: #UA-XXXX-Y
+
+
+github:
+  repo: https://github.com/Kamikouchi-lab/YORU
+  user: HMYamano
+  project: repository
