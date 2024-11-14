@@ -1,3 +1,8 @@
+---
+layout: page
+title: 1 Create a Model
+---
+
 ## Data description
 For test data, we can create and analyze fly mating behavior.
 
