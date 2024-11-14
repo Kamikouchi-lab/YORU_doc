@@ -6,7 +6,7 @@ order: 6
 
 1. Edit a condition YAML file.
 
-  > [condition YAML file template](../config/yoru_default.yaml)
+  > [condition YAML file template](https://github.com/Kamikouchi-lab/YORU/blob/main/config/yoru_default.yaml)
 
    ```
   name: Experiment name
