@@ -8,7 +8,7 @@ title: Home
 <img src="logos/YORU_logo.png" width="40%">
 <img src="imgs/title_movie.gif" width="50%">
 
-“YORU” (Your Optimal Recognition Utility) is an open source animal behavior recognition system using Python. YORU can detect animal behaviors not only single-aminal behaviors but also social beahviors. YORU also provide online/offline analysis and closed-loop manipulation.
+“YORU” (Your Optimal Recognition Utility) is an open source animal behavior recognition system using Python. YORU can detect animal behaviors not only single-aminal behaviors but also social beahviors. YORU also provides online/offline analysis and closed-loop manipulation.
 
 
 ## Features
@@ -56,7 +56,7 @@ title: Home
     ```
 
 
-## Learn to YORU
+## Learn about YORU
 - Learn step-by-step: [Instractions](overview.md)
 
 - Learn by reading: TBA
