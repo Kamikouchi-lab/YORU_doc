@@ -92,4 +92,4 @@ This project includes code from the following repositories:
 
 Hayato M. Yamanouchi - haya.m.yamano.neuro@gmail.com
 
-*please do not take logo or images from our website without our permission unless for research use, them please just cite the source.
+*Please do not use the logo or images from our website without permission. If they are used for research purposes, kindly cite the source.
