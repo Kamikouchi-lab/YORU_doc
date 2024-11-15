@@ -30,3 +30,9 @@ order: 6
 3. Run "Real-time Process".
 
 4. Operate Real-time Process GUI.
+
+
+## Plugin List
+
+YORU projector operation
+[GitHub](https://github.com/Kamikouchi-lab/YORU-projector)
