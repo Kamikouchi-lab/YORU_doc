@@ -8,15 +8,18 @@ title: Home
 <img src="logos/YORU_logo.png" width="40%">
 <img src="imgs/title_movie.gif" width="50%">
 
-“YORU” (Your Optimal Recognition Utility) is an open source animal behavior recognition system using Python. YORU can detect animal behaviors not only single-aminal behaviors but also social beahviors. YORU also provides online/offline analysis and closed-loop manipulation.
+“YORU” (Your Optimal Recognition Utility) is an open-source animal behavior recognition system using Python. YORU can detect animal behaviors, not only single-animal behaviors but also social behaviors. YORU also provides online/offline analysis and closed-loop manipulation.
 
 
 ## Features
 
 - TBA
 
+# Instructions
+[YORU Documents](https://kamikouchi-lab.github.io/YORU_doc/)
 
-## Quick install
+
+# Quick install
 1. Download or clone the YORU project.
     ```
     cd "Path/to/download"
@@ -25,13 +28,13 @@ title: Home
 
 2. Install the GPU driver and [CUDA toolkit](https://developer.nvidia.com/cuda-toolkit).
 
-3. Create a virtual environment using [YORU.yml](YORU.yml) in command prompt or Anaconda prompt.
+3. Create a virtual environment using [YORU.yml](https://github.com/Kamikouchi-lab/YORU/blob/main/YORU.yml) in command prompt or Anaconda prompt.
    
      ```
-     conda env create -f "Peth/to/YORU.yml"
+     conda env create -f "Path/to/YORU.yml"
      ```
 
-4. Activate the virtual environment in command prompt or Anaconda prompt.
+4. Activate the virtual environment in the command prompt or Anaconda prompt.
 
      ```
      conda activate yoru
@@ -47,7 +50,7 @@ title: Home
 
     - (torch, torchvision and torchaudio will be installed.)
 
-6. Run YORU in command prompt or Anaconda prompt.
+6. Run YORU in the command prompt or Anaconda prompt.
 
     ```
     conda activate yoru
@@ -56,17 +59,17 @@ title: Home
     ```
 
 
-## Learn about YORU
-- Learn step-by-step: [Instractions](overview.md)
+# Learn about YORU
+- Learn step-by-step: [Tutorial](overview.md)
 
 - Learn by reading: TBA
 
-## Requirements
+# Requirements
 
-### OS
+## OS
 - Windows 10 or later
 
-### Hardware
+## Hardware
 - Memory: 16 GB or more
 
 ### Development environments
@@ -75,21 +78,18 @@ title: Home
 - GPU: NVIDIA RTX 3080
 - Memory: DDR4 32 GB
 
-## License:
+# Reference
+ - Yamanouchi, H. M., Takeuchi, R. F., Chiba, N., Hashimoto, K., Shimizu, T., Tanaka, R., & Kamikouchi, A. (2024). YORU: social behavior detection based on user-defined animal appearance using deep learning. bioRxiv (p. 2024.11.12.623320). https://doi.org/10.1101/2024.11.12.623320
 
-AGPL-3.0 License:  YORU is intended for research/academic/personal use only. See the [LICENSE](https://github.com/Kamikouchi-lab/YORU/blob/main/LICENSE) file for more details.
 
-## Third-Party Libraries and Licenses
+# License:
+
+AGPL-3.0 License:  YORU is intended for research/academic/personal use only. See the [LICENSE](LICENSE) file for more details.
+
+# Third-Party Libraries and Licenses
 
 This project includes code from the following repositories:
 
 - [LabelImg](https://github.com/HumanSignal/labelImg): Licensed under the MIT License
 
 - [yolov5](https://github.com/ultralytics/yolov5): Licensed under the AGPL-3.0 License
-
-
-### Main developer
-
-Hayato M. Yamanouchi - haya.m.yamano.neuro@gmail.com
-
-*Please do not use the logo or images from our website without permission. If they are used for research purposes, kindly cite the source.

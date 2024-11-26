@@ -6,13 +6,13 @@ order: 6
 
 1. Edit a condition YAML file.
 
-  > [condition YAML file template](https://github.com/Kamikouchi-lab/YORU/blob/main/config/yoru_default.yaml)
+  > [condition YAML file template](../config/yoru_default.yaml)
 
    ```
   name: Experiment name
-  export: Folde path for video exporting
+  export: Folder path for video exporting
   export_name: Name of exporting videos
-  
+  s
   model:
    yolo_model_path: Path to YORU mode
   

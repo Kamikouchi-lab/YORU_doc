@@ -30,7 +30,7 @@ order: 4
 
 5. Run LabelImg and label the frames.
 
-    > The detailed coduments is accessed in [LabelImg](https://github.com/HumanSignal/labelImg).
+    > The detailed documents are accessible in [LabelImg](https://github.com/HumanSignal/labelImg).
 
     > Save format is done in YOLO. 
 
