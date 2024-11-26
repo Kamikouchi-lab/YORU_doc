@@ -8,27 +8,35 @@ title: Home
 <img src="logos/YORU_logo.png" width="40%">
 <img src="imgs/title_movie.gif" width="50%">
 
-“YORU” (Your Optimal Recognition Utility) is an open-source animal behavior recognition system using Python. YORU can detect animal behaviors, not only single-animal behaviors but also social behaviors. YORU also provides online/offline analysis and closed-loop manipulation.
-
+“YORU” (Your Optimal Recognition Utility) is an open-source animal behavior detection system using Python. YORU can detect animal behaviors, not only single-animal behaviors but also social behaviors. YORU also provides online/offline analysis and closed-loop manipulation.
 
 ## Features
 
-- TBA
+- Comprehensive Behavior Detection: Recognizes both single-animal and social behaviors, and allows for user-defined animal appearances using deep learning techniques.
 
-# Instructions
-[YORU Documents](https://kamikouchi-lab.github.io/YORU_doc/)
+- Online/Offline Analysis: Supports real-time and post-experiment data analysis.
 
+- Closed-Loop Manipulation: Enables interactive experiments with live feedback control.
+
+- User-Friendly Interface: Provide the GUI-based software.
+
+- Customizable: Allows you to customize various hardware manipulations in closed-loop system.
 
 # Quick install
+
+Follow these steps to install YORU quickly:
+
 1. Download or clone the YORU project.
     ```
     cd "Path/to/download"
     git clone https://github.com/Kamikouchi-lab/YORU.git 
     ```
 
-2. Install the GPU driver and [CUDA toolkit](https://developer.nvidia.com/cuda-toolkit).
+2. Install the appropriate GPU driver and the [CUDA toolkit](https://developer.nvidia.com/cuda-toolkit).
 
-3. Create a virtual environment using [YORU.yml](https://github.com/Kamikouchi-lab/YORU/blob/main/YORU.yml) in command prompt or Anaconda prompt.
+3. Create a virtual environment.
+
+    Use [YORU.yml](https://github.com/Kamikouchi-lab/YORU/blob/main/YORU.yml) file to create a conda environment:
    
      ```
      conda env create -f "Path/to/YORU.yml"
@@ -40,7 +48,7 @@ title: Home
      conda activate yoru
      ```
     
-5. Install [Pytorch](https://pytorch.org) depending on the CUDA versions.
+5. Install [Pytorch](https://pytorch.org) corresponding to the CUDA versions.
 
     - For CUDA==11.8
 
@@ -52,6 +60,8 @@ title: Home
 
 6. Run YORU in the command prompt or Anaconda prompt.
 
+    Navigate to the YORU project folder and execute:
+
     ```
     conda activate yoru
     cd "Peth/to/YORU/project/folder"
@@ -60,9 +70,9 @@ title: Home
 
 
 # Learn about YORU
-- Learn step-by-step: [Tutorial](overview.md)
+- **Learn details**: [Overview](overview.md)
 
-- Learn by reading: TBA
+- **Step-by-Step Tutorial**: TBA
 
 # Requirements
 
@@ -70,7 +80,8 @@ title: Home
 - Windows 10 or later
 
 ## Hardware
-- Memory: 16 GB or more
+- Memory: 16 GB RAM or more
+- GPU: NVIDIA GPU compatible with the required CUDA version
 
 ### Development environments
 - OS: Windows 11
