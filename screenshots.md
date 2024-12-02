@@ -5,32 +5,32 @@ order: 7
 ---
 
 ***
-# Home
+## Home
 
-<img src="../imgs/screenshot_home.png" width="40%">
-
-***
-
-# Training
-
-<img src="../imgs/screenshot_training.png" width="40%">
+<img src="../imgs/screenshot_home.png" width="80%">
 
 ***
 
-# Evaluation
+## Training
 
-<img src="../imgs/screenshot_evaluation.png" width="40%">
+<img src="../imgs/screenshot_training.png" width="80%">
+
+***
+
+## Evaluation
+
+<img src="../imgs/screenshot_evaluation.png" width="80%">
 
 ***
 
-# Video Analysis
+## Video Analysis
 
-<img src="../imgs/screenshot_video-analysis.png" width="40%">
+<img src="../imgs/screenshot_video-analysis.png" width="80%">
 
 ***
-# Real-time Process
+## Real-time Process
 
-<img src="../imgs/screenshot_real-time-process.png" width="40%">
+<img src="../imgs/screenshot_real-time-process.png" width="80%">
 
 ***
 
