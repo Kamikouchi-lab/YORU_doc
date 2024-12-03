@@ -43,4 +43,4 @@ order: 4
     > YORU calculates APs and IOUs.
 
 
-<img src="../imgs/screenshots_description-03.png" width="80%">
+<img src="../imgs/screenshots_description-03.png" width="100%">
