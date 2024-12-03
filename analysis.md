@@ -22,3 +22,5 @@ order: 5
 
     > If you check "Tracking algorithm", YORU will save the IDs in the results csv file.
 
+
+<img src="../imgs/screenshots_description-04.png" width="80%">

@@ -41,3 +41,6 @@ order: 4
 7. Push "Calculate APs" button. 
 
     > YORU calculates APs and IOUs.
+
+
+<img src="../imgs/screenshots_description-03.png" width="80%">

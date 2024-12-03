@@ -49,3 +49,8 @@ order: 3
 9. Start training by push "Train YOLOv5".
 
     >  In the terminal, you should check the initiation of training.
+
+
+<img src="../imgs/screenshots_description_01.png" width="80%">
+
+<img src="../imgs/screenshots_description-02.png" width="80%">

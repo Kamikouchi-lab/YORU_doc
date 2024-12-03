@@ -16,6 +16,11 @@ order: 7
 <img src="../imgs/screenshot_training.png" width="80%">
 
 ***
+## Screenshots GUI
+
+<img src="../imgs/screenshot_grab.png" width="80%">
+
+***
 
 ## Evaluation
 
