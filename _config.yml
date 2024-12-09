@@ -1,7 +1,7 @@
 # Setup
 title:               YORU
 tagline:             'Your Optimal Recognition Utility'
-description:         '“YORU” is an open-source sftware for animal behavior detection using an object detection. YORU classifies animal behavior as "behavior objects."'
+description:         '“YORU” is an open-source sftware for animal behavior detection using an object detection. YORU classifies animal behavior as "behavior objects."' 
 url:                 "https://kamikouchi-lab.github.io"
 baseurl:             "/YORU_doc"
 paginate:            5
