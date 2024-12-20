@@ -12,6 +12,7 @@ remote_theme: jekyll-theme-lanyon
 plugins:
   - jekyll-remote-theme
   - jekyll-paginate
+  - jekyll-seo-tag
 
 # About/contact
 author:
