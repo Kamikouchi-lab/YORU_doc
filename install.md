@@ -48,13 +48,13 @@ order: 2
     - For CUDA==11.8
 
     ```
-    conda install torch==2.4.1 torchvision==0.16.1 torchaudio==2.4.1 pytorch-cuda=11.8 -c pytorch -c nvidia
+    conda install torch==2.4.1 torchvision==0.19.1 torchaudio==2.4.1 pytorch-cuda=11.8 -c pytorch -c nvidia
     ```
 
    - For CUDA==12.1
 
     ```
-    conda install torch==2.4.1 torchvision==0.16.1 torchaudio==2.4.1 pytorch-cuda=12.1 -c pytorch -c nvidia
+    conda install torch==2.4.1 torchvision==0.19.1 torchaudio==2.4.1 pytorch-cuda=12.1 -c pytorch -c nvidia
     ```
     
     >(torch, torchvision and torchaudio will be installed.)
