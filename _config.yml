@@ -13,6 +13,7 @@ plugins:
   - jekyll-remote-theme
   - jekyll-paginate
   - jekyll-seo-tag
+  - jekyll-sitemap
 
 # About/contact
 author:
