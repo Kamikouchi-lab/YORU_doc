@@ -12,7 +12,7 @@ order: 6
   name: Experiment name
   export: Folder path for video exporting
   export_name: Name of exporting videos
-  s
+  
   model:
    yolo_model_path: Path to YORU mode
   
