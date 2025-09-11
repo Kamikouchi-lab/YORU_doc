@@ -1,5 +1,6 @@
 ---
 layout: page
+order: 1
 title: 1 Create a Model
 ---
 

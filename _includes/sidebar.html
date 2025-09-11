@@ -25,14 +25,30 @@
       {% endif %}
     {% endfor %}
 
-    <details>
+    <!-- <details>
       <summary class="sidebar-nav-item">Tutorial</summary>
       <a class="sidebar-nav-item" href="#subitem2">TBA</a>
+    </details> -->
+    <details>
+      <summary class="sidebar-nav-item">Tutorial</summary>
+      {% assign tutorial_pages = site.tutorial | sort: "order" %}
+      {% for t in tutorial_pages %}
+        <a class="sidebar-nav-item{% if page.url == t.url %} active{% endif %}"
+          href="{{ t.url | absolute_url }}">{{ t.title }}</a>
+      {% endfor %}
     </details>
 
-    <details>
+    <!-- <details>
       <summary class="sidebar-nav-item">Development notes</summary>
       <a class="sidebar-nav-item" href="#subitem1">TBA</a>
+    </details> -->
+    <details>
+      <summary class="sidebar-nav-item">Development notes</summary>
+      {% assign devs = site.devnotes | sort: "order" %}
+      {% for d in devs %}
+        <a class="sidebar-nav-item{% if page.url == d.url %} active{% endif %}"
+          href="{{ d.url | absolute_url }}">{{ d.title }}</a>
+      {% endfor %}
     </details>
   
     <a class="sidebar-nav-item" href="{{ site.github.repo }}">GitHub project</a>

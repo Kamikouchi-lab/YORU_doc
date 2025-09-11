@@ -34,3 +34,11 @@ github:
 
 Store:
   URL: https://www.zazzle.co.jp/store/yorustore?rf=238712148117349309
+
+collections:
+  tutorial:
+    output: true
+    permalink: /tutorial/:name/
+  devnotes:
+    output: true
+    permalink: /devnotes/:name/ 
