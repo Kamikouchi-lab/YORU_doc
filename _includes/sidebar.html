@@ -16,21 +16,27 @@
   <nav class="sidebar-nav">
     <!-- Home link always at the top -->
     <a class="sidebar-nav-item{% if page.title == "Home" %} active{% endif %}" href="{{ '/' | absolute_url }}">Home</a>
-  
-    <!-- Dynamically generate other pages in specified order -->
-    {% assign ordered_pages = site.pages | where: "layout", "page" | sort: "order" %}
-    {% for node in ordered_pages %}
-      {% if node.title and node.title != "Home" %}
-        <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url | absolute_url }}">{{ node.title }}</a>
-      {% endif %}
-    {% endfor %}
+
+
+    <!-- <details>
+      <summary class="sidebar-nav-item">Development notes</summary>
+      <a class="sidebar-nav-item" href="#subitem1">TBA</a>
+    </details> -->
+    <details>
+      <summary class="sidebar-nav-item">User Guides</summary>
+      {% assign guides = site.guides | sort: "order" %}
+      {% for d in guides %}
+        <a class="sidebar-nav-item{% if page.url == d.url %} active{% endif %}"
+          href="{{ d.url | absolute_url }}">{{ d.title }}</a>
+      {% endfor %}
+    </details>
 
     <!-- <details>
       <summary class="sidebar-nav-item">Tutorial</summary>
       <a class="sidebar-nav-item" href="#subitem2">TBA</a>
     </details> -->
     <details>
-      <summary class="sidebar-nav-item">Tutorial</summary>
+      <summary class="sidebar-nav-item">Step-by-step Protocols</summary>
       {% assign tutorial_pages = site.tutorial | sort: "order" %}
       {% for t in tutorial_pages %}
         <a class="sidebar-nav-item{% if page.url == t.url %} active{% endif %}"
@@ -50,6 +56,15 @@
           href="{{ d.url | absolute_url }}">{{ d.title }}</a>
       {% endfor %}
     </details>
+
+  
+    <!-- Dynamically generate other pages in specified order -->
+    {% assign ordered_pages = site.pages | where: "layout", "page" | sort: "order" %}
+    {% for node in ordered_pages %}
+      {% if node.title and node.title != "Home" %}
+        <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url | absolute_url }}">{{ node.title }}</a>
+      {% endif %}
+    {% endfor %}
   
     <a class="sidebar-nav-item" href="{{ site.github.repo }}">GitHub project</a>
     <!-- <a class="sidebar-nav-item" href="{{ site.Store.URL }}">Goods Shop</a>-->
