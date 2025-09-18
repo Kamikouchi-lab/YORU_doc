@@ -56,9 +56,11 @@ order: 2
 <img src="../../imgs/screenshots_description-02.png" width="100%">
 
 <br>
+---
 
 ## [Next](../03-analysis/)
 
 <br>  
+---
 
 ## [Previous](../01-install/)

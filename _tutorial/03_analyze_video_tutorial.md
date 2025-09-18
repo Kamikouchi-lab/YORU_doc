@@ -23,9 +23,11 @@ title: Step3. Analyze Videos
     > If you check "Tracking algorithm", YORU will save the IDs in the results csv file.
 
 <br>
+---
 
 ## [Next](../04-model-evaluation-tutorial/)
 
 <br>  
+---
 
 ## [Previous](../02-create-model-tutorial/)

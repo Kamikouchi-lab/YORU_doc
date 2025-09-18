@@ -77,9 +77,11 @@ Follow these steps to install YORU quickly:
 
 
 # Learn about YORU
-- **Learn details**: [Overview](overview.md)
+- [User guides](../guides/01-install/)
 
-- **Step-by-Step Tutorial**: TBA
+- [Step-by-Step Tutorial](../tutorial/01-preparation-tutorial/)
+
+- [Testing Guide](../devnotes/yoru-test/)
 
 # Requirements
 
