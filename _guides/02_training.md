@@ -57,8 +57,8 @@ order: 2
 
 <br>
 
-## [Next](./03_analysis.md)
+## [Next](../03_analysis.md)
 
 <br>  
 
-## [Previous](./01_install.md)
+## [Previous](../01_install.md)

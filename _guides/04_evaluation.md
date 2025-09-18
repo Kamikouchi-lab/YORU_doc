@@ -48,8 +48,8 @@ order: 4
 
 <br>
 
-## [Next](./05_closed-loop.md)
+## [Next](../05_closed-loop.md)
 
 <br>  
 
-## [Previous](./03_analysis.md)
+## [Previous](../03_analysis.md)

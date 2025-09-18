@@ -26,4 +26,4 @@ These data ware used in the previous paper.
 <br>
 
 
-## [Next](./02_create_model_tutorial.md)
+## [Next](../02_create_model_tutorial.md)

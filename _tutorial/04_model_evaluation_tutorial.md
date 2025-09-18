@@ -45,8 +45,8 @@ These data ware used in the previous paper.
 
 <br>
 
-## [Next](./05_closed_loop_tutorial.md)
+## [Next](../05_closed_loop_tutorial.md)
 
 <br>  
 
-## [Previous](./03_analyze_video_tutorial.md)
+## [Previous](../03_analyze_video_tutorial.md)

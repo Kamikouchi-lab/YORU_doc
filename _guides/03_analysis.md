@@ -27,8 +27,8 @@ order: 3
 
 <br>
 
-## [Next](./04_evaluation.md)
+## [Next](../04_evaluation.md)
 
 <br>  
 
-## [Previous](./02_training.md)
+## [Previous](../02_training.md)

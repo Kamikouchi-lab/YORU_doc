@@ -45,8 +45,8 @@ These data ware used in the previous paper.
 
 <br>
 
-## [Next](./04_model_evaluation_tutorial.md)
+## [Next](../04_model_evaluation_tutorial.md)
 
 <br>  
 
-## [Previous](./02_create_model_tutorial.md)
+## [Previous](../02_create_model_tutorial.md)

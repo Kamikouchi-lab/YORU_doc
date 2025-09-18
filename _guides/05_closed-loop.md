@@ -58,4 +58,4 @@ YORU projector operation
 
 <br>
 
-## [Previous](./04_evaluation.md)
+## [Previous](../04_evaluation.md)
