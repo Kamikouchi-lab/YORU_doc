@@ -4,44 +4,46 @@ order: 5
 title: Step5. Closed-loop experiments
 ---
 
-## Example hardware conditions
- - OS: Windows 11
- - RAM: 32GB
- - GPU: NVIDIA GeForce RTX 3080
+1. Edit a condition YAML file.
 
- - Dataset: Fruit fly copulation behaviour (Yamanouchi, H., 2025). [Fruit Fly Copulation Dataset](https://doi.org/10.5281/zenodo.15653581) 
+  > [condition YAML file template](https://github.com/Kamikouchi-lab/YORU/blob/main/config/template.yaml)
 
-
-# Training
-
-1. Start YORU and open the “Training” module.
+   ```
+  name: fly_copulation_project   # Experimental name.  
+    export: /Path/to/result/directory/   # Output folder for videos and experiment information.  
+    export_name: fly_copulation_real_time_analysis   # Specifying the file name of the output video.   
+    
+  model:  
+   yolo_detection: False   # If you want to start YORU's inference immediately after starting YORU's real-time process, set this to True.  
+   yolo_model_path: Path to YORU model   # Specify the YORU model (.pt file).  
+   Trigger: False  
   
-2. Run "Training".
+  capture_style:  
+   stream_MSS: False   # When using the screen capture function, set to True.  
+    
+  trigger:  
+   trigger_threshold_configuration: 0.3   # Confidence threshold when detecting YORU.  
+   trigger_class: copulation   # Which action class to trigger.  
+      
+   Arduino_COM: “COM3”   # COM to which Arduino is connected.  
+   trigger_pin: 13   # Specifying pin numbers for outputting TTL signals with Arduino.  
+   trigger_style: standard_arduino   # Select which trigger plugin to use.  
+     
+  hardware:  
+   use_camera: True   # Specify whether to use the camera.  
+   camera_id: 0   # Specifying the camera ID.  
+   camera_width: 640   # Specify the width (px) of images captured by the camera.  
+   camera_height: 480   # Specifying the height (px) of images captured by the camera.  
+   camera_scale: 1   # If you want to change the scale of the camera image, change this setting.  
+   camera_fps: 30   # Specifying camera fps.  
+   camera_imshow: False   # When set to True, the opencv window opens.  
+   ```
 
-3. Create a project.
+2. Select the condition YAML file in YORU start page.
 
-4. Move labeled data and classes.txt to "all_label_images" folder in the project.
+3. Run "Real-time Process".
 
-5. Push "Move Label Images" button.
-
-6. Select classes.txt files path and push "Add class info in YAML file".
-
-7. Select training conditions and start training.
-
-### Analyze a model
-
-1. Select "Model Path", "Movie Path",and "Result Directory". "test_video_fly_copulation.mp4" is used as a movie.
-
-2. Start analysis.
-
-
-## Data references
-
-These data ware used in the previous paper.
-
-- [Paper](https://ieeexplore.ieee.org/document/10150245)
-
-- H. M. Yamanouchi, R. Tanaka and A. Kamikouchi, "Event-triggered feedback system using YOLO for optogenetic manipulation of neural activity," 2023 IEEE International Conference on Pervasive Computing and Communications Workshops and other Affiliated Events (PerCom Workshops), Atlanta, GA, USA, 2023, pp. 184-187, doi: 10.1109/PerComWorkshops56833.2023.10150245.
+4. Operate Real-time Process GUI.
 
 
 <br>  

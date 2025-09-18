@@ -4,44 +4,43 @@ order: 4
 title: Step4. Evaluate models
 ---
 
-## Example hardware conditions
- - OS: Windows 11
- - RAM: 32GB
- - GPU: NVIDIA GeForce RTX 3080
+1. Run the YORU's Evaluation sub-module.
 
- - Dataset: Fruit fly copulation behaviour (Yamanouchi, H., 2025). [Fruit Fly Copulation Dataset](https://doi.org/10.5281/zenodo.15653581) 
+2. Load a project config.yaml file and a model.
+    
+    > The model is in the "exp" folder.
 
+3. Extract frames for labeling using Grab GUI. 
 
-# Training
+   I. Select a video in the Video file path in the Grab GUI.
 
-1. Start YORU and open the “Training” module.
-  
-2. Run "Training".
+   Ⅱ. Select Save directory. (Basically, all_label_images in the project folder is a good choice.)
 
-3. Create a project.
+   Ⅲ. Decide the grabed frame name.
 
-4. Move labeled data and classes.txt to "all_label_images" folder in the project.
+   IV. Cut out the screenshot.
 
-5. Push "Move Label Images" button.
+      i. Play video with Streaming movie.
 
-6. Select classes.txt files path and push "Add class info in YAML file".
+      ii. Arrow keys to go forward and back.
 
-7. Select training conditions and start training.
+      iii. Grab Current Frame or Alt key to save frame.
 
-### Analyze a model
+   > Images that are not used for creating a model are better.
 
-1. Select "Model Path", "Movie Path",and "Result Directory". "test_video_fly_copulation.mp4" is used as a movie.
+5. Run LabelImg and label the frames.
 
-2. Start analysis.
+    > The detailed documents are accessible in [LabelImg](https://github.com/HumanSignal/labelImg).
 
+    > Save format is done in YOLO. 
 
-## Data references
+    > It is easier to do so if Auto Save mode is turned on in the View tab.
 
-These data ware used in the previous paper.
+6. Push "Prediction" button.
 
-- [Paper](https://ieeexplore.ieee.org/document/10150245)
+7. Push "Calculate APs" button. 
 
-- H. M. Yamanouchi, R. Tanaka and A. Kamikouchi, "Event-triggered feedback system using YOLO for optogenetic manipulation of neural activity," 2023 IEEE International Conference on Pervasive Computing and Communications Workshops and other Affiliated Events (PerCom Workshops), Atlanta, GA, USA, 2023, pp. 184-187, doi: 10.1109/PerComWorkshops56833.2023.10150245.
+    > YORU calculates APs and IOUs.
 
 <br>
 

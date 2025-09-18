@@ -4,44 +4,51 @@ order: 2
 title: Step2. Create a Model
 ---
 
-## Example hardware conditions
- - OS: Windows 11
- - RAM: 32GB
- - GPU: NVIDIA GeForce RTX 3080
+1. Run the YORU's Training sub-module.
 
- - Dataset: Fruit fly copulation behaviour (Yamanouchi, H., 2025). [Fruit Fly Copulation Dataset](https://doi.org/10.5281/zenodo.15653581) 
+2. Create a project folder. (Step0)
+    
+    > Folders and condition yaml file will be created.
 
+3. Extract frames for labeling using Grab GUI. (Step1)
 
-# Training
+   I. Select a video in the Video file path in the Grab GUI.
 
-1. Start YORU and open the “Training” module.
-  
-2. Run "Training".
+   Ⅱ. Select Save directory. (Basically, all_label_images in the project folder is a good choice.)
 
-3. Create a project.
+   Ⅲ. Decide the grabbed frame name.
 
-4. Move labeled data and classes.txt to "all_label_images" folder in the project.
+   IV. Cut out the screenshot.
 
-5. Push "Move Label Images" button.
+      i. Play video with Streaming movie.
 
-6. Select classes.txt files path and push "Add class info in YAML file".
+      ii. Arrow keys to go forward and back.
 
-7. Select training conditions and start training.
+      iii. Grab Current Frame or Alt key to save frame.
 
-### Analyze a model
+4. Run LabelImg and label the frames. (Step2)
 
-1. Select "Model Path", "Movie Path",and "Result Directory". "test_video_fly_copulation.mp4" is used as a movie.
+    > The detailed documents are accessible in [LabelImg](https://github.com/HumanSignal/labelImg).
 
-2. Start analysis.
+    > Save format is done in YOLO. 
 
+    > It is easier to do so if Auto Save mode is turned on in the View tab.
 
-## Data references
+5. Move all images and txt files to "all_label_images" folder of the project. (Step3)
 
-These data ware used in the previous paper.
+6. Push "Move Label Images" button. (Step4)
 
-- [Paper](https://ieeexplore.ieee.org/document/10150245)
+    > Images and text files are copied to the train and val folders in a 4:1 ratio.
 
-- H. M. Yamanouchi, R. Tanaka and A. Kamikouchi, "Event-triggered feedback system using YOLO for optogenetic manipulation of neural activity," 2023 IEEE International Conference on Pervasive Computing and Communications Workshops and other Affiliated Events (PerCom Workshops), Atlanta, GA, USA, 2023, pp. 184-187, doi: 10.1109/PerComWorkshops56833.2023.10150245.
+7. Select classes.txt file and push "Add class info in YAML file". (Step5)
+
+    > The information in classes.txt will be entered into the config.yml file.
+
+8. Check the "YAML Path" and select training conditions, such as epochs, networks and so on.
+
+9. Start training by push "Train YOLOv5".
+
+    >  In the terminal, you should check the initiation of training.
 
 <br>
 
