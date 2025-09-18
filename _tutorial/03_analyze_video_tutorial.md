@@ -24,8 +24,8 @@ title: Step3. Analyze Videos
 
 <br>
 
-## [Next](../04_model_evaluation_tutorial.md)
+## [Next](../04-model-evaluation-tutorial/)
 
 <br>  
 
-## [Previous](../02_create_model_tutorial.md)
+## [Previous](../02-create-model-tutorial/)

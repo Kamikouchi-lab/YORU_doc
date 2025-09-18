@@ -51,14 +51,14 @@ order: 2
     >  In the terminal, you should check the initiation of training.
 
 
-<img src="../imgs/screenshots_description_01.png" width="100%">
+<img src="../../imgs/screenshots_description_01.png" width="100%">
 
-<img src="../imgs/screenshots_description-02.png" width="100%">
+<img src="../../imgs/screenshots_description-02.png" width="100%">
 
 <br>
 
-## [Next](../03_analysis.md)
+## [Next](../03-analysis/)
 
 <br>  
 
-## [Previous](../01_install.md)
+## [Previous](../01-install/)

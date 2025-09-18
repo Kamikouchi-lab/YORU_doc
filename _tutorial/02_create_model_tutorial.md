@@ -53,8 +53,8 @@ title: Step2. Create a Model
 <br>
 
 
-## [Next](../03_analyze_video_tutorial.md)
+## [Next](../03-analyze-video-tutorial/)
 
 <br>  
 
-## [Previous](../01_preparation_tutorial.md)
+## [Previous](../01-preparation-tutorial/)

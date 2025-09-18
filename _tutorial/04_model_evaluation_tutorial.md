@@ -44,8 +44,8 @@ title: Step4. Evaluate models
 
 <br>
 
-## [Next](../05_closed_loop_tutorial.md)
+## [Next](../05-closed-loop-tutorial/)
 
 <br>  
 
-## [Previous](../03_analyze_video_tutorial.md)
+## [Previous](../03-analyze-video-tutorial/)

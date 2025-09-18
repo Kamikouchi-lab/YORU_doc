@@ -69,4 +69,4 @@ order: 1
 
 <br>
 
-## [Next](../02_training.md)
+## [Next](../02-training/)

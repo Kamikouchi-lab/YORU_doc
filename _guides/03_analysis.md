@@ -23,12 +23,12 @@ order: 3
     > If you check "Tracking algorithm", YORU will save the IDs in the results csv file.
 
 
-<img src="../imgs/screenshots_description-04.png" width="100%">
+<img src="../../imgs/screenshots_description-04.png" width="100%">
 
 <br>
 
-## [Next](../04_evaluation.md)
+## [Next](../04-evaluation/)
 
 <br>  
 
-## [Previous](../02_training.md)
+## [Previous](../02-training/)

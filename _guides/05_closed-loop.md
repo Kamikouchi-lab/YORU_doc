@@ -54,8 +54,8 @@ YORU projector operation
 [GitHub](https://github.com/Kamikouchi-lab/YORU-projector)
 
 
-<img src="../imgs/screenshots_description-05.png" width="100%">
+<img src="../../imgs/screenshots_description-05.png" width="100%">
 
 <br>
 
-## [Previous](../04_evaluation.md)
+## [Previous](../04-evaluation/)
