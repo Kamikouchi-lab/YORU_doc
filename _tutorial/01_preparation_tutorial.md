@@ -9,10 +9,6 @@ title: Step1. Conditions
  - RAM: 32GB
  - GPU: NVIDIA GeForce RTX 3080
 
- - Dataset: Fruit fly copulation behaviour (Yamanouchi, H., 2025). [Fruit Fly Copulation Dataset](https://doi.org/10.5281/zenodo.15653581) 
-
-
-
 
 ## Data references
 
