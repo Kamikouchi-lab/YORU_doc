@@ -42,3 +42,6 @@ collections:
   devnotes:
     output: true
     permalink: /devnotes/:name/ 
+  guides:
+    output: true
+    permalink: /guides/:name/ 
