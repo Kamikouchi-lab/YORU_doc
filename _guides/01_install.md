@@ -66,3 +66,7 @@ order: 1
     cd "Path/to/YORU/project/folder"
     python -m yoru
     ```
+
+<br>
+
+## [Next](./02_training.md)

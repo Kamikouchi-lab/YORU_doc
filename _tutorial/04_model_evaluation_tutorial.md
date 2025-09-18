@@ -1,7 +1,7 @@
 ---
 layout: page
-order: 1
-title: Step1. Preparation
+order: 4
+title: Step4. Evaluate models
 ---
 
 ## Example hardware conditions
@@ -43,8 +43,10 @@ These data ware used in the previous paper.
 
 - H. M. Yamanouchi, R. Tanaka and A. Kamikouchi, "Event-triggered feedback system using YOLO for optogenetic manipulation of neural activity," 2023 IEEE International Conference on Pervasive Computing and Communications Workshops and other Affiliated Events (PerCom Workshops), Atlanta, GA, USA, 2023, pp. 184-187, doi: 10.1109/PerComWorkshops56833.2023.10150245.
 
-
 <br>
 
+## [Next](./05_closed_loop_tutorial.md)
 
-##[Next](02_create_model.md)
+<br>  
+
+## [Previous](./03_analyze_video_tutorial.md)

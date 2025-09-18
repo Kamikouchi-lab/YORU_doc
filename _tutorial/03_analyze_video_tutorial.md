@@ -1,7 +1,7 @@
 ---
 layout: page
-order: 4
-title: Step4. Evaluate models
+order: 3
+title: Step3. Analyze Videos
 ---
 
 ## Example hardware conditions
@@ -45,8 +45,8 @@ These data ware used in the previous paper.
 
 <br>
 
-##[Next](03_analyze_video.md)
+## [Next](./04_model_evaluation_tutorial.md)
 
 <br>  
 
-##[Previous](05_closed_loop.md)
+## [Previous](./02_create_model_tutorial.md)

@@ -54,3 +54,11 @@ order: 2
 <img src="../imgs/screenshots_description_01.png" width="100%">
 
 <img src="../imgs/screenshots_description-02.png" width="100%">
+
+<br>
+
+## [Next](./03_analysis.md)
+
+<br>  
+
+## [Previous](./01_install.md)

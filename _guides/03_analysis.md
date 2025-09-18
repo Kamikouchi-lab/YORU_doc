@@ -24,3 +24,11 @@ order: 3
 
 
 <img src="../imgs/screenshots_description-04.png" width="100%">
+
+<br>
+
+## [Next](./04_evaluation.md)
+
+<br>  
+
+## [Previous](./02_training.md)
