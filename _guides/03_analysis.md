@@ -26,11 +26,13 @@ order: 3
 <img src="../../imgs/screenshots_description-04.png" width="100%">
 
 <br>
+
 ---
 
 ## [Next](../04-evaluation/)
 
 <br>  
+
 ---
 
 ## [Previous](../02-training/)
