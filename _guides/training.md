@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Training
-order: 3
+order: 2
 ---
 
 1. Run the YORU's Training sub-module.

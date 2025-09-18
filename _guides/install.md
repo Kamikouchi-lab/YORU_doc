@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Install
-order: 2
+order: 1
 ---
 
 0. Check the instllation of [Google Chrome](https://www.google.com/intl/ja/chrome/)

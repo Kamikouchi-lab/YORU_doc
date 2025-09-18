@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Download Resources
-order: 8
+order: 3
 ---
 
 *Please cite the source when using logos or images from these resources.

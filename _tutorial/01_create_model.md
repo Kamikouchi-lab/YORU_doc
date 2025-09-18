@@ -4,17 +4,17 @@ order: 1
 title: 1 Create a Model
 ---
 
-## Data description
-For test data, we can create and analyze fly mating behavior.
+## Example hardware conditions
+ - OS: Windows 11
+ - RAM: 32GB
+ - GPU: NVIDIA GeForce RTX 3080
 
-In this data, we labeled copulation paired flies and non copulation flies.
+ - Dataset: Fruit fly copulation behaviour (Yamanouchi, H., 2025). [Fruit Fly Copulation Dataset](https://doi.org/10.5281/zenodo.15653581) 
 
-- labeled frames in [labeled_frames](labeled_frames) folder (1000 PNG images and 1000 labels text files)
 
-## Demonstration steps
-### Create a model
+# Training
 
-1. Download test_data.
+1. Start YORU and open the “Training” module.
   
 2. Run "Training".
 

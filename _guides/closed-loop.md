@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Real-time Process
-order: 6
+order: 5
 ---
 
 1. Edit a condition YAML file.

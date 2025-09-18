@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Video Analysis
-order: 5
+order: 3
 ---
 
 1. Select a model to analyze videos.
