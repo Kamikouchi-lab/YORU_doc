@@ -25,6 +25,11 @@ title: Step2. Create a Model
       ii. Arrow keys to go forward and back.
 
       iii. Grab Current Frame or Alt key to save frame.
+    
+    
+    <img src="../../imgs/grab_gui_screenshot.png" width="70%">
+
+    
 
 4. Run LabelImg and label the frames. (Step2)
 
@@ -33,6 +38,11 @@ title: Step2. Create a Model
     > Save format is done in YOLO. 
 
     > It is easier to do so if Auto Save mode is turned on in the View tab.
+
+    > Please label target behavior by bounidng box.
+
+    > In the folder, a classes.txt file is saved.
+    <img src="../../imgs/classes_txt_image.png" width="70%">
 
 5. Move all images and txt files to "all_label_images" folder of the project. (Step3)
 
@@ -49,6 +59,14 @@ title: Step2. Create a Model
 9. Start training by push "Train YOLOv5".
 
     >  In the terminal, you should check the initiation of training.
+
+    > After several minutes, training is started.
+    <img src="../../imgs/training_pert1_screenshot.png" width="70%">
+
+
+9. After several hours or days, training is finished.
+
+    <img src="../../imgs/training_pert2_screenshot.png" width="70%">
 
 <br>
 

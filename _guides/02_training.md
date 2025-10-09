@@ -57,6 +57,12 @@ order: 2
 
 <br>
 
+## Q&A
+
+- tourch.cuda.Out.OfMemoryError: CUDA out of memory.
+
+> This occurs when the mini-batch during training exceeds the GPU's memory capacity. Try smaler batch size.
+
 ---
 
 ## [Next](../03-analysis/)
