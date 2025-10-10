@@ -14,6 +14,12 @@ title: Step2. Create a Model
 
    I. Select a video in the Video file path in the Grab GUI.
 
+    <br>
+    
+    <img src="imgs/open_video.gif" width="70%">
+
+    <br>
+
    Ⅱ. Select Save directory. (Basically, all_label_images in the project folder is a good choice.)
 
    Ⅲ. Decide the grabbed frame name.
@@ -26,12 +32,23 @@ title: Step2. Create a Model
 
       iii. Grab Current Frame or Alt key to save frame.
     
-    
-    <img src="../../imgs/grab_gui_screenshot.png" width="70%">
+
 
     
 
 4. Run LabelImg and label the frames. (Step2)
+
+
+
+    <br>
+    
+    <img src="labeling_labelimg.gif" width="70%">
+
+    <br>
+
+    <img src="copulation_label.gif" width="70%">
+
+    <br>
 
     > The detailed documents are accessible in [LabelImg](https://github.com/HumanSignal/labelImg).
 

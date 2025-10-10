@@ -26,6 +26,13 @@ order: 2
 
       iii. Grab Current Frame or Alt key to save frame.
 
+
+    <br>
+    
+    <img src="imgs/grab_gui_screenshot.png" width="70%">
+
+    <br>
+
 4. Run LabelImg and label the frames. (Step2)
 
     > The detailed documents are accessible in [LabelImg](https://github.com/HumanSignal/labelImg).

@@ -69,6 +69,10 @@ order: 1
 
 <br>
 
+<img src="imgs/kidou_yoru.gif" width="100%">
+
+<br>
+
 ---
 
 ## [Next](../02-training/)
