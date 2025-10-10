@@ -41,11 +41,13 @@ order: 3
 
 - Result video frame
 
-<img src="../../imgs/defalut_results.png" width="70%">
+<img src="../../imgs/individual_no_images00001.png" width="70%">
 
 
 <br>
 
+
+### GUI  
 
 <img src="../../imgs/screenshots_description-04.png" width="100%">
 

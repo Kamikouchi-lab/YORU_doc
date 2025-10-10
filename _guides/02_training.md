@@ -59,6 +59,9 @@ order: 2
 
     >  In the terminal, you should check the initiation of training.
 
+<br>
+
+### GUI  
 
 <img src="../../imgs/screenshots_description_01.png" width="100%">
 

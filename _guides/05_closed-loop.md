@@ -48,11 +48,9 @@ order: 5
 <img src="imgs/screenshot_real-time-process.png" width="50%">
 
 
-## Plugin List
+<br>
 
-YORU projector operation
-[GitHub](https://github.com/Kamikouchi-lab/YORU-projector)
-
+### GUI  
 
 <img src="../../imgs/screenshots_description-05.png" width="100%">
 
