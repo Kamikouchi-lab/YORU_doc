@@ -14,12 +14,16 @@ title: Step1. Conditions
 
 ### [Fruit Fly Copulatio Dataset](https://zenodo.org/records/15803067)
 
+<br>
+
 *Train dataset*  
 - train_dataset_videos.zip: 20 videos of fly copulation
 
 - train_dataset_labels.zip: 1000 PNG images and 1000 labels text files
 
 - train_dataset_annotations.zip: Behavior annotation csv flies of each video by BORIS
+
+<br>
 
 *Test dataset*  
 - train_dataset_videos.zip: 17 videos of fly copulation

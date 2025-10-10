@@ -41,6 +41,8 @@ order: 2
 
     > It is easier to do so if Auto Save mode is turned on in the View tab.
 
+<img src="../../imgs/labeling_example.png" width="80%">
+
 5. Move all images and txt files to "all_label_images" folder of the project. (Step3)
 
 6. Push "Move Label Images" button. (Step4)

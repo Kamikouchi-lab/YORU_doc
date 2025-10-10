@@ -18,11 +18,26 @@ title: Step3. Analyze Videos
 
 5. Push the "YOLO analysis" and start an analysis.
 
+    > After several tens of seconds, the remaining time display stabilizes.
+
     > If you check "Create videos", YORU will save the videos shown in the box.
 
     > If you check "Tracking algorithm", YORU will save the IDs in the results csv file.
 
+<img src="../../imgs/defalut_results.png" width="80%">
+
 <br>
+
+### Data example  
+
+- Default
+
+
+- Default with tracking
+
+
+- Result video frame
+
 
 ---
 

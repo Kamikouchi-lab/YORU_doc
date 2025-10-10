@@ -10,6 +10,9 @@ title: Step4. Evaluate models
     
     > The model is in the "exp" folder.
 
+    > When loaded, folders are created as shown in the figure.
+    <img src="../../imgs/evaluation_files.png" width="80%">
+
 3. Extract frames for labeling using Grab GUI. 
 
    I. Select a video in the Video file path in the Grab GUI.
@@ -36,7 +39,15 @@ title: Step4. Evaluate models
 
     > It is easier to do so if Auto Save mode is turned on in the View tab.
 
+
+
 6. Push "Prediction" button.
+
+    <img src="../../imgs/terminal_description_evaluation.png" width="70%">
+
+
+    > Ultimately, classes.txt, image files, ground-truth labels, and YORU's labels will be placed in the data folder.
+    <img src="../../imgs/evaluation_files_of_images.png" width="80%">
 
 7. Push "Calculate APs" button. 
 
