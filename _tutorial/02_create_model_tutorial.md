@@ -16,7 +16,7 @@ title: Step2. Create a Model
 
     <br>
     
-    <img src="imgs/open_video.gif" width="70%">
+    <img src="../../imgs/open_video.gif" width="70%">
 
     <br>
 
@@ -42,11 +42,11 @@ title: Step2. Create a Model
 
     <br>
     
-    <img src="labeling_labelimg.gif" width="70%">
+    <img src="../../imgs/labeling_labelimg.gif" width="70%">
 
     <br>
 
-    <img src="copulation_label.gif" width="70%">
+    <img src="../../imgs/copulation_label.gif" width="70%">
 
     <br>
 

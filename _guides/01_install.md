@@ -69,7 +69,7 @@ order: 1
 
 <br>
 
-<img src="imgs/kidou_yoru.gif" width="100%">
+<img src="../../imgs/kidou_yoru.gif" width="100%">
 
 <br>
 
