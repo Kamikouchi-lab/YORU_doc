@@ -29,7 +29,7 @@ order: 2
 
     <br>
     
-    <img src="imgs/grab_gui_screenshot.png" width="70%">
+    <img src="../../imgs/grab_gui_screenshot.png" width="70%">
 
     <br>
 
