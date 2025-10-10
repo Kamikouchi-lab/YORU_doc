@@ -45,3 +45,6 @@ collections:
   guides:
     output: true
     permalink: /guides/:name/ 
+  plugins:
+    output: true
+    permalink: /plugins/:name/

@@ -32,6 +32,19 @@
     </details>
 
     <!-- <details>
+    <summary class="sidebar-nav-item">Development notes</summary>
+    <a class="sidebar-nav-item" href="#subitem1">TBA</a>
+    </details> -->
+    <details>
+      <summary class="sidebar-nav-item">Trigger Plugins</summary>
+      {% assign devs = site.plugins | sort: "order" %}
+      {% for d in devs %}
+        <a class="sidebar-nav-item{% if page.url == d.url %} active{% endif %}"
+          href="{{ d.url | absolute_url }}">{{ d.title }}</a>
+      {% endfor %}
+    </details>
+
+    <!-- <details>
       <summary class="sidebar-nav-item">Tutorial</summary>
       <a class="sidebar-nav-item" href="#subitem2">TBA</a>
     </details> -->
