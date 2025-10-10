@@ -45,8 +45,6 @@ order: 5
 
 4. Operate Real-time Process GUI.
 
-<img src="imgs/screenshot_real-time-process.png" width="50%">
-
 
 <br>
 
