@@ -53,7 +53,27 @@ title: Step4. Evaluate models
 
     > YORU calculates APs and IOUs.
 
+
 <br>
+
+## Evaluation Results
+
+- AP results
+<img src="../../imgs/best_ap50-95.png" width="80%">
+
+<br>
+
+<img src="../../imgs/text_result_evaluation.png" width="80%">
+
+<br>
+
+- IoU results
+<img src="../../imgs/best_iou_graph.png" width="80%">
+
+<br>
+
+- Evaluation information
+<img src="../../imgs/detect_information.png" width="80%">
 
 ---
 

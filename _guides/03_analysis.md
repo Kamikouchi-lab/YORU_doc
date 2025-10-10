@@ -22,6 +22,30 @@ order: 3
 
     > If you check "Tracking algorithm", YORU will save the IDs in the results csv file.
 
+    > Although YOLOv5 does not support assigning unique IDs to detected objects, YORU has the optoions of individual identification in multi-animal scenarios. However, currently(in YORU v1.1.0) this function is a beta-function. YORU applied the the Kuhn-Munkres method (Bashar et al., 2022) to assign IDs based on positional information following object detections. 
+
+
+### Data example  
+
+- Default
+
+<img src="../../imgs/defalut_results.png" width="70%">
+
+<br>
+
+- Default with tracking
+
+<img src="../../imgs/tracking_results.png" width="70%">
+
+<br>
+
+- Result video frame
+
+<img src="../../imgs/defalut_results.png" width="70%">
+
+
+<br>
+
 
 <img src="../../imgs/screenshots_description-04.png" width="100%">
 
