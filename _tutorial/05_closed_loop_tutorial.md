@@ -4,6 +4,10 @@ order: 5
 title: Step5. Closed-loop experiments
 ---
 
+## Condition
+Using the Drosophila mating model created earlier, I will explain an experimental setup that operates an LED in response to Drosophila mating. The LED is controlled by the Arduino's TTL (Transistor-Transistor Logic) signal.
+
+
 1. Edit a condition YAML file.
 
   > [condition YAML file template](https://github.com/Kamikouchi-lab/YORU/blob/main/config/template.yaml)
@@ -39,11 +43,23 @@ title: Step5. Closed-loop experiments
    camera_imshow: False   # When set to True, the opencv window opens.  
    ```
 
-2. Select the condition YAML file in YORU start page.
+2. Write the "Standard Firmata" program, located within the Example programs section of the Arduino IDE, to the Arduino.
 
-3. Run "Real-time Process".
+3. Connect a camera and Arduiono to a PC.
+
+4. Select the condition YAML file in YORU start page.
+
+5. Run "Real-time Process".
 
 4. Operate Real-time Process GUI.
+
+  i. Check the "YORU detection" box to start YORU's real-time analysis. Frames analyzed by YORU will be displayed on the right.
+
+  ii. By checking the "Trigger condition" box, you can start the YORU trigger. In this case, when "copulation" is detected, a TTL signal is output on Arduino pin 13.
+
+  iii. Save videos by checking the "Streaming data".
+
+
 
 
 <br>  
