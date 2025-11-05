@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Trouble Shootings
+title: Q and A
 order: 2
 ---
 
