@@ -10,6 +10,10 @@ title: Home
 
 “YORU” (Your Optimal Recognition Utility) is an open-source animal behavior detection system using Python. YORU can detect animal behaviors, not only single-animal behaviors but also social behaviors. YORU also provides online/offline analysis and closed-loop manipulation.
 
+
+["YORU: Animal behavior detection with object-based approach for real-time closed-loop feedback"](https://www.science.org/doi/10.1126/sciadv.adw2109)
+
+
 ## Features
 
 - Comprehensive Behavior Detection: Recognizes both single-animal and social behaviors, and allows for user-defined animal appearances using deep learning techniques.
@@ -99,6 +103,8 @@ Follow these steps to install YORU quickly:
 - Memory: DDR4 32 GB
 
 # Reference
+ - Hayato M. Yamanouchi et al. ,YORU: Animal behavior detection with object-based approach for real-time closed-loop feedback.Sci. Adv.12,eadw2109(2026). DOI:10.1126/sciadv.adw2109
+ 
  - Yamanouchi, H. M., Takeuchi, R. F., Chiba, N., Hashimoto, K., Shimizu, T., Tanaka, R., & Kamikouchi, A. (2024). YORU: social behavior detection based on user-defined animal appearance using deep learning. bioRxiv (p. 2024.11.12.623320). https://doi.org/10.1101/2024.11.12.623320
 
 
