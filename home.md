@@ -89,7 +89,7 @@ Follow these steps to install YORU quickly:
 
     ```
     conda activate yoru
-    cd "Peth/to/YORU/project/folder"
+    cd "Path/to/YORU/project/folder"
     python -m yoru
     ```
 
