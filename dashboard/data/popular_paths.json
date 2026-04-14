@@ -1,4 +1,65 @@
 {
-  "paths": [],
-  "last_updated": null
+  "paths": [
+    {
+      "path": "/Kamikouchi-lab/YORU",
+      "title": "Overview",
+      "count": 64,
+      "uniques": 38
+    },
+    {
+      "path": "/Kamikouchi-lab/YORU/blob/main/YORU.yml",
+      "title": "/blob/main/YORU.yml",
+      "count": 16,
+      "uniques": 8
+    },
+    {
+      "path": "/Kamikouchi-lab/YORU/releases/tag/v1.1.1",
+      "title": "/releases/tag/v1.1.1",
+      "count": 12,
+      "uniques": 9
+    },
+    {
+      "path": "/Kamikouchi-lab/YORU/blob/main/README.md",
+      "title": "/blob/main/README.md",
+      "count": 11,
+      "uniques": 4
+    },
+    {
+      "path": "/Kamikouchi-lab/YORU/releases/tag/v2.0.0-beta.1",
+      "title": "/releases/tag/v2.0.0-beta.1",
+      "count": 11,
+      "uniques": 4
+    },
+    {
+      "path": "/Kamikouchi-lab/YORU/tree/main/docs",
+      "title": "/tree/main/docs",
+      "count": 7,
+      "uniques": 6
+    },
+    {
+      "path": "/Kamikouchi-lab/YORU/tree/main",
+      "title": "/tree/main",
+      "count": 7,
+      "uniques": 3
+    },
+    {
+      "path": "/Kamikouchi-lab/YORU/blob/main/pyproject.toml",
+      "title": "/blob/main/pyproject.toml",
+      "count": 5,
+      "uniques": 1
+    },
+    {
+      "path": "/Kamikouchi-lab/YORU/blob/main/LICENSE",
+      "title": "/blob/main/LICENSE",
+      "count": 4,
+      "uniques": 1
+    },
+    {
+      "path": "/Kamikouchi-lab/YORU/releases",
+      "title": "/releases",
+      "count": 3,
+      "uniques": 2
+    }
+  ],
+  "last_updated": "2026-04-14T09:33:20Z"
 }
