@@ -30,12 +30,20 @@ permalink: /usage/
       <div class="kpi-label">Total Downloads</div>
     </div>
     <div class="kpi-card">
+      <div class="kpi-value" id="kpi-total-clones">&mdash;</div>
+      <div class="kpi-label">Total Clones</div>
+    </div>
+    <div class="kpi-card">
       <div class="kpi-value" id="kpi-clones">&mdash;</div>
       <div class="kpi-label">Clones (30d)</div>
     </div>
     <div class="kpi-card">
       <div class="kpi-value" id="kpi-unique-cloners">&mdash;</div>
       <div class="kpi-label">Unique Cloners (30d)</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-value" id="kpi-total-views">&mdash;</div>
+      <div class="kpi-label">Total Page Views</div>
     </div>
     <div class="kpi-card">
       <div class="kpi-value" id="kpi-views">&mdash;</div>
@@ -107,8 +115,14 @@ permalink: /usage/
       <dt>Total Downloads</dt>
       <dd>Sum of all GitHub Release asset download counts across every version.</dd>
 
+      <dt>Total Clones</dt>
+      <dd>Cumulative <code>git clone</code> count since data collection began. Computed from stored daily history.</dd>
+
       <dt>Clones (30d)</dt>
       <dd>Number of <code>git clone</code> operations in the last 30 days. Based on full clones tracked by GitHub.</dd>
+
+      <dt>Total Page Views</dt>
+      <dd>Cumulative GitHub repository page view count since data collection began. Computed from stored daily history.</dd>
 
       <dt>Page Views (30d)</dt>
       <dd>GitHub repository page views in the last 30 days.</dd>

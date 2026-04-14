@@ -84,8 +84,10 @@
     setText('kpi-forks', fmt(s.forks));
     setText('kpi-contributors', fmt(s.contributors));
     setText('kpi-downloads', fmt(s.total_release_downloads));
+    setText('kpi-total-clones', fmt(s.total_clones));
     setText('kpi-clones', fmt(s.clones_30d));
     setText('kpi-unique-cloners', fmt(s.unique_cloners_30d));
+    setText('kpi-total-views', fmt(s.total_views));
     setText('kpi-views', fmt(s.views_30d));
     setText('kpi-unique-visitors', fmt(s.unique_visitors_30d));
     setText('last-updated', fmtDate(s.last_updated));

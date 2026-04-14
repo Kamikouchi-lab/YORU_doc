@@ -41,8 +41,13 @@ def build():
     releases = load_json(os.path.join(DATA_DIR, "releases.json"))
     meta = load_json(os.path.join(DATA_DIR, "repo_meta.json"))
 
-    clones_30d = sum_last_30d(clones.get("history", []))
-    views_30d = sum_last_30d(views.get("history", []))
+    clone_history = clones.get("history", [])
+    view_history = views.get("history", [])
+    clones_30d = sum_last_30d(clone_history)
+    views_30d = sum_last_30d(view_history)
+
+    total_clones = sum(e.get("count", 0) for e in clone_history)
+    total_views = sum(e.get("count", 0) for e in view_history)
 
     total_downloads = sum(
         r.get("total_downloads", 0)
@@ -51,6 +56,8 @@ def build():
 
     summary = {
         "total_release_downloads": total_downloads,
+        "total_clones": total_clones,
+        "total_views": total_views,
         "clones_30d": clones_30d["count"],
         "unique_cloners_30d": clones_30d["uniques"],
         "views_30d": views_30d["count"],
