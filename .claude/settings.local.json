@@ -2,7 +2,10 @@
   "permissions": {
     "allow": [
       "WebFetch(domain:github.com)",
-      "WebFetch(domain:raw.githubusercontent.com)"
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(python3 scripts/build_metrics_summary.py)",
+      "Bash(python3 scripts/fetch_github_metrics.py)",
+      "Bash(git -C /Users/tankororin/YORU_doc status)"
     ]
   }
 }

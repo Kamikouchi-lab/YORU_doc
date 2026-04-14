@@ -1,0 +1,188 @@
+/* YORU Usage Dashboard */
+
+.dashboard-container {
+  max-width: 64rem;
+  padding: 0 1.5rem;
+  margin: 0 auto;
+}
+
+/* KPI Cards */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.kpi-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 1.25rem 1rem;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  transition: box-shadow 0.2s;
+}
+
+.kpi-card:hover {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.kpi-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #313131;
+  line-height: 1.2;
+  font-family: "PT Sans", Helvetica, Arial, sans-serif;
+}
+
+.kpi-label {
+  font-size: 0.78rem;
+  color: #9a9a9a;
+  margin-top: 0.3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* Chart sections */
+.chart-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.chart-box {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 1.25rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+.chart-box h3 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  color: #505050;
+}
+
+.chart-wrap {
+  position: relative;
+  height: 260px;
+}
+
+/* Tables */
+.dash-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.dash-table th,
+.dash-table td {
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.dash-table th {
+  font-weight: 600;
+  color: #505050;
+  background: #f9f9f9;
+}
+
+.dash-table td {
+  color: #313131;
+}
+
+/* Empty / loading states */
+.dash-empty {
+  color: #9a9a9a;
+  font-style: italic;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+#dashboard-loading {
+  text-align: center;
+  padding: 3rem;
+  color: #9a9a9a;
+  font-size: 1.1rem;
+}
+
+#dashboard-content {
+  display: none;
+}
+
+/* Footer info */
+.dash-footer {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #eee;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.dash-footer h3 {
+  font-size: 1rem;
+  color: #505050;
+  margin-top: 0;
+}
+
+.dash-footer dt {
+  font-weight: 600;
+  color: #505050;
+  margin-top: 0.6rem;
+}
+
+.dash-footer dd {
+  margin-left: 0;
+  margin-bottom: 0.2rem;
+}
+
+.last-updated {
+  text-align: right;
+  color: #9a9a9a;
+  font-size: 0.85rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+}
+
+/* Responsive */
+@media (max-width: 48em) {
+  .dashboard-container {
+    padding: 0 1rem;
+  }
+
+  .chart-row {
+    grid-template-columns: 1fr;
+  }
+
+  .kpi-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+
+  .kpi-value {
+    font-size: 1.5rem;
+  }
+
+  .chart-wrap {
+    height: 220px;
+  }
+}
+
+@media (max-width: 30em) {
+  .kpi-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .kpi-card {
+    padding: 1rem 0.5rem;
+  }
+
+  .kpi-value {
+    font-size: 1.3rem;
+  }
+}

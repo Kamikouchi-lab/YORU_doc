@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  {% include head.html %}
+  <link rel="stylesheet" href="{{ '/public/css/dashboard.css' | absolute_url }}">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
+
+  <body class="theme-base-09 sidebar-overlay">
+
+    {% include sidebar.html %}
+
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="{{ site.baseurl }}/" title="Home">{{ site.title }}</a>
+            <small>{{ site.tagline }}</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="dashboard-container content">
+        <div class="page">
+          <h1 class="page-title">{{ page.title }}</h1>
+          {{ content }}
+        </div>
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script src='{{ site.baseurl }}/public/js/script.js'></script>
+    <script>window.DASHBOARD_DATA_BASE = '{{ site.baseurl }}/dashboard/data';</script>
+    <script src='{{ site.baseurl }}/public/js/dashboard.js'></script>
+  </body>
+</html>

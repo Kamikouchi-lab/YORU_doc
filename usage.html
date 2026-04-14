@@ -1,0 +1,134 @@
+---
+layout: dashboard
+title: Usage Dashboard
+order: 8
+permalink: /usage/
+---
+
+<div id="dashboard-loading">
+  <p>Loading dashboard data...</p>
+</div>
+
+<div id="dashboard-content">
+
+  <!-- KPI Cards -->
+  <div class="kpi-grid">
+    <div class="kpi-card">
+      <div class="kpi-value" id="kpi-stars">&mdash;</div>
+      <div class="kpi-label">Stars</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-value" id="kpi-forks">&mdash;</div>
+      <div class="kpi-label">Forks</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-value" id="kpi-contributors">&mdash;</div>
+      <div class="kpi-label">Contributors</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-value" id="kpi-downloads">&mdash;</div>
+      <div class="kpi-label">Total Downloads</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-value" id="kpi-clones">&mdash;</div>
+      <div class="kpi-label">Clones (30d)</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-value" id="kpi-unique-cloners">&mdash;</div>
+      <div class="kpi-label">Unique Cloners (30d)</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-value" id="kpi-views">&mdash;</div>
+      <div class="kpi-label">Page Views (30d)</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-value" id="kpi-unique-visitors">&mdash;</div>
+      <div class="kpi-label">Unique Visitors (30d)</div>
+    </div>
+  </div>
+
+  <!-- Daily Clones & Views -->
+  <div class="chart-row">
+    <div class="chart-box">
+      <h3>Daily Clones</h3>
+      <div class="chart-wrap"><canvas id="clones-chart"></canvas></div>
+      <p id="clones-empty" class="dash-empty"></p>
+    </div>
+    <div class="chart-box">
+      <h3>Daily Page Views</h3>
+      <div class="chart-wrap"><canvas id="views-chart"></canvas></div>
+      <p id="views-empty" class="dash-empty"></p>
+    </div>
+  </div>
+
+  <!-- Release Downloads & Referrers -->
+  <div class="chart-row">
+    <div class="chart-box">
+      <h3>Downloads by Release</h3>
+      <div class="chart-wrap"><canvas id="releases-chart"></canvas></div>
+      <p id="releases-empty" class="dash-empty"></p>
+    </div>
+    <div class="chart-box">
+      <h3>Top Referrers</h3>
+      <table class="dash-table">
+        <thead>
+          <tr><th>Referrer</th><th>Views</th><th>Unique</th></tr>
+        </thead>
+        <tbody id="referrers-body">
+          <tr><td colspan="3" class="dash-empty">Loading...</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Popular Content -->
+  <div class="chart-box" style="margin-bottom:2rem;">
+    <h3>Popular Content</h3>
+    <table class="dash-table">
+      <thead>
+        <tr><th>Path</th><th>Views</th><th>Unique</th></tr>
+      </thead>
+      <tbody id="paths-body">
+        <tr><td colspan="3" class="dash-empty">Loading...</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Last updated -->
+  <p class="last-updated">Last updated: <span id="last-updated">&mdash;</span></p>
+
+  <!-- Metric definitions -->
+  <div class="dash-footer">
+    <h3>About these metrics</h3>
+    <dl>
+      <dt>Stars / Forks / Contributors</dt>
+      <dd>Current counts from the <a href="https://github.com/Kamikouchi-lab/YORU">YORU GitHub repository</a>.</dd>
+
+      <dt>Total Downloads</dt>
+      <dd>Sum of all GitHub Release asset download counts across every version.</dd>
+
+      <dt>Clones (30d)</dt>
+      <dd>Number of <code>git clone</code> operations in the last 30 days. Based on full clones tracked by GitHub.</dd>
+
+      <dt>Page Views (30d)</dt>
+      <dd>GitHub repository page views in the last 30 days.</dd>
+
+      <dt>Unique Cloners / Visitors (30d)</dt>
+      <dd>Distinct users (by IP) who cloned or visited the repository within the last 30 days.</dd>
+
+      <dt>Top Referrers</dt>
+      <dd>Websites that directed the most traffic to the repository (last 14 days, GitHub Traffic API).</dd>
+
+      <dt>Popular Content</dt>
+      <dd>Most visited pages within the repository (last 14 days, GitHub Traffic API).</dd>
+
+      <dt>Last Updated</dt>
+      <dd>UTC timestamp of the most recent automated data collection via GitHub Actions.</dd>
+    </dl>
+    <p>
+      Traffic metrics are collected daily by a GitHub Actions workflow and stored in this repository.
+      Some metrics depend on collection timing and may not cover days when the workflow did not run.
+    </p>
+  </div>
+
+</div>

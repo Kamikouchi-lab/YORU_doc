@@ -35,6 +35,11 @@ github:
 Store:
   URL: https://www.zazzle.co.jp/store/yorustore?rf=238712148117349309
 
+exclude:
+  - scripts
+  - DASHBOARD_SETUP.md
+  - README.md
+
 collections:
   tutorial:
     output: true
