@@ -11,14 +11,14 @@
       "uniques": 10
     },
     {
-      "referrer": "kamikouchi-lab.github.io",
-      "count": 17,
+      "referrer": "Google",
+      "count": 18,
       "uniques": 7
     },
     {
-      "referrer": "Google",
+      "referrer": "kamikouchi-lab.github.io",
       "count": 17,
-      "uniques": 6
+      "uniques": 7
     },
     {
       "referrer": "Bing",
@@ -41,5 +41,5 @@
       "uniques": 1
     }
   ],
-  "last_updated": "2026-04-19T05:11:05Z"
+  "last_updated": "2026-04-19T13:04:39Z"
 }
