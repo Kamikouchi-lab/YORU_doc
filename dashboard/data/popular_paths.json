@@ -3,20 +3,20 @@
     {
       "path": "/Kamikouchi-lab/YORU",
       "title": "Overview",
-      "count": 65,
-      "uniques": 32
-    },
-    {
-      "path": "/Kamikouchi-lab/YORU/blob/main/YORU.yml",
-      "title": "/blob/main/YORU.yml",
-      "count": 16,
-      "uniques": 8
+      "count": 69,
+      "uniques": 33
     },
     {
       "path": "/Kamikouchi-lab/YORU/blob/main/README.md",
       "title": "/blob/main/README.md",
       "count": 13,
       "uniques": 3
+    },
+    {
+      "path": "/Kamikouchi-lab/YORU/blob/main/YORU.yml",
+      "title": "/blob/main/YORU.yml",
+      "count": 11,
+      "uniques": 7
     },
     {
       "path": "/Kamikouchi-lab/YORU/releases/tag/v2.0.0-beta.1",
@@ -27,8 +27,20 @@
     {
       "path": "/Kamikouchi-lab/YORU/tree/main",
       "title": "/tree/main",
-      "count": 8,
-      "uniques": 4
+      "count": 7,
+      "uniques": 3
+    },
+    {
+      "path": "/Kamikouchi-lab/YORU/blob/main/docs/training.md",
+      "title": "/blob/main/docs/training.md",
+      "count": 7,
+      "uniques": 2
+    },
+    {
+      "path": "/Kamikouchi-lab/YORU/releases/tag/v1.1.1",
+      "title": "/releases/tag/v1.1.1",
+      "count": 5,
+      "uniques": 5
     },
     {
       "path": "/Kamikouchi-lab/YORU/releases",
@@ -43,23 +55,11 @@
       "uniques": 4
     },
     {
-      "path": "/Kamikouchi-lab/YORU/blob/main/docs/training.md",
-      "title": "/blob/main/docs/training.md",
-      "count": 5,
-      "uniques": 2
-    },
-    {
-      "path": "/Kamikouchi-lab/YORU/blob/main/pyproject.toml",
-      "title": "/blob/main/pyproject.toml",
-      "count": 5,
-      "uniques": 1
-    },
-    {
       "path": "/Kamikouchi-lab/YORU/graphs/traffic",
       "title": "/graphs/traffic",
       "count": 5,
       "uniques": 1
     }
   ],
-  "last_updated": "2026-04-21T05:09:00Z"
+  "last_updated": "2026-04-22T05:07:10Z"
 }
