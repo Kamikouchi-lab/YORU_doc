@@ -3,44 +3,32 @@
     {
       "path": "/Kamikouchi-lab/YORU",
       "title": "Overview",
-      "count": 74,
-      "uniques": 37
+      "count": 72,
+      "uniques": 36
     },
     {
       "path": "/Kamikouchi-lab/YORU/blob/main/README.md",
       "title": "/blob/main/README.md",
-      "count": 16,
+      "count": 13,
       "uniques": 3
-    },
-    {
-      "path": "/Kamikouchi-lab/YORU/blob/main/YORU.yml",
-      "title": "/blob/main/YORU.yml",
-      "count": 11,
-      "uniques": 7
     },
     {
       "path": "/Kamikouchi-lab/YORU/blob/main/docs/training.md",
       "title": "/blob/main/docs/training.md",
       "count": 11,
-      "uniques": 2
+      "uniques": 1
     },
     {
       "path": "/Kamikouchi-lab/YORU/releases/tag/v2.0.0-beta.1",
       "title": "/releases/tag/v2.0.0-beta.1",
-      "count": 10,
-      "uniques": 2
+      "count": 7,
+      "uniques": 1
     },
     {
       "path": "/Kamikouchi-lab/YORU/releases/tag/v1.1.1",
       "title": "/releases/tag/v1.1.1",
-      "count": 8,
-      "uniques": 8
-    },
-    {
-      "path": "/Kamikouchi-lab/YORU/issues",
-      "title": "/issues",
       "count": 6,
-      "uniques": 3
+      "uniques": 6
     },
     {
       "path": "/Kamikouchi-lab/YORU/releases",
@@ -49,17 +37,29 @@
       "uniques": 4
     },
     {
-      "path": "/Kamikouchi-lab/YORU/tree/main",
-      "title": "/tree/main",
-      "count": 5,
-      "uniques": 3
-    },
-    {
       "path": "/Kamikouchi-lab/YORU/graphs/traffic",
       "title": "/graphs/traffic",
       "count": 5,
       "uniques": 1
+    },
+    {
+      "path": "/Kamikouchi-lab/YORU/pulse",
+      "title": "/pulse",
+      "count": 5,
+      "uniques": 1
+    },
+    {
+      "path": "/Kamikouchi-lab/YORU/blob/main/YORU.yml",
+      "title": "/blob/main/YORU.yml",
+      "count": 4,
+      "uniques": 4
+    },
+    {
+      "path": "/Kamikouchi-lab/YORU/graphs/commit-activity",
+      "title": "/graphs/commit-activity",
+      "count": 4,
+      "uniques": 1
     }
   ],
-  "last_updated": "2026-04-23T05:11:32Z"
+  "last_updated": "2026-04-24T05:16:12Z"
 }
