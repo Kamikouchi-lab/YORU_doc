@@ -3,8 +3,8 @@
     {
       "path": "/Kamikouchi-lab/YORU",
       "title": "Overview",
-      "count": 64,
-      "uniques": 32
+      "count": 60,
+      "uniques": 31
     },
     {
       "path": "/Kamikouchi-lab/YORU/blob/main/README.md",
@@ -23,12 +23,6 @@
       "title": "/releases/tag/v1.1.1",
       "count": 5,
       "uniques": 5
-    },
-    {
-      "path": "/Kamikouchi-lab/YORU/releases",
-      "title": "/releases",
-      "count": 5,
-      "uniques": 4
     },
     {
       "path": "/Kamikouchi-lab/YORU/graphs/traffic",
@@ -59,7 +53,13 @@
       "title": "/commit/1cb1501073eee42cb38cae2b2a409eb27dd675d2",
       "count": 3,
       "uniques": 3
+    },
+    {
+      "path": "/Kamikouchi-lab/YORU/releases",
+      "title": "/releases",
+      "count": 3,
+      "uniques": 3
     }
   ],
-  "last_updated": "2026-04-27T05:32:55Z"
+  "last_updated": "2026-04-28T05:38:37Z"
 }
