@@ -3,19 +3,19 @@
     {
       "path": "/Kamikouchi-lab/YORU",
       "title": "Overview",
-      "count": 48,
-      "uniques": 30
+      "count": 42,
+      "uniques": 27
     },
     {
       "path": "/Kamikouchi-lab/YORU/blob/main/README.md",
       "title": "/blob/main/README.md",
-      "count": 19,
+      "count": 20,
       "uniques": 4
     },
     {
       "path": "/Kamikouchi-lab/YORU/blob/main/docs/training.md",
       "title": "/blob/main/docs/training.md",
-      "count": 14,
+      "count": 15,
       "uniques": 1
     },
     {
@@ -61,5 +61,5 @@
       "uniques": 1
     }
   ],
-  "last_updated": "2026-05-01T05:49:21Z"
+  "last_updated": "2026-05-02T05:18:52Z"
 }
