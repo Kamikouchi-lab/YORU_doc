@@ -3,8 +3,8 @@
     {
       "path": "/Kamikouchi-lab/YORU",
       "title": "Overview",
-      "count": 42,
-      "uniques": 27
+      "count": 44,
+      "uniques": 28
     },
     {
       "path": "/Kamikouchi-lab/YORU/blob/main/README.md",
@@ -21,8 +21,8 @@
     {
       "path": "/Kamikouchi-lab/YORU/releases/tag/v1.1.1",
       "title": "/releases/tag/v1.1.1",
-      "count": 5,
-      "uniques": 5
+      "count": 4,
+      "uniques": 4
     },
     {
       "path": "/Kamikouchi-lab/YORU/commit/1cb1501073eee42cb38cae2b2a409eb27dd675d2",
@@ -43,6 +43,12 @@
       "uniques": 1
     },
     {
+      "path": "/Kamikouchi-lab/YORU/blob/main/docs/imgs/title_movie.gif",
+      "title": "/blob/main/docs/imgs/title_movie.gif",
+      "count": 2,
+      "uniques": 2
+    },
+    {
       "path": "/Kamikouchi-lab/YORU/blame/main/.python-version",
       "title": "/blame/main/.python-version",
       "count": 2,
@@ -53,13 +59,7 @@
       "title": "/pulls",
       "count": 2,
       "uniques": 1
-    },
-    {
-      "path": "/Kamikouchi-lab/YORU/actions",
-      "title": "/actions",
-      "count": 1,
-      "uniques": 1
     }
   ],
-  "last_updated": "2026-05-02T05:18:52Z"
+  "last_updated": "2026-05-03T05:38:07Z"
 }
