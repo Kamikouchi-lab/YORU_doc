@@ -3,8 +3,8 @@
     {
       "path": "/Kamikouchi-lab/YORU",
       "title": "Overview",
-      "count": 44,
-      "uniques": 28
+      "count": 45,
+      "uniques": 30
     },
     {
       "path": "/Kamikouchi-lab/YORU/blob/main/README.md",
@@ -31,12 +31,6 @@
       "uniques": 3
     },
     {
-      "path": "/Kamikouchi-lab/YORU/issues",
-      "title": "/issues",
-      "count": 3,
-      "uniques": 2
-    },
-    {
       "path": "/Kamikouchi-lab/YORU/blob/main/.python-version",
       "title": "/blob/main/.python-version",
       "count": 3,
@@ -55,11 +49,17 @@
       "uniques": 1
     },
     {
+      "path": "/Kamikouchi-lab/YORU/issues",
+      "title": "/issues",
+      "count": 2,
+      "uniques": 1
+    },
+    {
       "path": "/Kamikouchi-lab/YORU/pulls",
       "title": "/pulls",
       "count": 2,
       "uniques": 1
     }
   ],
-  "last_updated": "2026-05-03T05:38:07Z"
+  "last_updated": "2026-05-04T05:44:20Z"
 }
