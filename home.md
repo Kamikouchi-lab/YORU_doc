@@ -95,11 +95,11 @@ Follow these steps to install YORU quickly:
 
 
 # Learn about YORU
-- [User guides](../guides/01-install/)
+- [User guides]({{ site.baseurl }}/guides/01-install/)
 
-- [Step-by-Step Tutorial](../tutorial/01-preparation-tutorial/)
+- [Step-by-Step Tutorial]({{ site.baseurl }}/tutorial/01-preparation-tutorial/)
 
-- [Testing Guide](../devnotes/yoru-test/)
+- [Testing Guide]({{ site.baseurl }}/devnotes/yoru-test/)
 
 # Requirements
 
