@@ -12,7 +12,7 @@ title: Step1. Conditions
 
 ## Data references
 
-### [Fruit Fly Copulatio Dataset](https://zenodo.org/records/15803067)
+### [Fruit Fly Copulation Dataset](https://zenodo.org/records/15803067)
 
 <br>
 
