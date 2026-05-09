@@ -7,7 +7,7 @@
     },
     {
       "referrer": "github.com",
-      "count": 12,
+      "count": 10,
       "uniques": 4
     },
     {
@@ -17,6 +17,11 @@
     },
     {
       "referrer": "Bing",
+      "count": 3,
+      "uniques": 2
+    },
+    {
+      "referrer": "DuckDuckGo",
       "count": 2,
       "uniques": 1
     },
@@ -26,5 +31,5 @@
       "uniques": 1
     }
   ],
-  "last_updated": "2026-05-08T05:11:33Z"
+  "last_updated": "2026-05-09T05:29:15Z"
 }

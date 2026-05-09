@@ -3,32 +3,26 @@
     {
       "path": "/Kamikouchi-lab/YORU",
       "title": "Overview",
-      "count": 32,
-      "uniques": 23
+      "count": 33,
+      "uniques": 24
     },
     {
       "path": "/Kamikouchi-lab/YORU/blob/main/README.md",
       "title": "/blob/main/README.md",
-      "count": 10,
-      "uniques": 2
+      "count": 6,
+      "uniques": 1
     },
     {
       "path": "/Kamikouchi-lab/YORU/blob/main/docs/training.md",
       "title": "/blob/main/docs/training.md",
-      "count": 8,
+      "count": 6,
       "uniques": 1
     },
     {
-      "path": "/Kamikouchi-lab/YORU/blob/main/.python-version",
-      "title": "/blob/main/.python-version",
+      "path": "/Kamikouchi-lab/YORU/releases/tag/v1.1.1",
+      "title": "/releases/tag/v1.1.1",
       "count": 3,
-      "uniques": 1
-    },
-    {
-      "path": "/Kamikouchi-lab/YORU/blame/main/.python-version",
-      "title": "/blame/main/.python-version",
-      "count": 2,
-      "uniques": 1
+      "uniques": 2
     },
     {
       "path": "/Kamikouchi-lab/YORU/blob/main/docs/imgs/title_movie.gif",
@@ -55,11 +49,17 @@
       "uniques": 1
     },
     {
-      "path": "/Kamikouchi-lab/YORU/releases/tag/v1.1.1",
-      "title": "/releases/tag/v1.1.1",
+      "path": "/Kamikouchi-lab/YORU/pulls",
+      "title": "/pulls",
+      "count": 1,
+      "uniques": 1
+    },
+    {
+      "path": "/Kamikouchi-lab/YORU/tree/main",
+      "title": "/tree/main",
       "count": 1,
       "uniques": 1
     }
   ],
-  "last_updated": "2026-05-08T05:11:33Z"
+  "last_updated": "2026-05-09T05:29:15Z"
 }
