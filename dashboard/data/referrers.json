@@ -29,7 +29,12 @@
       "referrer": "DuckDuckGo",
       "count": 2,
       "uniques": 1
+    },
+    {
+      "referrer": "search.brave.com",
+      "count": 1,
+      "uniques": 1
     }
   ],
-  "last_updated": "2026-05-10T05:45:11Z"
+  "last_updated": "2026-05-11T06:07:15Z"
 }
