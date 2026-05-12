@@ -1,18 +1,18 @@
 {
   "referrers": [
     {
-      "referrer": "Google",
-      "count": 14,
-      "uniques": 9
-    },
-    {
       "referrer": "science.org",
-      "count": 10,
+      "count": 18,
       "uniques": 6
     },
     {
+      "referrer": "Google",
+      "count": 12,
+      "uniques": 7
+    },
+    {
       "referrer": "github.com",
-      "count": 8,
+      "count": 7,
       "uniques": 4
     },
     {
@@ -36,5 +36,5 @@
       "uniques": 1
     }
   ],
-  "last_updated": "2026-05-11T06:07:15Z"
+  "last_updated": "2026-05-12T05:47:08Z"
 }

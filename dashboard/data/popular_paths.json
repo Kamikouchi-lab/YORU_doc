@@ -3,30 +3,48 @@
     {
       "path": "/Kamikouchi-lab/YORU",
       "title": "Overview",
-      "count": 37,
-      "uniques": 25
+      "count": 40,
+      "uniques": 24
     },
     {
       "path": "/Kamikouchi-lab/YORU/releases/tag/v1.1.1",
       "title": "/releases/tag/v1.1.1",
-      "count": 6,
-      "uniques": 3
+      "count": 9,
+      "uniques": 4
     },
     {
       "path": "/Kamikouchi-lab/YORU/blob/main/README.md",
       "title": "/blob/main/README.md",
-      "count": 4,
+      "count": 3,
       "uniques": 1
     },
     {
       "path": "/Kamikouchi-lab/YORU/blob/main/docs/training.md",
       "title": "/blob/main/docs/training.md",
-      "count": 4,
+      "count": 3,
+      "uniques": 1
+    },
+    {
+      "path": "/Kamikouchi-lab/YORU/actions",
+      "title": "/actions",
+      "count": 1,
+      "uniques": 1
+    },
+    {
+      "path": "/Kamikouchi-lab/YORU/blob/main/YORU.yml",
+      "title": "/blob/main/YORU.yml",
+      "count": 1,
       "uniques": 1
     },
     {
       "path": "/Kamikouchi-lab/YORU/blob/main/docs/imgs/title_movie.gif",
       "title": "/blob/main/docs/imgs/title_movie.gif",
+      "count": 1,
+      "uniques": 1
+    },
+    {
+      "path": "/Kamikouchi-lab/YORU/blob/main/logos/YORU_logo.png",
+      "title": "/blob/main/logos/YORU_logo.png",
       "count": 1,
       "uniques": 1
     },
@@ -41,25 +59,7 @@
       "title": "/blob/main/working-example.md",
       "count": 1,
       "uniques": 1
-    },
-    {
-      "path": "/Kamikouchi-lab/YORU/blob/main/yoru/grab_GUI.py",
-      "title": "/blob/main/yoru/grab_GUI.py",
-      "count": 1,
-      "uniques": 1
-    },
-    {
-      "path": "/Kamikouchi-lab/YORU/pulls",
-      "title": "/pulls",
-      "count": 1,
-      "uniques": 1
-    },
-    {
-      "path": "/Kamikouchi-lab/YORU/tree/main",
-      "title": "/tree/main",
-      "count": 1,
-      "uniques": 1
     }
   ],
-  "last_updated": "2026-05-11T06:07:15Z"
+  "last_updated": "2026-05-12T05:47:08Z"
 }
