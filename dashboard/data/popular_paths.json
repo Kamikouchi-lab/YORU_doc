@@ -3,7 +3,7 @@
     {
       "path": "/Kamikouchi-lab/YORU",
       "title": "Overview",
-      "count": 39,
+      "count": 35,
       "uniques": 25
     },
     {
@@ -13,53 +13,53 @@
       "uniques": 4
     },
     {
-      "path": "/Kamikouchi-lab/YORU/actions",
-      "title": "/actions",
-      "count": 1,
-      "uniques": 1
-    },
-    {
-      "path": "/Kamikouchi-lab/YORU/blob/main/README.md",
-      "title": "/blob/main/README.md",
-      "count": 1,
-      "uniques": 1
-    },
-    {
       "path": "/Kamikouchi-lab/YORU/blob/main/YORU.yml",
       "title": "/blob/main/YORU.yml",
-      "count": 1,
-      "uniques": 1
+      "count": 3,
+      "uniques": 2
     },
     {
-      "path": "/Kamikouchi-lab/YORU/blob/main/docs/imgs/title_movie.gif",
-      "title": "/blob/main/docs/imgs/title_movie.gif",
-      "count": 1,
-      "uniques": 1
+      "path": "/Kamikouchi-lab/YORU/tree/main/yoru",
+      "title": "/tree/main/yoru",
+      "count": 3,
+      "uniques": 2
     },
     {
-      "path": "/Kamikouchi-lab/YORU/blob/main/docs/training.md",
-      "title": "/blob/main/docs/training.md",
-      "count": 1,
+      "path": "/Kamikouchi-lab/YORU/blob/main/libs/yolov5/README.zh-CN.md",
+      "title": "/blob/main/libs/yolov5/README.zh-CN.md",
+      "count": 3,
       "uniques": 1
     },
     {
       "path": "/Kamikouchi-lab/YORU/blob/main/logos/YORU_logo.png",
       "title": "/blob/main/logos/YORU_logo.png",
-      "count": 1,
-      "uniques": 1
+      "count": 2,
+      "uniques": 2
     },
     {
       "path": "/Kamikouchi-lab/YORU/blob/main/working-example.md",
       "title": "/blob/main/working-example.md",
-      "count": 1,
+      "count": 2,
+      "uniques": 2
+    },
+    {
+      "path": "/Kamikouchi-lab/YORU/releases",
+      "title": "/releases",
+      "count": 2,
+      "uniques": 2
+    },
+    {
+      "path": "/Kamikouchi-lab/YORU/blob/main/docs/training.md",
+      "title": "/blob/main/docs/training.md",
+      "count": 2,
       "uniques": 1
     },
     {
-      "path": "/Kamikouchi-lab/YORU/blob/uv_install/pyproject.toml",
-      "title": "/blob/uv_install/pyproject.toml",
-      "count": 1,
+      "path": "/Kamikouchi-lab/YORU/blob/main/libs/yolov5/CITATION.cff",
+      "title": "/blob/main/libs/yolov5/CITATION.cff",
+      "count": 2,
       "uniques": 1
     }
   ],
-  "last_updated": "2026-05-16T05:34:30Z"
+  "last_updated": "2026-05-17T05:55:55Z"
 }
