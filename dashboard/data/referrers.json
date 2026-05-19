@@ -7,13 +7,13 @@
     },
     {
       "referrer": "Google",
-      "count": 9,
-      "uniques": 8
+      "count": 8,
+      "uniques": 7
     },
     {
       "referrer": "Bing",
-      "count": 3,
-      "uniques": 3
+      "count": 6,
+      "uniques": 4
     },
     {
       "referrer": "github.com",
@@ -41,5 +41,5 @@
       "uniques": 1
     }
   ],
-  "last_updated": "2026-05-18T06:32:31Z"
+  "last_updated": "2026-05-19T06:18:49Z"
 }
