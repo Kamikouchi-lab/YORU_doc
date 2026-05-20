@@ -3,18 +3,24 @@
     {
       "path": "/Kamikouchi-lab/YORU",
       "title": "Overview",
-      "count": 42,
-      "uniques": 28
+      "count": 45,
+      "uniques": 29
     },
     {
       "path": "/Kamikouchi-lab/YORU/releases/tag/v1.1.1",
       "title": "/releases/tag/v1.1.1",
-      "count": 9,
-      "uniques": 4
+      "count": 8,
+      "uniques": 3
     },
     {
       "path": "/Kamikouchi-lab/YORU/blob/main/YORU.yml",
       "title": "/blob/main/YORU.yml",
+      "count": 3,
+      "uniques": 2
+    },
+    {
+      "path": "/Kamikouchi-lab/YORU/blob/main/test_data/README.md",
+      "title": "/blob/main/test_data/README.md",
       "count": 3,
       "uniques": 2
     },
@@ -37,12 +43,6 @@
       "uniques": 2
     },
     {
-      "path": "/Kamikouchi-lab/YORU/blob/main/working-example.md",
-      "title": "/blob/main/working-example.md",
-      "count": 2,
-      "uniques": 2
-    },
-    {
       "path": "/Kamikouchi-lab/YORU/releases",
       "title": "/releases",
       "count": 2,
@@ -61,5 +61,5 @@
       "uniques": 1
     }
   ],
-  "last_updated": "2026-05-19T06:18:49Z"
+  "last_updated": "2026-05-20T06:18:36Z"
 }
