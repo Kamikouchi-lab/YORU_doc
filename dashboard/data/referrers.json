@@ -7,8 +7,8 @@
     },
     {
       "referrer": "Google",
-      "count": 9,
-      "uniques": 8
+      "count": 8,
+      "uniques": 7
     },
     {
       "referrer": "Bing",
@@ -31,15 +31,10 @@
       "uniques": 1
     },
     {
-      "referrer": "github.com",
-      "count": 1,
-      "uniques": 1
-    },
-    {
       "referrer": "search.brave.com",
       "count": 1,
       "uniques": 1
     }
   ],
-  "last_updated": "2026-05-21T06:19:10Z"
+  "last_updated": "2026-05-22T06:18:28Z"
 }
