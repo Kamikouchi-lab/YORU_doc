@@ -3,13 +3,19 @@
     {
       "path": "/Kamikouchi-lab/YORU",
       "title": "Overview",
-      "count": 43,
-      "uniques": 28
+      "count": 47,
+      "uniques": 30
     },
     {
       "path": "/Kamikouchi-lab/YORU/releases/tag/v1.1.1",
       "title": "/releases/tag/v1.1.1",
-      "count": 8,
+      "count": 7,
+      "uniques": 3
+    },
+    {
+      "path": "/Kamikouchi-lab/YORU/releases",
+      "title": "/releases",
+      "count": 4,
       "uniques": 3
     },
     {
@@ -37,29 +43,23 @@
       "uniques": 1
     },
     {
+      "path": "/Kamikouchi-lab/YORU/pull/34",
+      "title": "/pull/34",
+      "count": 3,
+      "uniques": 1
+    },
+    {
       "path": "/Kamikouchi-lab/YORU/blob/main/logos/YORU_logo.png",
       "title": "/blob/main/logos/YORU_logo.png",
       "count": 2,
       "uniques": 2
     },
     {
-      "path": "/Kamikouchi-lab/YORU/releases",
-      "title": "/releases",
+      "path": "/Kamikouchi-lab/YORU/blob/uv_install/pyproject.toml",
+      "title": "/blob/uv_install/pyproject.toml",
       "count": 2,
       "uniques": 2
-    },
-    {
-      "path": "/Kamikouchi-lab/YORU/blob/main/docs/training.md",
-      "title": "/blob/main/docs/training.md",
-      "count": 2,
-      "uniques": 1
-    },
-    {
-      "path": "/Kamikouchi-lab/YORU/blob/main/libs/yolov5/CITATION.cff",
-      "title": "/blob/main/libs/yolov5/CITATION.cff",
-      "count": 2,
-      "uniques": 1
     }
   ],
-  "last_updated": "2026-05-22T06:18:28Z"
+  "last_updated": "2026-05-23T05:47:16Z"
 }

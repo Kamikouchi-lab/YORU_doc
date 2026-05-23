@@ -1,5 +1,5 @@
 {
-  "count": 105,
+  "count": 134,
   "uniques": 31,
   "history": [
     {
@@ -256,7 +256,12 @@
       "date": "2026-05-20",
       "count": 0,
       "uniques": 0
+    },
+    {
+      "date": "2026-05-21",
+      "count": 33,
+      "uniques": 3
     }
   ],
-  "last_updated": "2026-05-22T06:18:28Z"
+  "last_updated": "2026-05-23T05:47:15Z"
 }
