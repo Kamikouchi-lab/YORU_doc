@@ -7,8 +7,8 @@
     },
     {
       "referrer": "Google",
-      "count": 6,
-      "uniques": 6
+      "count": 5,
+      "uniques": 5
     },
     {
       "referrer": "Bing",
@@ -29,12 +29,7 @@
       "referrer": "kamikouchi-lab.github.io",
       "count": 1,
       "uniques": 1
-    },
-    {
-      "referrer": "search.brave.com",
-      "count": 1,
-      "uniques": 1
     }
   ],
-  "last_updated": "2026-05-24T06:10:30Z"
+  "last_updated": "2026-05-25T06:45:42Z"
 }
