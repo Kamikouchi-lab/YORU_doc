@@ -3,26 +3,20 @@
     {
       "path": "/Kamikouchi-lab/YORU",
       "title": "Overview",
-      "count": 37,
-      "uniques": 24
+      "count": 40,
+      "uniques": 28
     },
     {
       "path": "/Kamikouchi-lab/YORU/releases",
       "title": "/releases",
-      "count": 4,
-      "uniques": 3
+      "count": 5,
+      "uniques": 4
     },
     {
-      "path": "/Kamikouchi-lab/YORU/releases/tag/v1.1.1",
-      "title": "/releases/tag/v1.1.1",
-      "count": 4,
-      "uniques": 2
-    },
-    {
-      "path": "/Kamikouchi-lab/YORU/blob/main/YORU.yml",
-      "title": "/blob/main/YORU.yml",
+      "path": "/Kamikouchi-lab/YORU/blob/uv_install/pyproject.toml",
+      "title": "/blob/uv_install/pyproject.toml",
       "count": 3,
-      "uniques": 2
+      "uniques": 3
     },
     {
       "path": "/Kamikouchi-lab/YORU/blob/main/test_data/README.md",
@@ -43,23 +37,29 @@
       "uniques": 1
     },
     {
-      "path": "/Kamikouchi-lab/YORU/blob/main/logos/YORU_logo.png",
-      "title": "/blob/main/logos/YORU_logo.png",
+      "path": "/Kamikouchi-lab/YORU/blob/main/YORU.yml",
+      "title": "/blob/main/YORU.yml",
       "count": 2,
-      "uniques": 2
+      "uniques": 1
     },
     {
-      "path": "/Kamikouchi-lab/YORU/blob/uv_install/pyproject.toml",
-      "title": "/blob/uv_install/pyproject.toml",
+      "path": "/Kamikouchi-lab/YORU/blob/main/docs/training.md",
+      "title": "/blob/main/docs/training.md",
       "count": 2,
-      "uniques": 2
+      "uniques": 1
     },
     {
-      "path": "/Kamikouchi-lab/YORU/issues",
-      "title": "/issues",
+      "path": "/Kamikouchi-lab/YORU/blob/main/libs/yolov5/CITATION.cff",
+      "title": "/blob/main/libs/yolov5/CITATION.cff",
       "count": 2,
-      "uniques": 2
+      "uniques": 1
+    },
+    {
+      "path": "/Kamikouchi-lab/YORU/blob/main/libs/yolov5/CONTRIBUTING.md",
+      "title": "/blob/main/libs/yolov5/CONTRIBUTING.md",
+      "count": 2,
+      "uniques": 1
     }
   ],
-  "last_updated": "2026-05-25T06:45:43Z"
+  "last_updated": "2026-05-26T06:16:22Z"
 }
