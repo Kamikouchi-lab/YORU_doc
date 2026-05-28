@@ -3,8 +3,8 @@
     {
       "path": "/Kamikouchi-lab/YORU",
       "title": "Overview",
-      "count": 40,
-      "uniques": 28
+      "count": 42,
+      "uniques": 29
     },
     {
       "path": "/Kamikouchi-lab/YORU/releases",
@@ -13,10 +13,10 @@
       "uniques": 4
     },
     {
-      "path": "/Kamikouchi-lab/YORU/blob/uv_install/pyproject.toml",
-      "title": "/blob/uv_install/pyproject.toml",
+      "path": "/Kamikouchi-lab/YORU/blob/main/YORU.yml",
+      "title": "/blob/main/YORU.yml",
       "count": 3,
-      "uniques": 3
+      "uniques": 2
     },
     {
       "path": "/Kamikouchi-lab/YORU/blob/main/test_data/README.md",
@@ -37,10 +37,16 @@
       "uniques": 1
     },
     {
-      "path": "/Kamikouchi-lab/YORU/blob/main/YORU.yml",
-      "title": "/blob/main/YORU.yml",
+      "path": "/Kamikouchi-lab/YORU/blob/main/README.md",
+      "title": "/blob/main/README.md",
       "count": 2,
-      "uniques": 1
+      "uniques": 2
+    },
+    {
+      "path": "/Kamikouchi-lab/YORU/blob/uv_install/pyproject.toml",
+      "title": "/blob/uv_install/pyproject.toml",
+      "count": 2,
+      "uniques": 2
     },
     {
       "path": "/Kamikouchi-lab/YORU/blob/main/docs/training.md",
@@ -53,13 +59,7 @@
       "title": "/blob/main/libs/yolov5/CITATION.cff",
       "count": 2,
       "uniques": 1
-    },
-    {
-      "path": "/Kamikouchi-lab/YORU/blob/main/libs/yolov5/CONTRIBUTING.md",
-      "title": "/blob/main/libs/yolov5/CONTRIBUTING.md",
-      "count": 2,
-      "uniques": 1
     }
   ],
-  "last_updated": "2026-05-27T06:39:17Z"
+  "last_updated": "2026-05-28T06:21:16Z"
 }
