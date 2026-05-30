@@ -2,13 +2,13 @@
   "referrers": [
     {
       "referrer": "science.org",
-      "count": 48,
-      "uniques": 4
+      "count": 47,
+      "uniques": 3
     },
     {
       "referrer": "Google",
-      "count": 14,
-      "uniques": 7
+      "count": 13,
+      "uniques": 5
     },
     {
       "referrer": "github.com",
@@ -36,5 +36,5 @@
       "uniques": 1
     }
   ],
-  "last_updated": "2026-05-29T06:32:07Z"
+  "last_updated": "2026-05-30T05:55:09Z"
 }
