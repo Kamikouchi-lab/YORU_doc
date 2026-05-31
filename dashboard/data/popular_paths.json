@@ -3,50 +3,20 @@
     {
       "path": "/Kamikouchi-lab/YORU",
       "title": "Overview",
-      "count": 38,
-      "uniques": 26
-    },
-    {
-      "path": "/Kamikouchi-lab/YORU/tree/main",
-      "title": "/tree/main",
-      "count": 5,
-      "uniques": 2
-    },
-    {
-      "path": "/Kamikouchi-lab/YORU/releases",
-      "title": "/releases",
-      "count": 4,
-      "uniques": 3
-    },
-    {
-      "path": "/Kamikouchi-lab/YORU/tree/main/yoru",
-      "title": "/tree/main/yoru",
-      "count": 4,
-      "uniques": 3
+      "count": 41,
+      "uniques": 27
     },
     {
       "path": "/Kamikouchi-lab/YORU/releases/tag/v1.1.1",
       "title": "/releases/tag/v1.1.1",
-      "count": 3,
-      "uniques": 3
+      "count": 4,
+      "uniques": 4
     },
     {
-      "path": "/Kamikouchi-lab/YORU/blob/main/YORU.yml",
-      "title": "/blob/main/YORU.yml",
+      "path": "/Kamikouchi-lab/YORU/releases",
+      "title": "/releases",
       "count": 3,
       "uniques": 2
-    },
-    {
-      "path": "/Kamikouchi-lab/YORU/blob/main/test_data/README.md",
-      "title": "/blob/main/test_data/README.md",
-      "count": 3,
-      "uniques": 2
-    },
-    {
-      "path": "/Kamikouchi-lab/YORU/blob/main/libs/yolov5/README.zh-CN.md",
-      "title": "/blob/main/libs/yolov5/README.zh-CN.md",
-      "count": 3,
-      "uniques": 1
     },
     {
       "path": "/Kamikouchi-lab/YORU/pull/34",
@@ -55,11 +25,41 @@
       "uniques": 1
     },
     {
+      "path": "/Kamikouchi-lab/YORU/tree/main",
+      "title": "/tree/main",
+      "count": 3,
+      "uniques": 1
+    },
+    {
       "path": "/Kamikouchi-lab/YORU/blob/main/README.md",
       "title": "/blob/main/README.md",
       "count": 2,
       "uniques": 2
+    },
+    {
+      "path": "/Kamikouchi-lab/YORU/blob/main/YORU.yml",
+      "title": "/blob/main/YORU.yml",
+      "count": 2,
+      "uniques": 2
+    },
+    {
+      "path": "/Kamikouchi-lab/YORU/blob/uv_install/pyproject.toml",
+      "title": "/blob/uv_install/pyproject.toml",
+      "count": 2,
+      "uniques": 2
+    },
+    {
+      "path": "/Kamikouchi-lab/YORU/tree/main/yoru",
+      "title": "/tree/main/yoru",
+      "count": 2,
+      "uniques": 2
+    },
+    {
+      "path": "/Kamikouchi-lab/YORU/compare/develop4...develop2",
+      "title": "/compare/develop4...develop2",
+      "count": 2,
+      "uniques": 1
     }
   ],
-  "last_updated": "2026-05-30T05:55:09Z"
+  "last_updated": "2026-05-31T06:34:10Z"
 }
