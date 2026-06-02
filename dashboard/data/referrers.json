@@ -16,14 +16,14 @@
       "uniques": 2
     },
     {
-      "referrer": "science.org",
-      "count": 5,
-      "uniques": 2
-    },
-    {
       "referrer": "kamikouchi-lab.github.io",
       "count": 3,
       "uniques": 3
+    },
+    {
+      "referrer": "science.org",
+      "count": 3,
+      "uniques": 2
     },
     {
       "referrer": "bio.nagoya-u.ac.jp",
@@ -41,5 +41,5 @@
       "uniques": 1
     }
   ],
-  "last_updated": "2026-06-01T07:20:59Z"
+  "last_updated": "2026-06-02T06:54:27Z"
 }
