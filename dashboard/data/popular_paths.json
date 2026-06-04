@@ -3,7 +3,7 @@
     {
       "path": "/Kamikouchi-lab/YORU",
       "title": "Overview",
-      "count": 34,
+      "count": 37,
       "uniques": 23
     },
     {
@@ -11,6 +11,12 @@
       "title": "/releases/tag/v1.1.1",
       "count": 4,
       "uniques": 4
+    },
+    {
+      "path": "/Kamikouchi-lab/YORU/issues",
+      "title": "/issues",
+      "count": 4,
+      "uniques": 3
     },
     {
       "path": "/Kamikouchi-lab/YORU/releases",
@@ -53,13 +59,7 @@
       "title": "/tree/main/yoru",
       "count": 2,
       "uniques": 2
-    },
-    {
-      "path": "/Kamikouchi-lab/YORU/compare/develop4...develop2",
-      "title": "/compare/develop4...develop2",
-      "count": 2,
-      "uniques": 1
     }
   ],
-  "last_updated": "2026-06-03T07:05:22Z"
+  "last_updated": "2026-06-04T06:54:13Z"
 }
