@@ -2,13 +2,13 @@
   "referrers": [
     {
       "referrer": "Google",
-      "count": 13,
-      "uniques": 5
+      "count": 12,
+      "uniques": 4
     },
     {
       "referrer": "github.com",
-      "count": 10,
-      "uniques": 5
+      "count": 7,
+      "uniques": 3
     },
     {
       "referrer": "Bing",
@@ -17,8 +17,8 @@
     },
     {
       "referrer": "science.org",
-      "count": 4,
-      "uniques": 2
+      "count": 5,
+      "uniques": 3
     },
     {
       "referrer": "bio.nagoya-u.ac.jp",
@@ -41,5 +41,5 @@
       "uniques": 1
     }
   ],
-  "last_updated": "2026-06-04T06:54:13Z"
+  "last_updated": "2026-06-05T06:41:54Z"
 }
