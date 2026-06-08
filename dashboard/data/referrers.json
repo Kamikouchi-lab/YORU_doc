@@ -21,6 +21,11 @@
       "uniques": 3
     },
     {
+      "referrer": "t.co",
+      "count": 3,
+      "uniques": 3
+    },
+    {
       "referrer": "bio.nagoya-u.ac.jp",
       "count": 3,
       "uniques": 2
@@ -41,5 +46,5 @@
       "uniques": 1
     }
   ],
-  "last_updated": "2026-06-07T06:41:19Z"
+  "last_updated": "2026-06-08T07:01:01Z"
 }
