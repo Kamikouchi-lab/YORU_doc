@@ -11,6 +11,11 @@
       "uniques": 4
     },
     {
+      "referrer": "Google",
+      "count": 5,
+      "uniques": 2
+    },
+    {
       "referrer": "Bing",
       "count": 4,
       "uniques": 2
@@ -21,30 +26,20 @@
       "uniques": 3
     },
     {
+      "referrer": "zenodo.org",
+      "count": 2,
+      "uniques": 2
+    },
+    {
       "referrer": "bio.nagoya-u.ac.jp",
-      "count": 3,
-      "uniques": 2
-    },
-    {
-      "referrer": "Google",
-      "count": 2,
-      "uniques": 2
-    },
-    {
-      "referrer": "kamikouchi-lab.github.io",
-      "count": 2,
-      "uniques": 2
-    },
-    {
-      "referrer": "doubao.com",
       "count": 1,
       "uniques": 1
     },
     {
-      "referrer": "zenodo.org",
+      "referrer": "kamikouchi-lab.github.io",
       "count": 1,
       "uniques": 1
     }
   ],
-  "last_updated": "2026-06-13T06:31:07Z"
+  "last_updated": "2026-06-14T06:55:45Z"
 }

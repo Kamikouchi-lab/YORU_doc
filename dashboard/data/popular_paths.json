@@ -3,20 +3,26 @@
     {
       "path": "/Kamikouchi-lab/YORU",
       "title": "Overview",
-      "count": 28,
-      "uniques": 18
+      "count": 29,
+      "uniques": 19
     },
     {
       "path": "/Kamikouchi-lab/YORU/issues",
       "title": "/issues",
-      "count": 5,
-      "uniques": 4
+      "count": 6,
+      "uniques": 5
+    },
+    {
+      "path": "/Kamikouchi-lab/YORU/blob/main/YORU.yml",
+      "title": "/blob/main/YORU.yml",
+      "count": 2,
+      "uniques": 2
     },
     {
       "path": "/Kamikouchi-lab/YORU/releases/tag/v1.1.1",
       "title": "/releases/tag/v1.1.1",
-      "count": 3,
-      "uniques": 3
+      "count": 2,
+      "uniques": 2
     },
     {
       "path": "/Kamikouchi-lab/YORU/blob/main/test_data/classes.txt",
@@ -25,8 +31,14 @@
       "uniques": 1
     },
     {
-      "path": "/Kamikouchi-lab/YORU/blob/main/YORU.yml",
-      "title": "/blob/main/YORU.yml",
+      "path": "/Kamikouchi-lab/YORU/actions",
+      "title": "/actions",
+      "count": 1,
+      "uniques": 1
+    },
+    {
+      "path": "/Kamikouchi-lab/YORU/blob/main/LICENSE",
+      "title": "/blob/main/LICENSE",
       "count": 1,
       "uniques": 1
     },
@@ -37,29 +49,17 @@
       "uniques": 1
     },
     {
+      "path": "/Kamikouchi-lab/YORU/blob/main/docs/overview.md",
+      "title": "/blob/main/docs/overview.md",
+      "count": 1,
+      "uniques": 1
+    },
+    {
       "path": "/Kamikouchi-lab/YORU/blob/main/yoru/analysis_GUI.py",
       "title": "/blob/main/yoru/analysis_GUI.py",
       "count": 1,
       "uniques": 1
-    },
-    {
-      "path": "/Kamikouchi-lab/YORU/blob/main/yoru/app.py",
-      "title": "/blob/main/yoru/app.py",
-      "count": 1,
-      "uniques": 1
-    },
-    {
-      "path": "/Kamikouchi-lab/YORU/issues/31",
-      "title": "/issues/31",
-      "count": 1,
-      "uniques": 1
-    },
-    {
-      "path": "/Kamikouchi-lab/YORU/pull/35",
-      "title": "/pull/35",
-      "count": 1,
-      "uniques": 1
     }
   ],
-  "last_updated": "2026-06-13T06:31:08Z"
+  "last_updated": "2026-06-14T06:55:45Z"
 }
