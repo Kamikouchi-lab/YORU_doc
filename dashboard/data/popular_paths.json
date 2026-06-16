@@ -3,14 +3,38 @@
     {
       "path": "/Kamikouchi-lab/YORU",
       "title": "Overview",
-      "count": 29,
-      "uniques": 19
+      "count": 31,
+      "uniques": 20
     },
     {
       "path": "/Kamikouchi-lab/YORU/issues",
       "title": "/issues",
-      "count": 6,
+      "count": 7,
       "uniques": 5
+    },
+    {
+      "path": "/Kamikouchi-lab/YORU/pulls",
+      "title": "/pulls",
+      "count": 7,
+      "uniques": 2
+    },
+    {
+      "path": "/Kamikouchi-lab/YORU/releases/tag/v1.1.1",
+      "title": "/releases/tag/v1.1.1",
+      "count": 3,
+      "uniques": 3
+    },
+    {
+      "path": "/Kamikouchi-lab/YORU/blob/main/test_data/classes.txt",
+      "title": "/blob/main/test_data/classes.txt",
+      "count": 3,
+      "uniques": 1
+    },
+    {
+      "path": "/Kamikouchi-lab/YORU/pull/36",
+      "title": "/pull/36",
+      "count": 3,
+      "uniques": 1
     },
     {
       "path": "/Kamikouchi-lab/YORU/blob/main/YORU.yml",
@@ -19,14 +43,14 @@
       "uniques": 2
     },
     {
-      "path": "/Kamikouchi-lab/YORU/releases/tag/v1.1.1",
-      "title": "/releases/tag/v1.1.1",
+      "path": "/Kamikouchi-lab/YORU/pull/37",
+      "title": "/pull/37",
       "count": 2,
-      "uniques": 2
+      "uniques": 1
     },
     {
-      "path": "/Kamikouchi-lab/YORU/blob/main/test_data/classes.txt",
-      "title": "/blob/main/test_data/classes.txt",
+      "path": "/Kamikouchi-lab/YORU/tree/main/test_data",
+      "title": "/tree/main/test_data",
       "count": 2,
       "uniques": 1
     },
@@ -35,31 +59,7 @@
       "title": "/actions",
       "count": 1,
       "uniques": 1
-    },
-    {
-      "path": "/Kamikouchi-lab/YORU/blob/main/LICENSE",
-      "title": "/blob/main/LICENSE",
-      "count": 1,
-      "uniques": 1
-    },
-    {
-      "path": "/Kamikouchi-lab/YORU/blob/main/docs/closed-loop.md",
-      "title": "/blob/main/docs/closed-loop.md",
-      "count": 1,
-      "uniques": 1
-    },
-    {
-      "path": "/Kamikouchi-lab/YORU/blob/main/docs/overview.md",
-      "title": "/blob/main/docs/overview.md",
-      "count": 1,
-      "uniques": 1
-    },
-    {
-      "path": "/Kamikouchi-lab/YORU/blob/main/yoru/analysis_GUI.py",
-      "title": "/blob/main/yoru/analysis_GUI.py",
-      "count": 1,
-      "uniques": 1
     }
   ],
-  "last_updated": "2026-06-15T07:35:25Z"
+  "last_updated": "2026-06-16T07:40:38Z"
 }
