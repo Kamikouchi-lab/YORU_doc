@@ -3,8 +3,8 @@
     {
       "path": "/Kamikouchi-lab/YORU",
       "title": "Overview",
-      "count": 27,
-      "uniques": 19
+      "count": 26,
+      "uniques": 18
     },
     {
       "path": "/Kamikouchi-lab/YORU/pulls",
@@ -37,12 +37,6 @@
       "uniques": 2
     },
     {
-      "path": "/Kamikouchi-lab/YORU/blob/main/test_data/classes.txt",
-      "title": "/blob/main/test_data/classes.txt",
-      "count": 2,
-      "uniques": 1
-    },
-    {
       "path": "/Kamikouchi-lab/YORU/pull/37",
       "title": "/pull/37",
       "count": 2,
@@ -59,7 +53,13 @@
       "title": "/actions",
       "count": 1,
       "uniques": 1
+    },
+    {
+      "path": "/Kamikouchi-lab/YORU/blob/main/LICENSE",
+      "title": "/blob/main/LICENSE",
+      "count": 1,
+      "uniques": 1
     }
   ],
-  "last_updated": "2026-06-18T07:04:03Z"
+  "last_updated": "2026-06-19T07:23:49Z"
 }
