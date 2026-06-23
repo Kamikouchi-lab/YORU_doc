@@ -3,7 +3,7 @@
     {
       "path": "/Kamikouchi-lab/YORU",
       "title": "Overview",
-      "count": 32,
+      "count": 33,
       "uniques": 20
     },
     {
@@ -31,6 +31,12 @@
       "uniques": 2
     },
     {
+      "path": "/Kamikouchi-lab/YORU/releases",
+      "title": "/releases",
+      "count": 2,
+      "uniques": 2
+    },
+    {
       "path": "/Kamikouchi-lab/YORU/releases/tag/v1.1.1",
       "title": "/releases/tag/v1.1.1",
       "count": 2,
@@ -53,13 +59,7 @@
       "title": "/actions",
       "count": 1,
       "uniques": 1
-    },
-    {
-      "path": "/Kamikouchi-lab/YORU/blob/main/LICENSE",
-      "title": "/blob/main/LICENSE",
-      "count": 1,
-      "uniques": 1
     }
   ],
-  "last_updated": "2026-06-22T07:38:59Z"
+  "last_updated": "2026-06-23T06:18:17Z"
 }

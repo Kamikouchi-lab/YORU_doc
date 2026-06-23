@@ -2,7 +2,7 @@
   "referrers": [
     {
       "referrer": "Google",
-      "count": 12,
+      "count": 13,
       "uniques": 5
     },
     {
@@ -26,5 +26,5 @@
       "uniques": 1
     }
   ],
-  "last_updated": "2026-06-22T07:38:59Z"
+  "last_updated": "2026-06-23T06:18:17Z"
 }
