@@ -3,8 +3,8 @@
     {
       "path": "/Kamikouchi-lab/YORU",
       "title": "Overview",
-      "count": 29,
-      "uniques": 17
+      "count": 26,
+      "uniques": 16
     },
     {
       "path": "/Kamikouchi-lab/YORU/pulls",
@@ -31,12 +31,6 @@
       "uniques": 1
     },
     {
-      "path": "/Kamikouchi-lab/YORU/blob/main/YORU.yml",
-      "title": "/blob/main/YORU.yml",
-      "count": 2,
-      "uniques": 2
-    },
-    {
       "path": "/Kamikouchi-lab/YORU/releases",
       "title": "/releases",
       "count": 2,
@@ -59,7 +53,13 @@
       "title": "/actions",
       "count": 1,
       "uniques": 1
+    },
+    {
+      "path": "/Kamikouchi-lab/YORU/blob/main/.python-version",
+      "title": "/blob/main/.python-version",
+      "count": 1,
+      "uniques": 1
     }
   ],
-  "last_updated": "2026-06-25T06:17:59Z"
+  "last_updated": "2026-06-26T06:19:27Z"
 }
