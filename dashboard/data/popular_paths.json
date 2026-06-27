@@ -3,20 +3,14 @@
     {
       "path": "/Kamikouchi-lab/YORU",
       "title": "Overview",
-      "count": 26,
-      "uniques": 16
+      "count": 31,
+      "uniques": 17
     },
     {
       "path": "/Kamikouchi-lab/YORU/pulls",
       "title": "/pulls",
-      "count": 6,
-      "uniques": 1
-    },
-    {
-      "path": "/Kamikouchi-lab/YORU/issues",
-      "title": "/issues",
-      "count": 3,
-      "uniques": 3
+      "count": 7,
+      "uniques": 2
     },
     {
       "path": "/Kamikouchi-lab/YORU/releases/tag/v2.0.0-beta.1",
@@ -25,10 +19,28 @@
       "uniques": 3
     },
     {
+      "path": "/Kamikouchi-lab/YORU/releases/tag/v1.1.1",
+      "title": "/releases/tag/v1.1.1",
+      "count": 3,
+      "uniques": 2
+    },
+    {
       "path": "/Kamikouchi-lab/YORU/pull/36",
       "title": "/pull/36",
       "count": 3,
       "uniques": 1
+    },
+    {
+      "path": "/Kamikouchi-lab/YORU/blob/main/LICENSE",
+      "title": "/blob/main/LICENSE",
+      "count": 2,
+      "uniques": 2
+    },
+    {
+      "path": "/Kamikouchi-lab/YORU/issues",
+      "title": "/issues",
+      "count": 2,
+      "uniques": 2
     },
     {
       "path": "/Kamikouchi-lab/YORU/releases",
@@ -47,19 +59,7 @@
       "title": "/tree/main/test_data",
       "count": 2,
       "uniques": 1
-    },
-    {
-      "path": "/Kamikouchi-lab/YORU/actions",
-      "title": "/actions",
-      "count": 1,
-      "uniques": 1
-    },
-    {
-      "path": "/Kamikouchi-lab/YORU/blob/main/.python-version",
-      "title": "/blob/main/.python-version",
-      "count": 1,
-      "uniques": 1
     }
   ],
-  "last_updated": "2026-06-26T06:19:27Z"
+  "last_updated": "2026-06-27T06:00:46Z"
 }
