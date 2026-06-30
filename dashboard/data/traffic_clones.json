@@ -446,7 +446,12 @@
       "date": "2026-06-27",
       "count": 1,
       "uniques": 1
+    },
+    {
+      "date": "2026-06-28",
+      "count": 0,
+      "uniques": 0
     }
   ],
-  "last_updated": "2026-06-29T07:02:54Z"
+  "last_updated": "2026-06-30T06:22:42Z"
 }
