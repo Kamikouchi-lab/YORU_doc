@@ -2,24 +2,24 @@
   "referrers": [
     {
       "referrer": "Google",
-      "count": 10,
-      "uniques": 5
+      "count": 11,
+      "uniques": 6
+    },
+    {
+      "referrer": "science.org",
+      "count": 4,
+      "uniques": 2
     },
     {
       "referrer": "github.com",
-      "count": 2,
-      "uniques": 1
+      "count": 3,
+      "uniques": 2
     },
     {
       "referrer": "claude.ai",
       "count": 1,
       "uniques": 1
-    },
-    {
-      "referrer": "science.org",
-      "count": 1,
-      "uniques": 1
     }
   ],
-  "last_updated": "2026-06-30T06:22:43Z"
+  "last_updated": "2026-07-01T06:43:19Z"
 }
