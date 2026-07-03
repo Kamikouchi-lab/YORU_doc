@@ -16,10 +16,15 @@
       "uniques": 3
     },
     {
+      "referrer": "DuckDuckGo",
+      "count": 1,
+      "uniques": 1
+    },
+    {
       "referrer": "claude.ai",
       "count": 1,
       "uniques": 1
     }
   ],
-  "last_updated": "2026-07-02T06:08:32Z"
+  "last_updated": "2026-07-03T06:02:26Z"
 }
