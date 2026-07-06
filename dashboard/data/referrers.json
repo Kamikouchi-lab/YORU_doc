@@ -2,8 +2,8 @@
   "referrers": [
     {
       "referrer": "Google",
-      "count": 7,
-      "uniques": 6
+      "count": 8,
+      "uniques": 7
     },
     {
       "referrer": "science.org",
@@ -21,6 +21,11 @@
       "uniques": 1
     },
     {
+      "referrer": "bio.nagoya-u.ac.jp",
+      "count": 1,
+      "uniques": 1
+    },
+    {
       "referrer": "claude.ai",
       "count": 1,
       "uniques": 1
@@ -31,5 +36,5 @@
       "uniques": 1
     }
   ],
-  "last_updated": "2026-07-05T06:14:09Z"
+  "last_updated": "2026-07-06T06:45:40Z"
 }
