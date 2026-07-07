@@ -2,8 +2,8 @@
   "referrers": [
     {
       "referrer": "Google",
-      "count": 8,
-      "uniques": 7
+      "count": 7,
+      "uniques": 6
     },
     {
       "referrer": "science.org",
@@ -12,8 +12,8 @@
     },
     {
       "referrer": "github.com",
-      "count": 2,
-      "uniques": 2
+      "count": 3,
+      "uniques": 3
     },
     {
       "referrer": "DuckDuckGo",
@@ -36,5 +36,5 @@
       "uniques": 1
     }
   ],
-  "last_updated": "2026-07-06T06:45:40Z"
+  "last_updated": "2026-07-07T06:17:25Z"
 }
