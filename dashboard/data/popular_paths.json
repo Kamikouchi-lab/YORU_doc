@@ -13,12 +13,6 @@
       "uniques": 3
     },
     {
-      "path": "/Kamikouchi-lab/YORU/releases/tag/v2.0.0-beta.1",
-      "title": "/releases/tag/v2.0.0-beta.1",
-      "count": 4,
-      "uniques": 4
-    },
-    {
       "path": "/Kamikouchi-lab/YORU/pulls",
       "title": "/pulls",
       "count": 3,
@@ -33,12 +27,6 @@
     {
       "path": "/Kamikouchi-lab/YORU/blob/main/.gitignore",
       "title": "/blob/main/.gitignore",
-      "count": 1,
-      "uniques": 1
-    },
-    {
-      "path": "/Kamikouchi-lab/YORU/blob/main/.python-version",
-      "title": "/blob/main/.python-version",
       "count": 1,
       "uniques": 1
     },
@@ -59,7 +47,19 @@
       "title": "/pulse",
       "count": 1,
       "uniques": 1
+    },
+    {
+      "path": "/Kamikouchi-lab/YORU/releases",
+      "title": "/releases",
+      "count": 1,
+      "uniques": 1
+    },
+    {
+      "path": "/Kamikouchi-lab/YORU/releases/tag/v2.0.0-beta.1",
+      "title": "/releases/tag/v2.0.0-beta.1",
+      "count": 1,
+      "uniques": 1
     }
   ],
-  "last_updated": "2026-07-08T05:30:13Z"
+  "last_updated": "2026-07-09T06:14:26Z"
 }
