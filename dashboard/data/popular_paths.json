@@ -4,7 +4,7 @@
       "path": "/Kamikouchi-lab/YORU",
       "title": "Overview",
       "count": 35,
-      "uniques": 22
+      "uniques": 21
     },
     {
       "path": "/Kamikouchi-lab/YORU/releases/tag/v1.1.1",
@@ -19,16 +19,16 @@
       "uniques": 3
     },
     {
-      "path": "/Kamikouchi-lab/YORU/blob/main/LICENSE",
-      "title": "/blob/main/LICENSE",
+      "path": "/Kamikouchi-lab/YORU/blob/main/.gitignore",
+      "title": "/blob/main/.gitignore",
       "count": 2,
       "uniques": 2
     },
     {
-      "path": "/Kamikouchi-lab/YORU/blob/main/.gitignore",
-      "title": "/blob/main/.gitignore",
-      "count": 1,
-      "uniques": 1
+      "path": "/Kamikouchi-lab/YORU/blob/main/LICENSE",
+      "title": "/blob/main/LICENSE",
+      "count": 2,
+      "uniques": 2
     },
     {
       "path": "/Kamikouchi-lab/YORU/issues",
@@ -61,5 +61,5 @@
       "uniques": 1
     }
   ],
-  "last_updated": "2026-07-10T06:13:50Z"
+  "last_updated": "2026-07-11T05:21:10Z"
 }
