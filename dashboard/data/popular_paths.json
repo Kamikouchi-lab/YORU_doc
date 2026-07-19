@@ -3,13 +3,13 @@
     {
       "path": "/Kamikouchi-lab/YORU",
       "title": "Overview",
-      "count": 21,
-      "uniques": 15
+      "count": 18,
+      "uniques": 14
     },
     {
       "path": "/Kamikouchi-lab/YORU/releases/tag/v1.1.1",
       "title": "/releases/tag/v1.1.1",
-      "count": 6,
+      "count": 4,
       "uniques": 4
     },
     {
@@ -61,5 +61,5 @@
       "uniques": 1
     }
   ],
-  "last_updated": "2026-07-18T05:04:13Z"
+  "last_updated": "2026-07-19T05:31:38Z"
 }
