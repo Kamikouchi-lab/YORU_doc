@@ -21,6 +21,11 @@
       "uniques": 1
     },
     {
+      "referrer": "bio.nagoya-u.ac.jp",
+      "count": 1,
+      "uniques": 1
+    },
+    {
       "referrer": "chatgpt.com",
       "count": 1,
       "uniques": 1
@@ -31,5 +36,5 @@
       "uniques": 1
     }
   ],
-  "last_updated": "2026-07-24T05:28:44Z"
+  "last_updated": "2026-07-25T05:22:26Z"
 }
