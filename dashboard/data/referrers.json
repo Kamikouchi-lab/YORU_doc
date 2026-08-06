@@ -2,8 +2,8 @@
   "referrers": [
     {
       "referrer": "Google",
-      "count": 10,
-      "uniques": 8
+      "count": 11,
+      "uniques": 9
     },
     {
       "referrer": "bio.nagoya-u.ac.jp",
@@ -31,5 +31,5 @@
       "uniques": 1
     }
   ],
-  "last_updated": "2026-08-05T05:23:20Z"
+  "last_updated": "2026-08-06T05:25:56Z"
 }
