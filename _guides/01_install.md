@@ -4,6 +4,8 @@ title: Install
 order: 1
 ---
 
+> These guides cover the **stable release (v1.1.1)**. If you are installing **v2.0.0-beta.2**, follow the [Beta Guides]({{ site.baseurl }}/beta-guides/01-install/) instead — the beta does not use Google Chrome and the procedure differs.
+
 0. Check the instllation of [Google Chrome](https://www.google.com/intl/ja/chrome/)
 
 - eel package need to use Google Chrome.

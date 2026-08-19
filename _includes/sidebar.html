@@ -31,6 +31,15 @@
       {% endfor %}
     </details>
 
+    <details>
+      <summary class="sidebar-nav-item">Beta Guides (v2.0.0-beta.2)</summary>
+      {% assign beta_guides = site.beta_guides | sort: "order" %}
+      {% for d in beta_guides %}
+        <a class="sidebar-nav-item{% if page.url == d.url %} active{% endif %}"
+          href="{{ d.url | absolute_url }}">{{ d.title }}</a>
+      {% endfor %}
+    </details>
+
     <!-- <details>
     <summary class="sidebar-nav-item">Development notes</summary>
     <a class="sidebar-nav-item" href="#subitem1">TBA</a>

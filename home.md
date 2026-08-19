@@ -19,12 +19,14 @@ title: Home
 | Channel | Version | Notes |
 |---------|---------|-------|
 | **Latest Release** | [v1.1.1](https://github.com/Kamikouchi-lab/YORU/releases/tag/v1.1.1) | Stable release recommended for general use |
-| **Latest Beta** | [v2.0.0-beta.1](https://github.com/Kamikouchi-lab/YORU/releases/tag/v2.0.0-beta.1) | Preview of the next major version — may contain bugs |
+| **Latest Beta** | [v2.0.0-beta.2](https://github.com/Kamikouchi-lab/YORU/releases/tag/v2.0.0-beta.2) | Preview of the next major version — may contain bugs |
 
 > To use the beta version, check out the corresponding tag:
 > ```
-> git checkout v2.0.0-beta.1
+> git checkout v2.0.0-beta.2
 > ```
+> Beta 2 changes how YORU is launched (no Google Chrome) and removes YOLOv5.
+> Read the [Beta Release Notes]({{ site.baseurl }}/beta/) before installing or upgrading.
 
 
 
@@ -95,7 +97,9 @@ Follow these steps to install YORU quickly:
 
 
 # Learn about YORU
-- [User guides]({{ site.baseurl }}/guides/01-install/)
+- [User guides]({{ site.baseurl }}/guides/01-install/) — for the stable release (v1.1.1)
+
+- [Beta guides]({{ site.baseurl }}/beta-guides/00-overview/) — for v2.0.0-beta.2
 
 - [Step-by-Step Tutorial]({{ site.baseurl }}/tutorial/01-preparation-tutorial/)
 

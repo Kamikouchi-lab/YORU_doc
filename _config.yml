@@ -49,7 +49,10 @@ collections:
     permalink: /devnotes/:name/ 
   guides:
     output: true
-    permalink: /guides/:name/ 
+    permalink: /guides/:name/
+  beta_guides:
+    output: true
+    permalink: /beta-guides/:name/
   plugins:
     output: true
     permalink: /plugins/:name/
