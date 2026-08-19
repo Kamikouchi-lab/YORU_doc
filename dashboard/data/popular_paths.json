@@ -3,7 +3,7 @@
     {
       "path": "/Kamikouchi-lab/YORU",
       "title": "Overview",
-      "count": 15,
+      "count": 14,
       "uniques": 10
     },
     {
@@ -13,11 +13,17 @@
       "uniques": 2
     },
     {
+      "path": "/Kamikouchi-lab/YORU/blob/main/README.md",
+      "title": "/blob/main/README.md",
+      "count": 1,
+      "uniques": 1
+    },
+    {
       "path": "/Kamikouchi-lab/YORU/blob/main/YORU.yml",
       "title": "/blob/main/YORU.yml",
       "count": 1,
       "uniques": 1
     }
   ],
-  "last_updated": "2026-08-18T03:06:28Z"
+  "last_updated": "2026-08-19T03:08:41Z"
 }
