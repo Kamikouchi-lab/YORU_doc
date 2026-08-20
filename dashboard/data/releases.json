@@ -1,6 +1,14 @@
 {
   "releases": [
     {
+      "tag_name": "v2.0.0-beta.2",
+      "name": "YORU v2.0.0 Beta 2",
+      "published_at": "2026-08-19T15:37:43Z",
+      "prerelease": true,
+      "assets": [],
+      "total_downloads": 0
+    },
+    {
       "tag_name": "v2.0.0-beta.1",
       "name": "YORU v2.0.0 Beta 1",
       "published_at": "2026-03-14T13:40:41Z",
@@ -73,5 +81,5 @@
       "total_downloads": 0
     }
   ],
-  "last_updated": "2026-08-19T03:08:40Z"
+  "last_updated": "2026-08-20T03:07:57Z"
 }
