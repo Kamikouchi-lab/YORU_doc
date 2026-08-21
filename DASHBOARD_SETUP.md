@@ -56,8 +56,8 @@ After this, the workflow runs automatically every day at 02:15 UTC.
 
 ## What happens without the secret
 
-- Public API endpoints (releases, repository metadata) still work and will
-  populate stars, forks, contributor count, and release download data
+- Public API endpoints (repository metadata) still work and will populate
+  stars and forks
 - Traffic endpoints (clones, views, referrers, popular paths) will be
   skipped with a warning in the workflow logs
 - The dashboard page itself will still load and display whatever data is

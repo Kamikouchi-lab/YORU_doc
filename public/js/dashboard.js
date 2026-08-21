@@ -53,37 +53,12 @@
     });
   }
 
-  function barChart(canvasId, labels, values) {
-    var ctx = document.getElementById(canvasId);
-    if (!ctx || labels.length === 0) return;
-    new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: labels,
-        datasets: [{
-          data: values,
-          backgroundColor: ORANGE_BG,
-          borderColor: ORANGE,
-          borderWidth: 1
-        }]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: { legend: { display: false } },
-        scales: { y: { beginAtZero: true } }
-      }
-    });
-  }
-
   /* --- Render sections --- */
 
   function renderKPIs(s) {
     if (!s) return;
     setText('kpi-stars', fmt(s.stars));
     setText('kpi-forks', fmt(s.forks));
-    setText('kpi-contributors', fmt(s.contributors));
-    setText('kpi-downloads', fmt(s.total_release_downloads));
     setText('kpi-total-clones', fmt(s.total_clones));
     setText('kpi-clones', fmt(s.clones_30d));
     setText('kpi-unique-cloners', fmt(s.unique_cloners_30d));
@@ -125,22 +100,6 @@
     );
   }
 
-  function renderReleases(data) {
-    if (!data || !data.releases || data.releases.length === 0) {
-      setText('releases-empty', 'No release data available yet.');
-      return;
-    }
-    var filtered = data.releases.filter(function (r) { return r.total_downloads > 0 || r.assets.length > 0; });
-    if (filtered.length === 0) {
-      setText('releases-empty', 'No download data available.');
-      return;
-    }
-    barChart('releases-chart',
-      filtered.map(function (r) { return r.tag_name; }),
-      filtered.map(function (r) { return r.total_downloads; })
-    );
-  }
-
   function renderReferrers(data) {
     var tbody = document.getElementById('referrers-body');
     if (!tbody) return;
@@ -172,16 +131,14 @@
       fetchJSON('summary.json'),
       fetchJSON('traffic_clones.json'),
       fetchJSON('traffic_views.json'),
-      fetchJSON('releases.json'),
       fetchJSON('referrers.json'),
       fetchJSON('popular_paths.json')
     ]).then(function (results) {
       renderKPIs(results[0]);
       renderClones(results[1]);
       renderViews(results[2]);
-      renderReleases(results[3]);
-      renderReferrers(results[4]);
-      renderPaths(results[5]);
+      renderReferrers(results[3]);
+      renderPaths(results[4]);
 
       var loading = document.getElementById('dashboard-loading');
       if (loading) loading.style.display = 'none';

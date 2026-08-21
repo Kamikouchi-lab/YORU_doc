@@ -586,3 +586,25 @@ details[open] summary {
   margin: auto;
   display: block;
 }
+
+/*
+ * Badges
+ *
+ * Shields.io badges laid out inline; the base theme sets `img { display: block }`
+ * which would otherwise stack them one per line.
+ */
+
+.badges {
+  margin-bottom: 1rem;
+}
+
+.badges p {
+  margin-bottom: 0;
+}
+
+.badges img {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 .3rem .35rem 0;
+  border-radius: 3px;
+}

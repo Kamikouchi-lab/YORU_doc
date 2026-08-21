@@ -38,7 +38,6 @@ def sum_last_30d(history):
 def build():
     clones = load_json(os.path.join(DATA_DIR, "traffic_clones.json"))
     views = load_json(os.path.join(DATA_DIR, "traffic_views.json"))
-    releases = load_json(os.path.join(DATA_DIR, "releases.json"))
     meta = load_json(os.path.join(DATA_DIR, "repo_meta.json"))
 
     clone_history = clones.get("history", [])
@@ -49,13 +48,7 @@ def build():
     total_clones = sum(e.get("count", 0) for e in clone_history)
     total_views = sum(e.get("count", 0) for e in view_history)
 
-    total_downloads = sum(
-        r.get("total_downloads", 0)
-        for r in releases.get("releases", [])
-    )
-
     summary = {
-        "total_release_downloads": total_downloads,
         "total_clones": total_clones,
         "total_views": total_views,
         "clones_30d": clones_30d["count"],
@@ -64,7 +57,6 @@ def build():
         "unique_visitors_30d": views_30d["uniques"],
         "stars": meta.get("stars", 0),
         "forks": meta.get("forks", 0),
-        "contributors": meta.get("contributors", 0),
         "last_updated": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
     }
 

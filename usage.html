@@ -22,14 +22,6 @@ permalink: /usage/
       <div class="kpi-label">Forks</div>
     </div>
     <div class="kpi-card">
-      <div class="kpi-value" id="kpi-contributors">&mdash;</div>
-      <div class="kpi-label">Contributors</div>
-    </div>
-    <div class="kpi-card">
-      <div class="kpi-value" id="kpi-downloads">&mdash;</div>
-      <div class="kpi-label">Total Downloads</div>
-    </div>
-    <div class="kpi-card">
       <div class="kpi-value" id="kpi-total-clones">&mdash;</div>
       <div class="kpi-label">Total Clones</div>
     </div>
@@ -69,24 +61,17 @@ permalink: /usage/
     </div>
   </div>
 
-  <!-- Release Downloads & Referrers -->
-  <div class="chart-row">
-    <div class="chart-box">
-      <h3>Downloads by Release</h3>
-      <div class="chart-wrap"><canvas id="releases-chart"></canvas></div>
-      <p id="releases-empty" class="dash-empty"></p>
-    </div>
-    <div class="chart-box">
-      <h3>Top Referrers</h3>
-      <table class="dash-table">
-        <thead>
-          <tr><th>Referrer</th><th>Views</th><th>Unique</th></tr>
-        </thead>
-        <tbody id="referrers-body">
-          <tr><td colspan="3" class="dash-empty">Loading...</td></tr>
-        </tbody>
-      </table>
-    </div>
+  <!-- Top Referrers -->
+  <div class="chart-box" style="margin-bottom:1.5rem;">
+    <h3>Top Referrers</h3>
+    <table class="dash-table">
+      <thead>
+        <tr><th>Referrer</th><th>Views</th><th>Unique</th></tr>
+      </thead>
+      <tbody id="referrers-body">
+        <tr><td colspan="3" class="dash-empty">Loading...</td></tr>
+      </tbody>
+    </table>
   </div>
 
   <!-- Popular Content -->
@@ -109,11 +94,8 @@ permalink: /usage/
   <div class="dash-footer">
     <h3>About these metrics</h3>
     <dl>
-      <dt>Stars / Forks / Contributors</dt>
+      <dt>Stars / Forks</dt>
       <dd>Current counts from the <a href="https://github.com/Kamikouchi-lab/YORU">YORU GitHub repository</a>.</dd>
-
-      <dt>Total Downloads</dt>
-      <dd>Sum of all GitHub Release asset download counts across every version.</dd>
 
       <dt>Total Clones</dt>
       <dd>Cumulative <code>git clone</code> count since data collection began. Computed from stored daily history.</dd>

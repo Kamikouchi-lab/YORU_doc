@@ -103,47 +103,8 @@ def fetch_repo_meta(token):
         "last_updated": now_iso(),
     }
 
-    contribs = api_get(f"/repos/{OWNER}/{REPO}/contributors?per_page=100&anon=true", token)
-    if contribs and isinstance(contribs, list):
-        meta["contributors"] = len(contribs)
-
     save_json(os.path.join(DATA_DIR, "repo_meta.json"), meta)
     print(f"  Stars={meta['stars']} Forks={meta['forks']}")
-
-
-def fetch_releases(token):
-    print("Fetching releases...")
-    data = api_get(f"/repos/{OWNER}/{REPO}/releases?per_page=100", token)
-    if data is None:
-        print("  Skipped")
-        return
-
-    releases = []
-    for rel in (data if isinstance(data, list) else []):
-        assets = []
-        total = 0
-        for asset in rel.get("assets", []):
-            dl = asset.get("download_count", 0)
-            assets.append({
-                "name": asset.get("name", ""),
-                "download_count": dl,
-                "size": asset.get("size", 0),
-            })
-            total += dl
-        releases.append({
-            "tag_name": rel.get("tag_name", ""),
-            "name": rel.get("name", ""),
-            "published_at": rel.get("published_at", ""),
-            "prerelease": rel.get("prerelease", False),
-            "assets": assets,
-            "total_downloads": total,
-        })
-
-    save_json(os.path.join(DATA_DIR, "releases.json"), {
-        "releases": releases,
-        "last_updated": now_iso(),
-    })
-    print(f"  {len(releases)} releases found")
 
 
 def fetch_traffic_clones(token):
@@ -221,12 +182,11 @@ if __name__ == "__main__":
     if not token:
         print("WARNING: YORU_GH_METRICS_TOKEN not set.")
         print("Traffic APIs require authentication with push access.")
-        print("Public endpoints (releases, repo metadata) will still be attempted.\n")
+        print("Public endpoints (repo metadata) will still be attempted.\n")
 
     os.makedirs(DATA_DIR, exist_ok=True)
 
     fetch_repo_meta(token)
-    fetch_releases(token)
 
     if token:
         fetch_traffic_clones(token)
