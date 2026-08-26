@@ -26,10 +26,15 @@
       "uniques": 2
     },
     {
+      "referrer": "DuckDuckGo",
+      "count": 2,
+      "uniques": 1
+    },
+    {
       "referrer": "search.brave.com",
       "count": 1,
       "uniques": 1
     }
   ],
-  "last_updated": "2026-08-25T03:10:12Z"
+  "last_updated": "2026-08-26T03:15:52Z"
 }
