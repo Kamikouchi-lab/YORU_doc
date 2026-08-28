@@ -1,24 +1,24 @@
 {
   "referrers": [
     {
-      "referrer": "Google",
-      "count": 7,
+      "referrer": "github.com",
+      "count": 9,
       "uniques": 5
     },
     {
-      "referrer": "github.com",
-      "count": 7,
+      "referrer": "science.org",
+      "count": 8,
       "uniques": 4
     },
     {
-      "referrer": "science.org",
+      "referrer": "t.co",
       "count": 7,
-      "uniques": 3
+      "uniques": 7
     },
     {
-      "referrer": "t.co",
-      "count": 6,
-      "uniques": 6
+      "referrer": "Google",
+      "count": 7,
+      "uniques": 5
     },
     {
       "referrer": "chatgpt.com",
@@ -41,5 +41,5 @@
       "uniques": 1
     }
   ],
-  "last_updated": "2026-08-27T12:45:06Z"
+  "last_updated": "2026-08-28T14:18:17Z"
 }
