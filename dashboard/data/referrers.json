@@ -1,6 +1,11 @@
 {
   "referrers": [
     {
+      "referrer": "Google",
+      "count": 9,
+      "uniques": 6
+    },
+    {
       "referrer": "github.com",
       "count": 9,
       "uniques": 5
@@ -14,11 +19,6 @@
       "referrer": "t.co",
       "count": 7,
       "uniques": 7
-    },
-    {
-      "referrer": "Google",
-      "count": 7,
-      "uniques": 5
     },
     {
       "referrer": "chatgpt.com",
@@ -46,5 +46,5 @@
       "uniques": 1
     }
   ],
-  "last_updated": "2026-08-30T08:16:04Z"
+  "last_updated": "2026-08-31T08:36:13Z"
 }
