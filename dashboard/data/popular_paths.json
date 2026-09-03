@@ -3,20 +3,20 @@
     {
       "path": "/Kamikouchi-lab/YORU",
       "title": "Overview",
-      "count": 58,
-      "uniques": 26
+      "count": 57,
+      "uniques": 25
     },
     {
       "path": "/Kamikouchi-lab/YORU/releases/tag/v2.0.0-beta.2",
       "title": "/releases/tag/v2.0.0-beta.2",
-      "count": 15,
-      "uniques": 13
+      "count": 12,
+      "uniques": 10
     },
     {
       "path": "/Kamikouchi-lab/YORU/releases/tag/v1.1.1",
       "title": "/releases/tag/v1.1.1",
-      "count": 9,
-      "uniques": 4
+      "count": 10,
+      "uniques": 5
     },
     {
       "path": "/Kamikouchi-lab/YORU/blob/main/README.md",
@@ -37,12 +37,6 @@
       "uniques": 2
     },
     {
-      "path": "/Kamikouchi-lab/YORU/releases",
-      "title": "/releases",
-      "count": 2,
-      "uniques": 2
-    },
-    {
       "path": "/Kamikouchi-lab/YORU/blob/main/config/template.yaml",
       "title": "/blob/main/config/template.yaml",
       "count": 1,
@@ -59,7 +53,13 @@
       "title": "/blob/main/docs/imgs/screenshots_description-02.png",
       "count": 1,
       "uniques": 1
+    },
+    {
+      "path": "/Kamikouchi-lab/YORU/blob/main/docs/imgs/screenshots_description-03.png",
+      "title": "/blob/main/docs/imgs/screenshots_description-03.png",
+      "count": 1,
+      "uniques": 1
     }
   ],
-  "last_updated": "2026-09-02T07:04:01Z"
+  "last_updated": "2026-09-03T07:08:07Z"
 }
