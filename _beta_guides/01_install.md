@@ -4,7 +4,7 @@ title: "Beta: Install"
 order: 1
 ---
 
-> Applies to **v2.0.0-beta.2**. For the stable v1.1.1 procedure, see the [User Guides]({{ site.baseurl }}/guides/01-install/).
+> Applies to **v2.0.0-beta.2**. For the stable v1.1.2 procedure, see the [User Guides]({{ site.baseurl }}/guides/01-install/).
 
 **Google Chrome is no longer required.** The launcher opens in a native window (pywebview) instead of a browser page served over `localhost:8889`, and nothing opens a network port any more.
 
@@ -53,7 +53,7 @@ The launch command itself is unchanged.
     git checkout v2.0.0-beta.2
     ```
 
-3. Install the GPU driver and the [CUDA toolkit](https://developer.nvidia.com/cuda-toolkit).
+3. Install the GPU driver. The [CUDA toolkit](https://developer.nvidia.com/cuda-toolkit) is not needed — the PyTorch wheels in step 6 carry their own CUDA runtime — so the `cu118` / `cu121` choice there only has to be one your driver supports.
 
 4. Create a virtual environment using [YORU.yml](https://github.com/Kamikouchi-lab/YORU/blob/main/YORU.yml).
 
