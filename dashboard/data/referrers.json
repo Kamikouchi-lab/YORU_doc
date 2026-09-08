@@ -7,8 +7,8 @@
     },
     {
       "referrer": "Google",
-      "count": 9,
-      "uniques": 7
+      "count": 10,
+      "uniques": 8
     },
     {
       "referrer": "science.org",
@@ -21,16 +21,6 @@
       "uniques": 1
     },
     {
-      "referrer": "DuckDuckGo",
-      "count": 3,
-      "uniques": 2
-    },
-    {
-      "referrer": "kamikouchi-lab.github.io",
-      "count": 2,
-      "uniques": 2
-    },
-    {
       "referrer": "search.brave.com",
       "count": 2,
       "uniques": 1
@@ -41,10 +31,20 @@
       "uniques": 1
     },
     {
+      "referrer": "DuckDuckGo",
+      "count": 1,
+      "uniques": 1
+    },
+    {
+      "referrer": "kamikouchi-lab.github.io",
+      "count": 1,
+      "uniques": 1
+    },
+    {
       "referrer": "t.co",
       "count": 1,
       "uniques": 1
     }
   ],
-  "last_updated": "2026-09-07T07:17:10Z"
+  "last_updated": "2026-09-08T07:12:52Z"
 }
