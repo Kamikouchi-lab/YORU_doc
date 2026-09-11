@@ -6,7 +6,7 @@ order: 10
 
 ## YORU v2.0.0-beta.2
 
-> **Pre-release software.** This version targets the `develop4` branch and may contain bugs. For general lab use, **v1.1.1 remains the recommended stable release**. Feedback and bug reports via [GitHub Issues](https://github.com/Kamikouchi-lab/YORU/issues) are welcome.
+> **Pre-release software.** This version targets the `develop4` branch and may contain bugs. For general lab use, **v1.1.2 remains the recommended stable release**. Feedback and bug reports via [GitHub Issues](https://github.com/Kamikouchi-lab/YORU/issues) are welcome.
 
 Released 2026-08-19 — [release page](https://github.com/Kamikouchi-lab/YORU/releases/tag/v2.0.0-beta.2)
 
@@ -202,9 +202,9 @@ The detector exposes `.names` and `.detect(image)`, which takes a BGR image and 
 
 ### Notes
 
-- This release targets the `develop4` branch and is **not** the stable release. For general lab use, v1.1.1 remains the recommended version.
+- This release targets the `develop4` branch and is **not** the stable release. For general lab use, v1.1.2 remains the recommended version.
 - The GUI, camera, training and Arduino paths in this release were developed in an environment without a GPU, camera, display or Arduino — they need real-hardware testing. Reports from actual rigs are especially valuable right now.
-- **Task-by-task instructions for this release are in the [Beta Guides]({{ site.baseurl }}/beta-guides/00-overview/).** The [user guides]({{ site.baseurl }}/guides/01-install/) and step-by-step protocols elsewhere on this site describe the stable v1.1.1 workflow (Google Chrome, YOLOv5 training, `train/` output folder) and do not apply to Beta 2.
+- **Task-by-task instructions for this release are in the [Beta Guides]({{ site.baseurl }}/beta-guides/00-overview/).** The [user guides]({{ site.baseurl }}/guides/01-install/) and step-by-step protocols elsewhere on this site describe the stable v1.1.2 workflow (Google Chrome, YOLOv5 training, `train/` output folder) and do not apply to Beta 2.
 
 <br>
 
@@ -256,6 +256,7 @@ git checkout v2.0.0-beta.1
 
 | Version | Date | Notes |
 |---------|------|-------|
+| [v1.1.2](https://github.com/Kamikouchi-lab/YORU/releases/tag/v1.1.2) | 2026-09-04 | **Stable release** — uv environment on macOS and Linux, automatic device selection, `~/.yoru` logging |
 | [v2.0.0-beta.2](https://github.com/Kamikouchi-lab/YORU/releases/tag/v2.0.0-beta.2) | 2026-08-19 | Pre-release — native launcher, plugin / ONNX backends, YOLOv5 removed |
 | [v2.0.0-beta.1](https://github.com/Kamikouchi-lab/YORU/releases/tag/v2.0.0-beta.1) | 2026-03-14 | Pre-release — see above |
 | [v1.1.1](https://github.com/Kamikouchi-lab/YORU/releases/tag/v1.1.1) | 2026-03-14 | **Stable release** — PyTorch 2.6 fix, `uv` install support, path corrections |

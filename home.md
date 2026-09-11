@@ -28,7 +28,7 @@ title: Home
 
 | Channel | Version | Notes |
 |---------|---------|-------|
-| **Latest Release** | [v1.1.1](https://github.com/Kamikouchi-lab/YORU/releases/tag/v1.1.1) | Stable release recommended for general use |
+| **Latest Release** | [v1.1.2](https://github.com/Kamikouchi-lab/YORU/releases/tag/v1.1.2) | Stable release recommended for general use |
 | **Latest Beta** | [v2.0.0-beta.2](https://github.com/Kamikouchi-lab/YORU/releases/tag/v2.0.0-beta.2) | Preview of the next major version — may contain bugs |
 
 > To use the beta version, check out the corresponding tag:
@@ -52,9 +52,11 @@ title: Home
 
 - Customizable: Allows you to customize various hardware manipulations in closed-loop system.
 
-# Quick install
+# Quick install (conda)
 
-Follow these steps to install YORU quickly:
+Follow these steps to install YORU quickly. These steps describe the conda route, which targets Windows (and Linux) with an NVIDIA GPU; on macOS, or if you already use [uv](https://docs.astral.sh/uv/), [Install via uv](#install-via-uv) below is simpler.
+
+> Whichever route you take, YORU needs a **Chromium browser** for its launcher and, for GPU work, an **NVIDIA driver** — but not the CUDA toolkit. On macOS it also needs the **Xcode Command Line Tools**. The [install guide]({{ site.baseurl }}/guides/01-install/) covers all three in detail.
 
 1. Download or clone the YORU project.
     ```
@@ -62,7 +64,7 @@ Follow these steps to install YORU quickly:
     git clone https://github.com/Kamikouchi-lab/YORU.git 
     ```
 
-2. Install the appropriate GPU driver and the [CUDA toolkit](https://developer.nvidia.com/cuda-toolkit).
+2. Install the appropriate GPU driver. The [CUDA toolkit](https://developer.nvidia.com/cuda-toolkit) is not needed — the PyTorch wheels in step 5 carry their own CUDA runtime — so the `cu118` / `cu121` choice there only has to be one your driver supports.
 
 3. Create a virtual environment.
 
@@ -106,8 +108,54 @@ Follow these steps to install YORU quickly:
     ```
 
 
+# Install via uv
+
+The repository ships its own `pyproject.toml` and `uv.lock`, so [uv](https://docs.astral.sh/uv/) builds the whole environment in one step on Windows, Linux and macOS. uv also picks the right PyTorch build for your platform automatically: the CUDA wheels on Windows and Linux, and the MPS-enabled build from PyPI on macOS. Neither a system Python nor conda is needed — uv downloads the Python 3.10 the project asks for.
+
+1. Install uv.
+
+    Windows (PowerShell):
+
+    ```
+    winget install --id=astral-sh.uv -e
+    ```
+
+    macOS / Linux:
+
+    ```
+    curl -LsSf https://astral.sh/uv/install.sh | sh
+    ```
+
+2. Clone the repository and build the environment.
+
+    ```
+    git clone https://github.com/Kamikouchi-lab/YORU.git
+    cd YORU
+    uv sync
+    ```
+
+3. Run YORU **from the repository root** — the launcher resolves `web/` and `config/` relative to the working directory.
+
+    ```
+    uv run yoru
+    ```
+
+`uv run python -m yoru` does the same thing. There is no `uv init` step: the project is already initialised, and uv refuses to re-initialise a folder that already has a `pyproject.toml`.
+
+# Compute device
+
+YORU picks its compute device automatically, in this order: CUDA, then Apple MPS, then CPU. Nothing has to be configured for the usual cases, beyond the NVIDIA driver CUDA needs.
+
+To choose the device yourself, set the `YORU_DEVICE` environment variable before launching (`cuda`, `mps`, `cpu`, or a CUDA index such as `0`), or use the device selector in the training GUI:
+
+```
+YORU_DEVICE=cpu uv run yoru
+```
+
+On Windows, `set YORU_DEVICE=cpu` before the launch command. The variable applies to YOLOv8, YOLO11, RT-DETR and the torchvision detectors; YOLOv5 inference is loaded through `torch.hub`, which always takes CUDA when it is available and the CPU otherwise. If the requested device is unavailable, YORU falls back to the next best one and writes a warning to `~/.yoru/logs/yoru.log` (`%USERPROFILE%\.yoru\logs\yoru.log` on Windows).
+
 # Learn about YORU
-- [User guides]({{ site.baseurl }}/guides/01-install/) — for the stable release (v1.1.1)
+- [User guides]({{ site.baseurl }}/guides/01-install/) — for the stable release (v1.1.2)
 
 - [Beta guides]({{ site.baseurl }}/beta-guides/00-overview/) — for v2.0.0-beta.2
 
@@ -118,17 +166,25 @@ Follow these steps to install YORU quickly:
 # Requirements
 
 ## OS
-- Windows 10 or later
+- Windows 10 or later, with an NVIDIA GPU. This is the primary target, and the only platform tested end to end including the closed-loop hardware.
+- Linux, with an NVIDIA GPU and CUDA. It uses the same CUDA wheels as Windows, but has seen much less testing.
+- macOS 14 (Sonoma) or later, on Apple Silicon.
 
 ## Hardware
 - Memory: 16 GB RAM or more
-- GPU: NVIDIA GPU compatible with the required CUDA version
+- GPU: NVIDIA GPU with a driver supporting CUDA 12.x, or an Apple Silicon (M-series) Mac, which uses MPS. YORU also runs on the CPU alone, but detection is much slower.
 
 ### Development environments
 - OS: Windows 11
 - CPU: Intel Core i9 (11th)
 - GPU: NVIDIA RTX 3080
 - Memory: DDR4 32 GB
+
+## Software
+- Python 3.10. uv installs it for you; the conda environment file pins it.
+- Google Chrome or Chromium, for the launcher window.
+- To use a GPU: an NVIDIA driver supporting CUDA 12.x on Windows/Linux, or macOS 14+ on Apple Silicon for MPS. The CUDA toolkit itself is optional.
+- On macOS only: the Xcode Command Line Tools, and the Camera / Input Monitoring / Screen Recording permissions.
 
 # Reference
  - Hayato M. Yamanouchi et al. ,YORU: Animal behavior detection with object-based approach for real-time closed-loop feedback.Sci. Adv.12,eadw2109(2026). DOI:10.1126/sciadv.adw2109
