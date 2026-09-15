@@ -3,8 +3,8 @@
     {
       "path": "/Kamikouchi-lab/YORU",
       "title": "Overview",
-      "count": 44,
-      "uniques": 24
+      "count": 47,
+      "uniques": 23
     },
     {
       "path": "/Kamikouchi-lab/YORU/pull/41",
@@ -17,12 +17,6 @@
       "title": "/releases/tag/v1.1.1",
       "count": 2,
       "uniques": 2
-    },
-    {
-      "path": "/Kamikouchi-lab/YORU/blob/main/README.md",
-      "title": "/blob/main/README.md",
-      "count": 1,
-      "uniques": 1
     },
     {
       "path": "/Kamikouchi-lab/YORU/blob/main/pyproject.toml",
@@ -59,7 +53,13 @@
       "title": "/pulls",
       "count": 1,
       "uniques": 1
+    },
+    {
+      "path": "/Kamikouchi-lab/YORU/releases",
+      "title": "/releases",
+      "count": 1,
+      "uniques": 1
     }
   ],
-  "last_updated": "2026-09-14T07:51:55Z"
+  "last_updated": "2026-09-15T07:40:28Z"
 }
