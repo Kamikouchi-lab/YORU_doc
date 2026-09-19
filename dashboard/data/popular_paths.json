@@ -3,32 +3,8 @@
     {
       "path": "/Kamikouchi-lab/YORU",
       "title": "Overview",
-      "count": 45,
+      "count": 39,
       "uniques": 25
-    },
-    {
-      "path": "/Kamikouchi-lab/YORU/pull/41",
-      "title": "/pull/41",
-      "count": 3,
-      "uniques": 2
-    },
-    {
-      "path": "/Kamikouchi-lab/YORU/blob/main/pyproject.toml",
-      "title": "/blob/main/pyproject.toml",
-      "count": 1,
-      "uniques": 1
-    },
-    {
-      "path": "/Kamikouchi-lab/YORU/blob/main/uv.lock",
-      "title": "/blob/main/uv.lock",
-      "count": 1,
-      "uniques": 1
-    },
-    {
-      "path": "/Kamikouchi-lab/YORU/branches",
-      "title": "/branches",
-      "count": 1,
-      "uniques": 1
     },
     {
       "path": "/Kamikouchi-lab/YORU/issues",
@@ -37,20 +13,8 @@
       "uniques": 1
     },
     {
-      "path": "/Kamikouchi-lab/YORU/pull/41/changes",
-      "title": "/pull/41/changes",
-      "count": 1,
-      "uniques": 1
-    },
-    {
-      "path": "/Kamikouchi-lab/YORU/pulls",
-      "title": "/pulls",
-      "count": 1,
-      "uniques": 1
-    },
-    {
-      "path": "/Kamikouchi-lab/YORU/releases",
-      "title": "/releases",
+      "path": "/Kamikouchi-lab/YORU/pull/41",
+      "title": "/pull/41",
       "count": 1,
       "uniques": 1
     },
@@ -61,5 +25,5 @@
       "uniques": 1
     }
   ],
-  "last_updated": "2026-09-18T07:22:05Z"
+  "last_updated": "2026-09-19T07:17:52Z"
 }
