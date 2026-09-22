@@ -871,7 +871,12 @@
       "date": "2026-09-20",
       "count": 1,
       "uniques": 1
+    },
+    {
+      "date": "2026-09-21",
+      "count": 0,
+      "uniques": 0
     }
   ],
-  "last_updated": "2026-09-21T07:55:29Z"
+  "last_updated": "2026-09-22T07:40:27Z"
 }
