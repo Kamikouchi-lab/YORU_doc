@@ -608,3 +608,55 @@ details[open] summary {
   margin: 0 .3rem .35rem 0;
   border-radius: 3px;
 }
+
+/*
+ * Sponsor button
+ *
+ * Styled after GitHub's own Sponsor button. Used in the sidebar and on Home;
+ * the `.sidebar a` / `.container a` qualifiers beat the theme's link colours.
+ */
+
+.sidebar a.sponsor-button,
+.container a.sponsor-button {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  padding: .3rem .9rem;
+  font-size: .9rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #24292f;
+  background-color: #f6f8fa;
+  border: 1px solid rgba(31,35,40,.15);
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.sidebar a.sponsor-button:hover,
+.sidebar a.sponsor-button:focus,
+.container a.sponsor-button:hover,
+.container a.sponsor-button:focus {
+  background-color: #eaeef2;
+  text-decoration: none;
+}
+
+.sponsor-button svg {
+  fill: #bf3989;
+  flex-shrink: 0;
+}
+
+.sidebar-sponsor p {
+  margin-bottom: .5rem;
+}
+
+.sponsor-cta {
+  margin: 1.5rem 0;
+  padding: 1rem 1.25rem;
+  border: 1px solid #eee;
+  border-left: 4px solid #bf3989;
+  border-radius: 4px;
+}
+
+.sponsor-cta p {
+  margin-bottom: .75rem;
+}

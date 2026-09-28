@@ -32,7 +32,7 @@
     </details>
 
     <details>
-      <summary class="sidebar-nav-item">Beta Guides (v2.0.0-beta.2)</summary>
+      <summary class="sidebar-nav-item">Beta Guides ({{ site.beta_version }})</summary>
       {% assign beta_guides = site.beta_guides | sort: "order" %}
       {% for d in beta_guides %}
         <a class="sidebar-nav-item{% if page.url == d.url %} active{% endif %}"
@@ -94,6 +94,11 @@
     <a class="sidebar-nav-item" href="{{ site.Store.URL }}">YORU Goods Shop</a>
     <span class="sidebar-nav-item">Currently {{ site.version }}</span>
   </nav>
+
+  <div class="sidebar-item sidebar-sponsor">
+    <p>Support the development of YORU.</p>
+    {% include sponsor-button.html %}
+  </div>
 
   <div class="sidebar-item">
     <p>

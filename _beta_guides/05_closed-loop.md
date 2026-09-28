@@ -4,9 +4,11 @@ title: "Beta: Real-time Process"
 order: 5
 ---
 
-> Applies to **v2.0.0-beta.2**. For the stable v1.1.1 procedure, see the [User Guides]({{ site.baseurl }}/guides/05-closed-loop/).
+> Applies to **v2.0.0-beta.3**. For the stable v1.1.2 procedure, see the [User Guides]({{ site.baseurl }}/guides/05-closed-loop/).
 
-> ⚠️ **Read this before your next closed-loop experiment.** Two settings that Beta 1 silently ignored are now honoured: `trigger_pin` and `trigger_threshold_configuration`. An unchanged condition file will not behave the way it did on Beta 1.
+> ⚠️ **Read this before your next closed-loop experiment.** Two settings that Beta 1 and v1.1.x silently ignore are honoured in the beta: `trigger_pin` and `trigger_threshold_configuration`. An unchanged condition file will not behave the way it did before.
+
+> **New in Beta 3:** each row of `*_detect.csv` (and of `m_dict["yolo_results"]`) has 13 columns instead of 8. See [Detection results](#detection-results-_detectcsv) below. Custom trigger plugins that unpack rows must be updated — see [Custom Trigger Plugins](../06-trigger-plugins/#detection-rows-have-13-entries-beta-3).
 
 ---
 
@@ -14,7 +16,7 @@ order: 5
 
 ### `trigger_pin`
 
-Beta 1 hard-coded the TTL output to digital pin **13** and ignored whatever `trigger_pin` said in your file. **Beta 2 uses the value in the file.**
+Beta 1 hard-coded the TTL output to digital pin **13** and ignored whatever `trigger_pin` said in your file. **Since Beta 2, the beta uses the value in the file.**
 
 - If any of your condition files sets `trigger_pin` to something other than 13, **that pin is what will now fire.** Edit the YAML or rewire before your next experiment.
 - Files with no `trigger_pin` key still default to 13.
@@ -23,7 +25,7 @@ Beta 1 hard-coded the TTL output to digital pin **13** and ignored whatever `tri
 
 Beta 1 loaded this value but never read it, so the trigger fired on **any** detection of the trigger class regardless of confidence — effectively a threshold of 0.
 
-- Beta 2 applies it. With the shipped values (0.3–0.5), expect **fewer firings** from an unchanged config.
+- The beta applies it (since Beta 2). With the shipped values (0.3–0.5), expect **fewer firings** from an unchanged config.
 - If you had raised the threshold to compensate for it being ignored, lower it back to the value you actually want.
 
 ---
@@ -46,18 +48,18 @@ Beta 1 loaded this value but never read it, so the trigger fired on **any** dete
    model:
      yolo_detection: False   # If you want to start YORU's inference immediately after starting YORU's real-time process, set this to True.
      yolo_model_path: Path/to/YORU/model   # Specify the YORU model (.pt or .onnx file).
-     yolo_model_type: auto   # Optional. auto / ultralytics / rtdetr / torchvision / onnx. Auto-detected from the weights file if omitted.
+     yolo_model_type: auto   # Optional. Auto-detected from the weights file, including OBB models. Leave it as auto.
      Trigger: False
 
    capture_style:
      stream_MSS: False   # When using the screen capture function, set to True.
 
    trigger:
-     trigger_threshold_configuration: 0.3   # Confidence threshold when detecting YORU. APPLIED in Beta 2 (ignored in Beta 1).
+     trigger_threshold_configuration: 0.3   # Confidence threshold when detecting YORU. APPLIED since Beta 2 (ignored in Beta 1).
      trigger_class: copulation   # Which action class to trigger.
 
      Arduino_COM: "COM3"   # COM to which Arduino is connected. Use "None" when no board is connected. Straight quotes only.
-     trigger_pin: 13   # Pin number for outputting TTL signals with Arduino. HONOURED in Beta 2 (always 13 in Beta 1).
+     trigger_pin: 13   # Pin number for outputting TTL signals with Arduino. HONOURED since Beta 2 (always 13 in Beta 1).
      trigger_style: standard_arduino   # Select which trigger plugin to use.
 
    hardware:
@@ -79,9 +81,11 @@ Beta 1 loaded this value but never read it, so the trigger fired on **any** dete
 
 4. Select the condition YAML file on the YORU start page.
 
-    > The launcher shows the selected condition file in the window at startup, and remembers the last-used config instead of resetting to `config/template.yaml`.
+    > The launcher shows the selected condition file in the window at startup, and remembers the last-used config (in `~/.yoru/condition_file_log.json`) instead of resetting to `config/template.yaml`.
 
 5. Run "Real-time Process".
+
+    > The window fits the monitor it is on, and the panel arrangement is remembered (new in Beta 3). Use the **Window** menu to fit, maximise or reset the layout — see [The YORU window](../00-overview/#the-yoru-window-new-in-beta-3).
 
     > It can also be started directly from the command line:
     >
@@ -97,9 +101,29 @@ Beta 1 loaded this value but never read it, so the trigger fired on **any** dete
 
    iii. Save videos by checking "Streaming data".
 
+    > An [OBB model](../02-training/#oriented-bounding-boxes-obb) draws rotated rectangles on screen and in the recorded video. It needs no special setting.
+
 ---
 
-## Configuration keys new or changed in Beta 2
+## Detection results (`*_detect.csv`)
+
+One row per detection per recorded frame. **Changed in Beta 3:** five columns were added at the end.
+
+| Column | Meaning |
+|---|---|
+| `x1, y1, x2, y2` | The upright box, in pixels |
+| `confidence` | Detection score |
+| `class`, `class_name` | Class index and its name |
+| `total_time` | Seconds since the run started |
+| `cx, cy, w, h` | New in Beta 3. The box's centre, and its own width and height |
+| `angle` | New in Beta 3. Rotation of the `w` axis, in **radians** |
+
+- A model trained on an OBB project fills the last five columns with the rotated box it predicted. Any other model fills them with the same upright box as `x1..y2` and an `angle` of `0`.
+- The first eight columns are unchanged in both name and position, so existing analysis scripts and the bundled trigger plugins keep working.
+
+---
+
+## Configuration keys new or changed since Beta 2
 
 | Key | Change |
 |---|---|
@@ -107,7 +131,7 @@ Beta 1 loaded this value but never read it, so the trigger fired on **any** dete
 | `trigger.trigger_threshold_configuration` | Now applied (Beta 1 ignored it) |
 | `trigger.Arduino_COM` | `"None"` is supported for running with no board connected. Use straight quotes |
 | `model.yolo_model_path` | Accepts `.onnx` as well as `.pt`. YOLOv5 `.pt` files no longer load |
-| `model.yolo_model_type` | `yolov5` is aliased to `ultralytics`; `onnx` selects the ONNX backend |
+| `model.yolo_model_type` | `yolov5` is aliased to `ultralytics`; `onnx` selects the ONNX backend. `auto` also recognises OBB models (Beta 3) |
 | `hardware.camera_settings_dialog` | New, optional, default `False`. The camera driver's property dialog is now opt-in |
 | `export` | Defaults to `./results/` in the shipped files |
 | `root:` | Removed from the shipped files (was unused) |
@@ -125,7 +149,7 @@ Beta 1 loaded this value but never read it, so the trigger fired on **any** dete
 - **Camera errors are legible.** A camera that cannot be opened, or that returns no frame, now says so and names `hardware.camera_id`.
 - **The camera driver property dialog no longer pops up on every real-time start** — it is opt-in via `hardware.camera_settings_dialog`.
 - **The detection process no longer spins a CPU core at full speed** when detection is switched off, and no longer dies silently on a bad frame; it sleeps between checks, and errors are logged and retried.
-- The Real-time Process window is 1000×800, narrower than in Beta 1 (it was 1280×700).
+- The Real-time Process window was a fixed 1000×800 in Beta 2. From Beta 3 it fits the monitor it is on.
 
 <br>
 

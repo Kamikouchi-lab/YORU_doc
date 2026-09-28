@@ -23,7 +23,8 @@ author:
 
 
 # Custom vars
-version:             v 1.1.1
+version:             v 1.1.2
+beta_version:        v2.0.0-beta.3
 google_analytics_id: G-GT3X41B0YR
 
 
@@ -34,6 +35,9 @@ github:
 
 Store:
   URL: https://www.zazzle.co.jp/store/yorustore?rf=238712148117349309
+
+sponsor:
+  URL: https://github.com/sponsors/HMYamano
 
 exclude:
   - scripts

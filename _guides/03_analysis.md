@@ -6,6 +6,8 @@ order: 3
 
 1. Select a model to analyze videos.
 
+    > From v1.1.2, YORU accepts YOLOv5, YOLOv8, YOLO11, RT-DETR, Faster R-CNN, Mask R-CNN and SSD models. The model type is recognised from the weights file.
+
 2. Select movies.
 
 3. Select a folder to save results.
@@ -22,7 +24,7 @@ order: 3
 
     > If you check "Tracking algorithm", YORU will save the IDs in the results csv file.
 
-    > Although YOLOv5 does not support assigning unique IDs to detected objects, YORU has the optoions of individual identification in multi-animal scenarios. However, currently(in YORU v1.1.0) this function is a beta-function. YORU applied the the Kuhn-Munkres method (Bashar et al., 2022) to assign IDs based on positional information following object detections. 
+    > Although YOLOv5 does not support assigning unique IDs to detected objects, YORU has the option of individual identification in multi-animal scenarios. YORU applies the Kuhn-Munkres method (Bashar et al., 2022) to assign IDs based on positional information following object detection. This function is still a beta function.
 
 
 ### Data example  
