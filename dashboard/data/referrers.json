@@ -2,13 +2,13 @@
   "referrers": [
     {
       "referrer": "github.com",
-      "count": 13,
+      "count": 10,
       "uniques": 7
     },
     {
       "referrer": "Google",
-      "count": 7,
-      "uniques": 7
+      "count": 6,
+      "uniques": 6
     },
     {
       "referrer": "search.brave.com",
@@ -21,20 +21,15 @@
       "uniques": 2
     },
     {
-      "referrer": "chatgpt.com",
-      "count": 2,
-      "uniques": 2
+      "referrer": "kamikouchi-lab.github.io",
+      "count": 1,
+      "uniques": 1
     },
     {
       "referrer": "science.org",
       "count": 1,
       "uniques": 1
-    },
-    {
-      "referrer": "tankobucreate.com",
-      "count": 1,
-      "uniques": 1
     }
   ],
-  "last_updated": "2026-09-29T08:24:16Z"
+  "last_updated": "2026-09-30T08:27:47Z"
 }
