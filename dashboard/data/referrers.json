@@ -2,28 +2,28 @@
   "referrers": [
     {
       "referrer": "github.com",
-      "count": 10,
-      "uniques": 7
+      "count": 11,
+      "uniques": 8
     },
     {
       "referrer": "Google",
-      "count": 6,
-      "uniques": 6
+      "count": 7,
+      "uniques": 7
     },
     {
       "referrer": "search.brave.com",
+      "count": 4,
+      "uniques": 4
+    },
+    {
+      "referrer": "Bing",
       "count": 3,
       "uniques": 3
     },
     {
-      "referrer": "Bing",
+      "referrer": "kamikouchi-lab.github.io",
       "count": 2,
       "uniques": 2
-    },
-    {
-      "referrer": "kamikouchi-lab.github.io",
-      "count": 1,
-      "uniques": 1
     },
     {
       "referrer": "science.org",
@@ -31,5 +31,5 @@
       "uniques": 1
     }
   ],
-  "last_updated": "2026-09-30T08:27:47Z"
+  "last_updated": "2026-10-01T08:50:12Z"
 }
