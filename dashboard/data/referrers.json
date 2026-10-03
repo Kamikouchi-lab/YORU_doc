@@ -7,16 +7,11 @@
     },
     {
       "referrer": "Google",
-      "count": 7,
-      "uniques": 7
+      "count": 8,
+      "uniques": 8
     },
     {
       "referrer": "search.brave.com",
-      "count": 4,
-      "uniques": 4
-    },
-    {
-      "referrer": "Bing",
       "count": 3,
       "uniques": 3
     },
@@ -26,10 +21,15 @@
       "uniques": 2
     },
     {
+      "referrer": "Bing",
+      "count": 1,
+      "uniques": 1
+    },
+    {
       "referrer": "science.org",
       "count": 1,
       "uniques": 1
     }
   ],
-  "last_updated": "2026-10-02T08:26:22Z"
+  "last_updated": "2026-10-03T08:02:11Z"
 }
