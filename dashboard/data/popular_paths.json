@@ -3,30 +3,18 @@
     {
       "path": "/Kamikouchi-lab/YORU",
       "title": "Overview",
-      "count": 38,
-      "uniques": 26
+      "count": 40,
+      "uniques": 24
     },
     {
       "path": "/Kamikouchi-lab/YORU/releases/tag/v1.1.2",
       "title": "/releases/tag/v1.1.2",
-      "count": 5,
-      "uniques": 5
-    },
-    {
-      "path": "/Kamikouchi-lab/YORU/tree/main",
-      "title": "/tree/main",
-      "count": 3,
-      "uniques": 2
+      "count": 6,
+      "uniques": 6
     },
     {
       "path": "/Kamikouchi-lab/YORU/blob/main/README.md",
       "title": "/blob/main/README.md",
-      "count": 2,
-      "uniques": 1
-    },
-    {
-      "path": "/Kamikouchi-lab/YORU/tags",
-      "title": "/tags",
       "count": 2,
       "uniques": 1
     },
@@ -49,17 +37,29 @@
       "uniques": 1
     },
     {
-      "path": "/Kamikouchi-lab/YORU/branches",
-      "title": "/branches",
-      "count": 1,
-      "uniques": 1
-    },
-    {
       "path": "/Kamikouchi-lab/YORU/edit/main/.github/FUNDING.yml",
       "title": "/edit/main/.github/FUNDING.yml",
       "count": 1,
       "uniques": 1
+    },
+    {
+      "path": "/Kamikouchi-lab/YORU/issues",
+      "title": "/issues",
+      "count": 1,
+      "uniques": 1
+    },
+    {
+      "path": "/Kamikouchi-lab/YORU/tree/develop4",
+      "title": "/tree/develop4",
+      "count": 1,
+      "uniques": 1
+    },
+    {
+      "path": "/Kamikouchi-lab/YORU/tree/main",
+      "title": "/tree/main",
+      "count": 1,
+      "uniques": 1
     }
   ],
-  "last_updated": "2026-10-06T08:55:24Z"
+  "last_updated": "2026-10-07T08:35:50Z"
 }
