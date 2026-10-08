@@ -83,7 +83,8 @@
     <!-- Dynamically generate other pages in specified order -->
     {% assign page_pages = site.pages | where: "layout", "page" %}
     {% assign dash_pages = site.pages | where: "layout", "dashboard" %}
-    {% assign ordered_pages = page_pages | concat: dash_pages | sort: "order" %}
+    {% assign eco_pages = site.pages | where: "layout", "ecosystem" %}
+    {% assign ordered_pages = page_pages | concat: dash_pages | concat: eco_pages | sort: "order" %}
     {% for node in ordered_pages %}
       {% if node.title and node.title != "Home" %}
         <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url | absolute_url }}">{{ node.title }}</a>

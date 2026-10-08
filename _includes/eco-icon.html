@@ -1,0 +1,12 @@
+{%- comment -%} The icon of a kind of system on the YORU Ecosystem page. {%- endcomment -%}
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+{%- if include.planned -%}
+<path d="M12 5v14M5 12h14"/>
+{%- elsif include.kind == "core" -%}
+<path d="M12 3 2 8l10 5 10-5-10-5z"/><path d="m2 13 10 5 10-5"/>
+{%- elsif include.kind == "plugin" -%}
+<path d="M9 2v5M15 2v5M6 7h12v4a6 6 0 0 1-12 0V7zM12 17v5"/>
+{%- else -%}
+<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M6.5 6.5h.01M9.5 6.5h.01"/>
+{%- endif -%}
+</svg>
