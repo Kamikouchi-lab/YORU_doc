@@ -1,0 +1,2 @@
+{%- comment -%} A link from _data/ecosystem.yml: "/..." is a page of this site, anything else a full URL. {%- endcomment -%}
+{%- if include.url contains '://' -%}{{ include.url }}{%- else -%}{{ include.url | relative_url }}{%- endif -%}

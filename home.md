@@ -153,6 +153,8 @@ These steps install the stable release (v1.1.2). The [Install guide]({{ site.bas
 
 - [YORU Tracker](https://kamikouchi-lab.github.io/YORU-Tracker_doc/) — the tracking sister application: persistent IDs, trajectories and per-animal tracks on top of YORU's detectors (needs v2.0.0-beta.4 or later)
 
+- [YORU Ecosystem]({{ site.baseurl }}/ecosystem/) — how YORU, YORU Tracker and the trigger plugins fit together
+
 - [Step-by-Step Tutorial]({{ site.baseurl }}/tutorial/01-preparation-tutorial/)
 
 - [Testing Guide]({{ site.baseurl }}/devnotes/yoru-test/)

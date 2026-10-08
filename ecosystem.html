@@ -1,0 +1,321 @@
+---
+layout: ecosystem
+title: YORU Ecosystem
+order: 1
+permalink: /ecosystem/
+---
+{%- comment -%}
+  Every diagram and table on this page is drawn from _data/ecosystem.yml.
+  To add a system, edit that file, not this one.
+{%- endcomment -%}
+{%- assign eco = site.data.ecosystem -%}
+{%- assign apps = eco.systems | where_exp: "s", "s.kind != 'plugin'" -%}
+{%- assign released = eco.systems | where_exp: "s", "s.status != 'planned'" -%}
+{%- assign users = eco.systems | where_exp: "s", "s.uses" -%}
+{%- assign files = "" | split: "" -%}
+{%- for s in released -%}{%- for step in s.steps -%}
+  {%- if step.out -%}{%- assign files = files | concat: step.out -%}{%- endif -%}
+  {%- if step.in -%}{%- assign files = files | concat: step.in -%}{%- endif -%}
+{%- endfor -%}{%- endfor -%}
+{%- assign files = files | uniq -%}
+
+<div class="eco">
+
+<p class="eco-lede">
+  YORU is growing into a family of programs. <strong>YORU</strong> itself detects animal behaviours.
+  <strong>Sister applications</strong> such as YORU Tracker build on YORU's detectors for work of their own, and
+  <strong>trigger plugins</strong> act on what YORU detects while an experiment runs.
+  This page shows how the parts fit together. New parts are added to it as they appear.
+</p>
+
+<nav class="eco-toc" aria-label="On this page">
+  <a href="#map">Map</a>
+  <a href="#flow">From video to result</a>
+  <a href="#kinds">Three ways to be part of YORU</a>
+  <a href="#rules">Rules</a>
+  <a href="#where">Where a new feature goes</a>
+  <a href="#versions">Versions</a>
+</nav>
+
+<h2 id="map">Map</h2>
+<p class="eco-intro">
+  You launch each application on its own. Underneath, they share one Python package, <code>yoru</code>.
+  A sister application uses only the names in YORU's <em>external API</em>, and YORU never depends on a sister application,
+  so YORU starts, runs and passes its tests without any of them installed.
+</p>
+
+<div class="eco-map">
+  <div class="eco-tier-label">Applications</div>
+  <div class="eco-apps" style="--n: {{ apps.size }}">
+    {%- for s in apps %}
+    {%- assign kind = eco.kinds | where: "id", s.kind | first %}
+    <div class="eco-col eco-col--{{ s.kind }}{% if s.status == 'planned' %} eco-col--planned{% endif %}" style="--c: {{ s.color }}">
+      <article class="eco-card">
+        <div class="eco-card-logo">
+          {%- if s.logo -%}
+          <img src="{{ s.logo | relative_url }}" alt="{{ s.name }} logo">
+          {%- else -%}
+          {%- if s.status == 'planned' %}{% assign planned = true %}{% else %}{% assign planned = false %}{% endif -%}
+          <span class="eco-icon">{% include eco-icon.html kind=s.kind planned=planned %}</span>
+          {%- endif -%}
+        </div>
+        <h3 class="eco-card-name">{{ s.name }}</h3>
+        <div class="eco-pills">
+          <span class="eco-pill eco-pill--kind">{{ kind.short }}</span>
+          {%- if s.versions_from_site %}
+          {%- assign stable = site.version | remove: " " %}
+          <a class="eco-pill" href="{{ site.github.repo }}/releases/tag/{{ stable }}">Stable {{ stable }}</a>
+          <a class="eco-pill eco-pill--beta" href="{{ site.github.repo }}/releases/tag/{{ site.beta_version }}">Beta {{ site.beta_version }}</a>
+          {%- elsif s.status == 'planned' %}
+          <span class="eco-pill">Planned</span>
+          {%- elsif s.version %}
+          <a class="eco-pill{% if s.status == 'pre-release' or s.status == 'beta' %} eco-pill--beta{% endif %}" href="{{ s.release }}">{% if s.status == 'pre-release' %}Pre-release {% elsif s.status == 'beta' %}Beta {% endif %}{{ s.version }}</a>
+          {%- endif %}
+        </div>
+        <p class="eco-card-role">{{ s.role }}</p>
+        {%- if s.launch %}
+        <p class="eco-card-launch"><code>{{ s.launch }}</code></p>
+        {%- endif %}
+        {%- assign hosted = eco.systems | where: "host", s.id %}
+        {%- if hosted.size > 0 or s.bundled_plugins %}
+        {%- assign plugin_kind = eco.kinds | where: "id", "plugin" | first %}
+        <div class="eco-slot">
+          <div class="eco-slot-label">{{ plugin_kind.label }}s, loaded by Real-time Process</div>
+          <div class="eco-slot-items">
+            {%- if s.bundled_plugins %}
+            <span class="eco-plug eco-plug--bundled">{{ s.bundled_plugins }} <small>bundled</small></span>
+            {%- endif %}
+            {%- for p in hosted %}
+            <a class="eco-plug" href="{% include eco-href.html url=p.docs %}">{{ p.name }}</a>
+            {%- endfor %}
+            <a class="eco-plug eco-plug--yours" href="{% include eco-href.html url=plugin_kind.guide %}">+ your own</a>
+          </div>
+        </div>
+        {%- endif %}
+        {%- if s.status != 'planned' %}
+        <p class="eco-card-links">
+          {%- if s.docs %}<a href="{% include eco-href.html url=s.docs %}">Documentation</a>{% endif %}
+          {%- if s.repo %}<a href="{{ s.repo }}">GitHub</a>{% endif %}
+        </p>
+        {%- endif %}
+      </article>
+      <div class="eco-stub" aria-hidden="true"><span>{{ kind.stub }}</span></div>
+    </div>
+    {%- endfor %}
+  </div>
+
+  <div class="eco-bridge" aria-hidden="true"><span>every application is built on the yoru package</span></div>
+
+  <div class="eco-core">
+    <div class="eco-core-head">
+      <span class="eco-core-title">The <code>yoru</code> package &middot; external API</span>
+      <span class="eco-oneway"><b aria-hidden="true">&#x2715;</b> One way only: nothing in <code>yoru</code> imports a sister application.</span>
+    </div>
+    <ul class="eco-api">
+      {%- for a in eco.core_api %}
+      <li>
+        <strong>{{ a.name }}</strong>
+        <code>{{ a.module }}</code>
+        <span>{{ a.what }}</span>
+        <span class="eco-dots">
+          {%- for s in users -%}{%- if s.uses contains a.id -%}
+          <i style="--c: {{ s.color }}" title="Used by {{ s.name }}"></i>
+          {%- endif -%}{%- endfor -%}
+        </span>
+      </li>
+      {%- endfor %}
+    </ul>
+    {%- if users.size > 0 %}
+    <p class="eco-dots-legend">
+      {%- for s in users %}
+      <span><i style="--c: {{ s.color }}"></i> used by {{ s.name }}</span>
+      {%- endfor %}
+    </p>
+    {%- endif %}
+  </div>
+
+  {%- if files.size > 0 %}
+  <div class="eco-handoffs">
+    <span>Files they hand to each other</span>
+    {%- for f in files %}
+    <code>{{ f | escape }}</code>
+    {%- endfor %}
+    <span>Logs of all of them: <code>~/.yoru/logs/</code></span>
+  </div>
+  {%- endif %}
+</div>
+
+<h2 id="flow">From video to result</h2>
+<p class="eco-intro">
+  The columns are the steps of an experiment, and the rows are the systems. When one row writes a file and another
+  row reads it, the file is a hand-off between them. Point at a file name to see where it comes from and where it goes.
+</p>
+
+<div class="eco-lanes" style="--stages: {{ eco.stages.size }}">
+  <div class="eco-lanes-corner" aria-hidden="true"></div>
+  {%- for st in eco.stages %}
+  <div class="eco-stage"><span class="eco-stage-n">{{ forloop.index }}</span><strong>{{ st.name }}</strong><small>{{ st.hint }}</small></div>
+  {%- endfor %}
+  {%- for s in eco.systems %}
+  {%- assign kind = eco.kinds | where: "id", s.kind | first %}
+  <div class="eco-lane-name{% if s.status == 'planned' %} is-planned{% endif %}" style="--c: {{ s.color }}">{{ s.name }}<small>{{ kind.short }}</small></div>
+  {%- if s.status == 'planned' %}
+  <div class="eco-lane-planned" style="grid-column: span {{ eco.stages.size }}">{{ s.role }}</div>
+  {%- else %}
+  {%- for st in eco.stages %}
+  {%- assign steps = s.steps | where: "stage", st.id %}
+  <div class="eco-cell{% if steps.size == 0 %} is-empty{% endif %}" style="--c: {{ s.color }}" data-stage="{{ st.name }}">
+    {%- for p in steps %}
+    <div class="eco-step">
+      <span class="eco-step-name">{{ p.name }}</span>
+      {%- if p.note %}<span class="eco-step-note">{{ p.note }}</span>{% endif %}
+      {%- if p.in or p.out %}
+      <span class="eco-files">
+        {%- for f in p.in %}<span class="eco-file eco-file--in" data-file="{{ f | escape }}" tabindex="0"><span class="eco-dir">reads</span> {{ f | escape }}</span>{% endfor %}
+        {%- for f in p.out %}<span class="eco-file eco-file--out" data-file="{{ f | escape }}" tabindex="0"><span class="eco-dir">writes</span> {{ f | escape }}</span>{% endfor %}
+      </span>
+      {%- endif %}
+    </div>
+    {%- endfor %}
+  </div>
+  {%- endfor %}
+  {%- endif %}
+  {%- endfor %}
+</div>
+<p class="eco-note">
+  <code>best.pt</code> stands for any trained model YORU can load (<code>.pt</code>, <code>.pth</code> or <code>.onnx</code>).
+  <code>&lt;video&gt;.csv</code> is the result file of Video Analysis, and <code>*_detect.csv</code> is the file that Real-time Process records.
+</p>
+
+<h2 id="kinds">Three ways to be part of YORU</h2>
+<p class="eco-intro">
+  Each part of the family is one of three kinds. The kind decides where its code lives, how it runs, and how it talks to YORU.
+</p>
+
+<div class="eco-kinds">
+  {%- for k in eco.kinds %}
+  {%- assign members = released | where: "kind", k.id %}
+  <article class="eco-kind" style="--c: {{ k.color }}">
+    <span class="eco-icon">{% include eco-icon.html kind=k.id %}</span>
+    <h3>{{ k.label }}</h3>
+    <p>{{ k.summary }}</p>
+    <dl>
+      <dt>Code lives in</dt><dd>{{ k.lives_in }}</dd>
+      <dt>Runs</dt><dd>{{ k.runs_as }}</dd>
+      <dt>Talks to YORU through</dt><dd>{{ k.talks }}</dd>
+      <dt>What belongs here</dt><dd>{{ k.belongs }}</dd>
+      {%- if members.size > 0 %}
+      <dt>Today</dt>
+      <dd>
+        {%- for m in members %}
+        <a href="{% include eco-href.html url=m.docs %}">{{ m.name }}</a>{% unless forloop.last %}, {% endunless %}
+        {%- endfor %}
+      </dd>
+      {%- endif %}
+    </dl>
+    {%- if k.guide %}
+    <a class="eco-kind-guide" href="{% include eco-href.html url=k.guide %}">{{ k.guide_label }} &rarr;</a>
+    {%- endif %}
+  </article>
+  {%- endfor %}
+</div>
+
+<h2 id="rules">Rules that hold the family together</h2>
+
+<div class="eco-rules">
+  <div class="eco-rule">
+    <div class="eco-rule-art" aria-hidden="true">
+      <span class="eco-chip eco-chip--teal">Sister</span><span class="eco-arrow">&rarr;</span><span class="eco-chip">YORU</span>
+      <br>
+      <span class="eco-chip">YORU</span><span class="eco-arrow eco-arrow--no">&#x2715;</span><span class="eco-chip eco-chip--teal">Sister</span>
+    </div>
+    <h3>One-way dependency</h3>
+    <p>Sister applications depend on YORU. YORU never imports one, and its windows contain nothing that belongs to one.</p>
+  </div>
+  <div class="eco-rule">
+    <div class="eco-rule-art" aria-hidden="true">
+      <span class="eco-chip eco-chip--navy">detectors</span> <span class="eco-chip eco-chip--navy">OBB</span> <span class="eco-chip eco-chip--navy">camera</span> <span class="eco-chip eco-chip--navy">GUI</span>
+    </div>
+    <h3>Share building blocks, not screens</h3>
+    <p>A sister application builds its own windows from YORU's GUI primitives. It does not subclass or copy YORU's screens.</p>
+  </div>
+  <div class="eco-rule">
+    <div class="eco-rule-art" aria-hidden="true">
+      <span class="eco-chip eco-chip--yellow">external API</span> <span class="eco-arrow">=</span> <span class="eco-chip">promise</span>
+    </div>
+    <h3>The external API is a promise</h3>
+    <p>Changing one of its names breaks every sister application. Such a change needs a new major version of YORU, or a deprecation period. YORU's tests pin every name.</p>
+  </div>
+  <div class="eco-rule">
+    <div class="eco-rule-art" aria-hidden="true">
+      <code>~/.yoru/logs/</code><br><code>yoru.log</code> <code>yoru_tracker.log</code>
+    </div>
+    <h3>One place for logs</h3>
+    <p>Each program writes its own log file into YORU's log folder, so a problem report needs only one folder.</p>
+  </div>
+</div>
+
+<h2 id="where">Where does a new feature go?</h2>
+<p class="eco-intro">Ask these questions in order. The first <em>yes</em> decides.</p>
+
+<ol class="eco-decide">
+  <li>
+    <p class="eco-q">Is it about <strong>which animal is which</strong>: identities, trajectories, or state carried across many frames?</p>
+    <p class="eco-a" style="--c: #00897b"><span>yes</span> YORU Tracker</p>
+  </li>
+  <li>
+    <p class="eco-q">Does it <strong>act on a detection during an experiment</strong>, for example by switching hardware or showing a stimulus?</p>
+    <p class="eco-a" style="--c: #d28445"><span>yes</span> A trigger plugin</p>
+  </li>
+  <li>
+    <p class="eco-q">Does YORU need it to <strong>detect behaviours or run closed-loop experiments</strong>?</p>
+    <p class="eco-a" style="--c: #0e274c"><span>yes</span> YORU</p>
+  </li>
+  <li>
+    <p class="eco-q">Is it a <strong>general building block</strong> (a detector, an oriented-box, camera or GUI utility) that more than one application needs?</p>
+    <p class="eco-a" style="--c: #0e274c"><span>yes</span> YORU's external API</p>
+  </li>
+  <li>
+    <p class="eco-q">Is it <strong>optional, expensive or model-heavy</strong>, with a workflow of its own?</p>
+    <p class="eco-a" style="--c: #00897b"><span>yes</span> A sister application</p>
+  </li>
+</ol>
+<p class="eco-note">
+  A feature never goes into YORU only because a sister application could use it there. YORU keeps general, stable building blocks.
+  Tracking logic, identity logic and tracking screens stay in YORU Tracker.
+</p>
+
+<h2 id="versions">Versions that work together</h2>
+
+<div class="eco-table-wrap">
+<table class="eco-versions">
+  <thead>
+    <tr><th>System</th><th>Kind</th><th>Latest</th><th>Needs</th><th>Links</th></tr>
+  </thead>
+  <tbody>
+    {%- for s in released %}
+    {%- assign kind = eco.kinds | where: "id", s.kind | first %}
+    <tr style="--c: {{ s.color }}">
+      <td class="eco-versions-name">{{ s.name }}</td>
+      <td>{{ kind.short }}</td>
+      <td>
+        {%- if s.versions_from_site -%}
+        {%- assign stable = site.version | remove: " " -%}
+        <a href="{{ site.github.repo }}/releases/tag/{{ stable }}">{{ stable }}</a> (stable)<br>
+        <a href="{{ site.github.repo }}/releases/tag/{{ site.beta_version }}">{{ site.beta_version }}</a> (beta)
+        {%- elsif s.version -%}
+        <a href="{{ s.release }}">{{ s.version }}</a>{% if s.status == 'pre-release' %} (pre-release){% elsif s.status == 'beta' %} (beta){% endif %}
+        {%- else -%}&mdash;{%- endif -%}
+      </td>
+      <td>{% if s.requires %}{{ s.requires }}{% else %}&mdash;{% endif %}</td>
+      <td class="eco-versions-links">
+        {%- if s.docs %}<a href="{% include eco-href.html url=s.docs %}">Docs</a>{% endif %}
+        {%- if s.repo %}<a href="{{ s.repo }}">GitHub</a>{% endif %}
+      </td>
+    </tr>
+    {%- endfor %}
+  </tbody>
+</table>
+</div>
+
+</div>
