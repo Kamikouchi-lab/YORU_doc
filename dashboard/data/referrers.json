@@ -2,8 +2,8 @@
   "referrers": [
     {
       "referrer": "Google",
-      "count": 14,
-      "uniques": 9
+      "count": 12,
+      "uniques": 7
     },
     {
       "referrer": "github.com",
@@ -26,5 +26,5 @@
       "uniques": 1
     }
   ],
-  "last_updated": "2026-10-07T08:35:47Z"
+  "last_updated": "2026-10-08T08:53:40Z"
 }
