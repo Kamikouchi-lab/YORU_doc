@@ -4,7 +4,7 @@ title: "Beta: Evaluation"
 order: 4
 ---
 
-> Applies to **v2.0.0-beta.3**. For the stable v1.1.2 procedure, see the [User Guides]({{ site.baseurl }}/guides/04-evaluation/).
+> Applies to **v2.0.0-beta.4**. For the stable v1.1.2 procedure, see the [User Guides]({{ site.baseurl }}/guides/04-evaluation/).
 
 ---
 
@@ -16,6 +16,7 @@ order: 4
 
     > The model is in the **`exp_<model>/`** folder, not `train/` (changed in Beta 2).
     >
+    > - YOLOv5: `<project>/exp_yolov5s/weights/best.pt`
     > - YOLO / RT-DETR: `<project>/exp_yolo11s/weights/best.pt`
     > - YOLO OBB: `<project>/exp_yolo11s-obb/weights/best.pt`
     > - torchvision: `<project>/exp_fasterrcnn/fasterrcnn_best.pt`
@@ -50,18 +51,34 @@ order: 4
 
 5. Push the "Prediction" button.
 
+    > For an OBB model, Prediction writes all four corners of each box to `_yolo.txt` (Beta 4). Files written by earlier versions hold only the upright box, so **run Prediction again** on an old evaluation dataset.
+
 6. Push the "Calculate APs" button.
 
-    > YORU calculates APs and IOUs.
+    > YORU calculates APs and IOUs. See [How AP is calculated](#how-ap-is-calculated-changed-in-beta-4) below.
+
+    > Prediction and the AP calculation run in the background (Beta 4), so Quit can be pressed while they run.
 
 ---
 
-## Evaluating an OBB model
+## How AP is calculated (changed in Beta 4)
 
-The Evaluation sub-module reads OBB label files, but it computes IoU on the *upright* box around each rotated box. **The angle is not evaluated at all.**
+- Predictions are ranked by confidence across all evaluation images.
+- Each ground-truth box matches at most one prediction of the same class: the best one still free.
+- AP is the all-point interpolated precision envelope, averaged over IoU thresholds 0.50 to 0.95 in steps of 0.05.
+- IoU is the overlap of the two **polygons**, for ordinary and OBB labels alike, so the two can be evaluated together. An OBB model is scored by its rotated boxes: a 100×10 box at +45° and the same box at −45° now barely overlap, where Beta 3 gave them an IoU of 1.0.
+- A class with no ground-truth annotations reports AP `null` and is left out of the mAP. Overall precision and recall need a same-class match at IoU 0.50.
+- The results file gives the overall mAP@[.50:.05:.95] and names the IoU and AP methods it used.
 
-- The mAP it reports for an OBB model is therefore not reliable, and for elongated, tilted animals it is usually **too high**. For example, a 100×10 box at +45° and the same box at −45° share one upright box and score an IoU of 1.0, although as rotated boxes they barely overlap.
-- **Quote the rotated mAP that ultralytics prints at the end of training instead.**
+> **Figures from Beta 4 are not comparable with earlier ones.** Earlier versions sorted predictions by class ID instead of confidence, never ranked them across images, built the precision envelope on a reversed array, counted a prediction as a false positive when its best match was taken even if another free box overlapped, and compared OBB boxes by their upright envelopes. They can also differ from the validation score a training backend prints, because YORU evaluates the boxes its detector keeps after its own confidence and NMS settings.
+
+---
+
+## What changed in Beta 4
+
+- The AP calculation was corrected (see above).
+- `.jpeg` and upper-case extensions are found, blank label lines are skipped, and an unreadable image gives a clear error.
+- An empty IoU table no longer breaks the box plot.
 
 ---
 

@@ -4,7 +4,7 @@ title: Install
 order: 1
 ---
 
-> These guides cover the **stable release (v1.1.2)**. If you are installing **v2.0.0-beta.3**, follow the [Beta Guides]({{ site.baseurl }}/beta-guides/01-install/) instead. The beta does not use Google Chrome, and the procedure differs.
+> These guides cover the **stable release (v1.1.2)**. If you are installing **v2.0.0-beta.4**, follow the [Beta Guides]({{ site.baseurl }}/beta-guides/01-install/) instead. The beta does not use Google Chrome, and the procedure differs.
 
 YORU can be installed in two ways:
 

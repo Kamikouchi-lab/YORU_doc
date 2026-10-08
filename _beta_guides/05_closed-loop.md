@@ -4,11 +4,13 @@ title: "Beta: Real-time Process"
 order: 5
 ---
 
-> Applies to **v2.0.0-beta.3**. For the stable v1.1.2 procedure, see the [User Guides]({{ site.baseurl }}/guides/05-closed-loop/).
+> Applies to **v2.0.0-beta.4**. For the stable v1.1.2 procedure, see the [User Guides]({{ site.baseurl }}/guides/05-closed-loop/).
 
 > ⚠️ **Read this before your next closed-loop experiment.** Two settings that Beta 1 and v1.1.x silently ignore are honoured in the beta: `trigger_pin` and `trigger_threshold_configuration`. An unchanged condition file will not behave the way it did before.
 
 > **New in Beta 3:** each row of `*_detect.csv` (and of `m_dict["yolo_results"]`) has 13 columns instead of 8. See [Detection results](#detection-results-_detectcsv) below. Custom trigger plugins that unpack rows must be updated — see [Custom Trigger Plugins](../06-trigger-plugins/#detection-rows-have-13-entries-beta-3).
+
+> **New in Beta 4:** the trigger fires only on **fresh** results — never on boxes left over after detection is switched off, the model reloads or the camera stops, and never on a frame older than `trigger.result_max_age` seconds. See [Stopping, recording and capture](#stopping-recording-and-capture-changed-in-beta-4) below.
 
 ---
 
@@ -55,6 +57,7 @@ Beta 1 loaded this value but never read it, so the trigger fired on **any** dete
      stream_MSS: False   # When using the screen capture function, set to True.
 
    trigger:
+     result_max_age: 1.0   # New in Beta 4. Optional. Maximum age (seconds) of the frame a trigger may act on.
      trigger_threshold_configuration: 0.3   # Confidence threshold when detecting YORU. APPLIED since Beta 2 (ignored in Beta 1).
      trigger_class: copulation   # Which action class to trigger.
 
@@ -97,7 +100,7 @@ Beta 1 loaded this value but never read it, so the trigger fired on **any** dete
 
    i. Check the "YORU detection" box to start YORU's real-time analysis. Frames analyzed by YORU will be displayed on the right.
 
-   ii. Check the "Trigger condition" box to start the YORU trigger. A TTL signal is then output on the Arduino pin given by `trigger_pin` when the trigger class is detected **above `trigger_threshold_configuration`**.
+   ii. Check the "Trigger condition" box to start the YORU trigger. A TTL signal is then output on the Arduino pin given by `trigger_pin` when the trigger class is detected **above `trigger_threshold_configuration`** in a frame at most `result_max_age` seconds old.
 
    iii. Save videos by checking "Streaming data".
 
@@ -114,7 +117,7 @@ One row per detection per recorded frame. **Changed in Beta 3:** five columns we
 | `x1, y1, x2, y2` | The upright box, in pixels |
 | `confidence` | Detection score |
 | `class`, `class_name` | Class index and its name |
-| `total_time` | Seconds since the run started |
+| `total_time` | Seconds since the run started, at which the frame used for the detection was captured (Beta 4). A result can be written for later recorded frames until it expires |
 | `cx, cy, w, h` | New in Beta 3. The box's centre, and its own width and height |
 | `angle` | New in Beta 3. Rotation of the `w` axis, in **radians** |
 
@@ -123,15 +126,27 @@ One row per detection per recorded frame. **Changed in Beta 3:** five columns we
 
 ---
 
+## Stopping, recording and capture (changed in Beta 4)
+
+- **Fresh results only.** Turning detection off or reloading the model invalidates its previous results, and the trigger ignores a result whose frame is older than `trigger.result_max_age` seconds (default `1.0`). Set this optional value to the largest delay your experiment can accept, allowing for the model's inference time. The trigger, the recorded `_detect.csv` and the preview all use the same check, so old boxes disappear from the preview.
+- **The workers stop together.** Closing the window, choosing Quit, or losing the camera stops all of them. One that does not respond within 30 s is stopped by force and reported as an error, because its recording may be incomplete.
+- **The trigger output is reset at the end.** The plugin is called once with no detections, which the bundled plugins take as output OFF, and then its `close()` if it has one. See [Custom Trigger Plugins](../06-trigger-plugins/#shutting-down-beta-4).
+- **Recording does not drop frames.** Video and CSVs are written by a separate thread through a bounded queue. If the disk falls behind, acquisition waits instead of dropping frames, and write errors are reported. The AVI uses the configured constant FPS; `*_log.csv` records the actual acquisition time of each saved frame. The condition YAML is copied when recording starts.
+- **Camera.** It opens with DirectShow on Windows, AVFoundation on macOS or V4L2 on Linux, falling back to the automatic backend, with a one-frame driver buffer. The driver settings dialog is available only on Windows.
+- **Screen capture** runs at `hardware.camera_fps`, sleeping between frames. The screen region can be dragged in any direction; `Escape` cancels the selection, and a click that selects no area is ignored. It no longer resets `camera_width` / `camera_height` to 640×480.
+
+---
+
 ## Configuration keys new or changed since Beta 2
 
 | Key | Change |
 |---|---|
+| `trigger.result_max_age` | New in Beta 4, optional, default `1.0`. Maximum age in seconds of the frame a trigger may act on |
 | `trigger.trigger_pin` | Now honoured (Beta 1 always used pin 13) |
 | `trigger.trigger_threshold_configuration` | Now applied (Beta 1 ignored it) |
 | `trigger.Arduino_COM` | `"None"` is supported for running with no board connected. Use straight quotes |
-| `model.yolo_model_path` | Accepts `.onnx` as well as `.pt`. YOLOv5 `.pt` files no longer load |
-| `model.yolo_model_type` | `yolov5` is aliased to `ultralytics`; `onnx` selects the ONNX backend. `auto` also recognises OBB models (Beta 3) |
+| `model.yolo_model_path` | Accepts `.onnx` as well as `.pt`. YOLOv5 `.pt` files, including those from YORU v1, load again from Beta 4 (not in Beta 2 / 3) |
+| `model.yolo_model_type` | `yolov5` selects the bundled YOLOv5 backend (Beta 4; in Beta 2 / 3 it was an alias of `ultralytics`); `onnx` selects the ONNX backend. `auto` also recognises OBB models (Beta 3) and YOLOv5 checkpoints (Beta 4) |
 | `hardware.camera_settings_dialog` | New, optional, default `False`. The camera driver's property dialog is now opt-in |
 | `export` | Defaults to `./results/` in the shipped files |
 | `root:` | Removed from the shipped files (was unused) |

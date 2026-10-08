@@ -4,7 +4,7 @@ title: "Beta: Custom Trigger Plugins"
 order: 6
 ---
 
-> Applies to **v2.0.0-beta.3**. This page covers the API changes that affect user-written code. If you only use the bundled plugins, you can skip it — but see [Real-time Process](../05-closed-loop/) for the `trigger_pin` and threshold changes, which affect everyone.
+> Applies to **v2.0.0-beta.4**. This page covers the API changes that affect user-written code. If you only use the bundled plugins, you can skip it — but see [Real-time Process](../05-closed-loop/) for the `trigger_pin` and threshold changes, which affect everyone.
 
 Plugins for the YORU project are listed under [Trigger Plugins]({{ site.baseurl }}/plugins/projector-trigger/).
 
@@ -35,6 +35,33 @@ The first eight entries keep their names and positions, and none of the bundled 
 
 - For an OBB model, `cx, cy, w, h, angle` are the rotated box. For any other model they describe the same upright box as `x1..y2`, with `angle = 0`.
 - Rows passed to `yoru.libs.drawing.draw_detections` changed the same way.
+
+---
+
+## Fresh results only (Beta 4)
+
+`trigger()` now receives only **fresh** results. When detection is off, the model is reloading, capture has stopped, or the frame is older than `trigger.result_max_age` seconds (default `1.0`), `results` is an empty list, exactly as if nothing had been detected. A plugin that switches its output off when it sees no detection of the trigger class therefore switches it off in all of these cases too.
+
+---
+
+## Shutting down (Beta 4)
+
+When the real-time process ends, YORU:
+
+1. calls `trigger()` once more with **no detections** — an empty class list and empty `results` — which the bundled plugins take as output OFF, and then
+2. calls the plugin's `close()`, **if it has one**.
+
+`close()` is optional and takes no arguments. Use it to reset outputs and release what the plugin opened — a serial port, a window, a DAQ task. The bundled serial, display and NI-DAQ plugins implement it. An exception in either call is written to `yoru.log` and does not stop the shutdown.
+
+For example, the bundled `standard_serial` plugin:
+
+```python
+def close(self):
+    try:
+        self.ser.write(b"0")
+    finally:
+        self.ser.close()
+```
 
 ---
 
@@ -93,8 +120,10 @@ with:
 ```python
 from yoru.libs.plugins import get_detector
 
-det = get_detector("auto", model_path)   # or "ultralytics", "rtdetr", "torchvision", "onnx"
+det = get_detector("auto", model_path)   # or "yolov5", "ultralytics", "rtdetr", "torchvision", "onnx"
 ```
+
+`yoru.libs.plugins.list_detector_backends()` (new in Beta 4) returns the names `get_detector` accepts on this machine, `"auto"` first. For a YOLOv5 model, `get_detector(..., rgb_input=True)` gives it RGB frames instead of the BGR frames v1 used (or set `YORU_YOLOV5_RGB=1`).
 
 The detector exposes:
 
@@ -103,6 +132,10 @@ The detector exposes:
 - **New in Beta 3:** an OBB model adds the keys `cx, cy, w, h, angle` (radians) for the rotated box. `x1..y2` is still the upright box around it. Other models leave these keys out.
 
 `yoru.libs.file_operation_evaluation` was also removed; it was a duplicate of `yoru.libs.file_operation_create_label`.
+
+### The external API (Beta 4)
+
+`docs/external_api.md` in the repository lists the YORU names that code outside YORU may rely on — the supported surface, where a rename is a breaking change — and `tests/test_public_api.py` pins each one. It is written for sister applications such as [YORU Tracker](https://kamikouchi-lab.github.io/YORU-Tracker_doc/), and is the safest set of names to use from your own scripts as well. Anything not listed there may change between betas.
 
 ### Detection defaults
 
@@ -116,7 +149,7 @@ All backends use the same thresholds: **confidence 0.25, IoU 0.45** (changed in 
 |---|---|---|
 | Trained weights | `<project>/train/weights/best.pt` | `<project>/exp_<model>/weights/best.pt` |
 | Saved window layouts | `config/custom_layout_*.ini` | `logs/custom_layout_*.ini` (plus `logs/yoru_windows.ini` from Beta 3) |
-| YOLOv5 sources | `yoru/libs/yolov5/` | Removed |
+| YOLOv5 sources | `yoru/libs/yolov5/` | Removed in Beta 2 and 3; bundled again in `yoru/libs/yolov5/` from Beta 4 |
 
 The stale `config/custom_layout_*.ini` files can be deleted; saved window layouts reset once.
 
