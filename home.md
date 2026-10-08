@@ -34,13 +34,13 @@ title: Home
 | Channel | Version | Notes |
 |---------|---------|-------|
 | **Latest Release** | [v1.1.2](https://github.com/Kamikouchi-lab/YORU/releases/tag/v1.1.2) | Stable release recommended for general use |
-| **Latest Beta** | [v2.0.0-beta.3](https://github.com/Kamikouchi-lab/YORU/releases/tag/v2.0.0-beta.3) | Preview of the next major version — may contain bugs |
+| **Latest Beta** | [v2.0.0-beta.4](https://github.com/Kamikouchi-lab/YORU/releases/tag/v2.0.0-beta.4) | Preview of the next major version — may contain bugs |
 
 > To use the beta version, check out the corresponding tag:
 > ```
-> git checkout v2.0.0-beta.3
+> git checkout v2.0.0-beta.4
 > ```
-> The v2.0 betas launch without Google Chrome and no longer include YOLOv5. Beta 3 adds oriented bounding boxes (OBB) and faster labelling, and moves to Python 3.10, so a Beta 2 conda environment has to be recreated.
+> The v2.0 betas launch without Google Chrome. Beta 4 brings YOLOv5 back, so models trained with YORU v1 load again. It also moves PyTorch to the CUDA 12.8 build for RTX 50-series GPUs, which needs NVIDIA driver 570 or newer, and corrects the Evaluation sub-module's AP.
 > Read the [Beta Release Notes]({{ site.baseurl }}/beta/) before installing or upgrading.
 
 ### What's new in v1.1.2
@@ -149,7 +149,9 @@ These steps install the stable release (v1.1.2). The [Install guide]({{ site.bas
 # Learn about YORU
 - [User guides]({{ site.baseurl }}/guides/01-install/) — for the stable release (v1.1.2)
 
-- [Beta guides]({{ site.baseurl }}/beta-guides/00-overview/) — for v2.0.0-beta.3
+- [Beta guides]({{ site.baseurl }}/beta-guides/00-overview/) — for v2.0.0-beta.4
+
+- [YORU Tracker](https://kamikouchi-lab.github.io/YORU-Tracker_doc/) — the tracking sister application: persistent IDs, trajectories and per-animal tracks on top of YORU's detectors (needs v2.0.0-beta.4 or later)
 
 - [Step-by-Step Tutorial]({{ site.baseurl }}/tutorial/01-preparation-tutorial/)
 

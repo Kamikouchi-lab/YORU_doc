@@ -4,7 +4,7 @@ title: "Beta: Training"
 order: 2
 ---
 
-> Applies to **v2.0.0-beta.3**. For the stable v1.1.2 procedure, see the [User Guides]({{ site.baseurl }}/guides/02-training/).
+> Applies to **v2.0.0-beta.4**. For the stable v1.1.2 procedure, see the [User Guides]({{ site.baseurl }}/guides/02-training/).
 
 ---
 
@@ -72,7 +72,9 @@ order: 2
 
 8. Check the "YAML Path" and select training conditions — model, epochs, Image Size, Batch and **Device**.
 
-    > In an OBB project, the model family is fixed to YOLO and the weight gets an `-obb` suffix (for example `yolo11s-obb.pt`).
+    > **Changed in Beta 4:** a new project starts on **YOLOv5** (`yolov5s.pt`), as in YORU v1, instead of YOLO11. Choose another version here if you want one. See [YOLOv5](#yolov5).
+
+    > In an OBB project, the model family is fixed to YOLO, the version to YOLOv8 or YOLO11, and the weight gets an `-obb` suffix (for example `yolo11s-obb.pt`).
 
     > **Device** is `auto` (CUDA, then Apple MPS, then CPU), `cuda`, `mps` or `cpu`. See [Install](../01-install/#choosing-the-compute-device).
 
@@ -130,7 +132,7 @@ New in Beta 3. In an OBB project a box can be turned to lie along the animal:
 - Dragging a corner still resizes the box, and it stays square to its own axes rather than to the image, so a tilted box is adjusted exactly like an upright one.
 - The status bar shows the box's own width, height and angle, not those of the upright box around it.
 - OBB labels are saved as `class x1 y1 x2 y2 x3 y3 x4 y4` (four corners, normalised) — the format ultralytics reads for `task="obb"`. The file extension is `.txt`, the same as ordinary YOLO labels; LabelImg tells the two apart by counting the numbers on a line.
-- Only **YOLOv8 and YOLO11** have a rotated-box head. RT-DETR, Faster R-CNN, Mask R-CNN and SSD cannot be trained on oriented boxes.
+- Only **YOLOv8 and YOLO11** have a rotated-box head. YOLOv5, RT-DETR, Faster R-CNN, Mask R-CNN and SSD cannot be trained on oriented boxes. Ticking OBB moves a YOLOv5 selection to YOLO11.
 
 ### What an OBB project changes, end to end
 
@@ -138,7 +140,7 @@ New in Beta 3. In an OBB project a box can be turned to lie along the animal:
 |---|---|---|
 | `config.yaml` | `task: detect` | `task: obb` |
 | LabelImg format | YOLO (`class cx cy w h`) | YOLO-OBB (`class x1 y1 … y4`) |
-| Weight | `yolo11s.pt` | `yolo11s-obb.pt` |
+| Weight | `yolov5s.pt` (default) or e.g. `yolo11s.pt` | `yolo11s-obb.pt` |
 | Model families | all of them | YOLOv8 / YOLO11 only |
 | Real-time / analysis drawing | upright rectangle | rotated rectangle |
 | `*_detect.csv` | `… total_time, cx, cy, w, h, angle` (`angle = 0`) | `… total_time, cx, cy, w, h, angle` |
@@ -147,7 +149,7 @@ Detection needs no special setting: leave `yolo_model_type: "auto"` and YORU rec
 
 > **Keep ordinary (5-field) label files out of OBB projects.** In an OBB session, opening an axis-aligned label file switches LabelImg to plain YOLO, and boxes saved after that lose their angle. Check the format button in LabelImg's toolbar if in doubt.
 
-> **Evaluate OBB models with the rotated mAP that ultralytics prints at the end of training.** The Evaluation sub-module ignores the angle. See [Evaluation](../04-evaluation/#evaluating-an-obb-model).
+> **Changed in Beta 4:** the Evaluation sub-module scores OBB models by the rotated boxes themselves. See [Evaluation](../04-evaluation/#how-ap-is-calculated-changed-in-beta-4).
 
 ---
 
@@ -157,24 +159,28 @@ The beta selects a backend through a plugin registry (`yoru/libs/plugins/`):
 
 | Backend | Models |
 |---|---|
-| `ultralytics` | YOLOv8 / YOLO11 (including `-obb` weights) |
+| `yolov5` | YOLOv5, run by the bundled YOLOv5 code as in v1 (new in Beta 4) |
+| `ultralytics` | YOLOv8 / YOLO11 (including `-obb` weights), and ultralytics' YOLOv5u |
 | `rtdetr` | RT-DETR |
 | `torchvision` | Faster R-CNN / Mask R-CNN / SSD |
 | `onnx` | `.onnx` exports (inference only) |
 | `auto` | Picks one from the weights file |
 
-- `auto` does not unpickle the checkpoint to identify it — it reads the file name and, if needed, the class-name table out of the archive.
+- `auto` does not unpickle the checkpoint to identify it. It reads the module names a YOLOv5 checkpoint was saved with, then the file name and, if needed, the class-name table out of the archive. A v1 weight named `best.pt` therefore reaches the YOLOv5 backend without being renamed.
 - If a backend's dependency is missing, the error names the backends that *are* available and why the others failed.
 - The ONNX backend is **inference only**; use it for analysis and real-time processing, not for training.
 
-### Existing YOLOv5 projects
+### YOLOv5
 
-The bundled YOLOv5 code was removed in Beta 2. **YOLOv5 cannot be trained in the beta, and old YOLOv5 `.pt` weights do not load.**
+New in Beta 4 (Betas 2 and 3 could not use YOLOv5). YORU bundles upstream YOLOv5 — the anchor-based model from [ultralytics/yolov5](https://github.com/ultralytics/yolov5) that YORU v1 trained with — in `yoru/libs/yolov5/`. It is a first-class backend and the default for a new project: training, real-time detection, analysis and evaluation all work with it, and nothing has to be exported.
 
-- **To keep using an existing YOLOv5 model for detection:** export it to ONNX with the upstream YOLOv5 repository, then point `yolo_model_path` at the `.onnx` file. The ONNX backend understands the YOLOv5 output layout and is selected automatically from the file extension.
-- **Otherwise:** retrain with YOLOv8 or YOLO11. Opening a v1.x / Beta 1 project does not error — the GUI swaps `yolov5s.pt` for `yolo11s.pt` (same size letter) and prints a notice — but **the run starts from scratch and the results are not comparable to the YOLOv5 baseline.**
-- Condition files that still say `yolo_model_type: yolov5` keep loading; the name is aliased to `ultralytics`. It is the old weight *file* that cannot be read.
-- If you need YOLOv5, use the stable [v1.1.2]({{ site.baseurl }}/guides/02-training/).
+- **Opening a v1 project.** Open the project folder in the Training GUI as usual. The GUI restores its YOLOv5 selection instead of substituting a different model.
+- **Using a v1 model for detection.** Set `yolo_model_type: "yolov5"` in the condition file, or leave it on `auto`. The boxes are the same as in v1: on three v1 models every box matched exactly, and with the same confidence threshold video analysis agrees with v1, tracking IDs included.
+- **YOLOv5 and YOLOv5u are different models.** The *YOLOv5* entry in the Version selector always means upstream YOLOv5 (`yolov5s.pt` and friends). Ultralytics' **YOLOv5u** (`yolov5su.pt`) puts the same backbone under YOLOv8's anchor-free head; it has different weights and a different output format, and it runs on the `ultralytics` backend. YORU tells them apart by the `u` in the file name.
+- **Colour order.** YORU v1 gave its YOLOv5 models the BGR frames OpenCV reads, although YOLOv5 trains on RGB, and the beta does the same by default so that v1 models reproduce their results. To give YOLOv5 models RGB frames instead, set `YORU_YOLOV5_RGB=1` before launching (`set YORU_YOLOV5_RGB=1` on Windows). The order in use is printed and written to `yoru.log` each time a model loads.
+- **What YOLOv5 cannot do.** It predicts upright boxes only, so it cannot be used in an [OBB project](#oriented-bounding-boxes-obb).
+
+> **A `.pt` file runs code when it is opened.** Loading a YOLOv5 checkpoint means unpickling it, which executes whatever the file says to. Train your own weights, or get them from someone you trust.
 
 ---
 
@@ -189,7 +195,7 @@ Step 6 shows a live line such as:
 - It comes with a breakdown, is colour-coded green / orange / red, and is recalculated as the model, Image Size and Batch change.
 - It counts **free** VRAM, so another training run or a live detection session on the same card is taken into account.
 - Pressing **Train Model** while the line is red offers **"Use Batch *n*"** (the largest batch expected to fit), **"Train anyway"** or **"Cancel"**.
-- The estimate is accurate to roughly **±30%**, so treat it as guidance rather than a guarantee.
+- The estimate is accurate to roughly **±30%**, so treat it as guidance rather than a guarantee. From Beta 4 it covers YOLOv5 n/s/m/l/x too; it gives no estimate for ultralytics' YOLOv5u.
 
 > **Known issue:** the warning still appears when *Device* is set to `cpu`. Choose **Train anyway**.
 
@@ -202,6 +208,8 @@ Step 6 shows a live line such as:
 - A run started from a terminal can be stopped the same way by creating an empty `.yoru_stop_request` file in the project directory.
 - Step 6 reports how the run ended — **Complete!!**, or **Stopped at epoch N / M** with a message giving the weights location.
 - **Train Model** is disabled during a run, so a second training subprocess cannot be started by accident.
+- **Closing the Training window stops the training** (changed in Beta 4). It asks the run to stop at the end of the epoch, waits 3 s, and then ends the training process along with its data-loader workers. Checkpoints already saved remain, but the unfinished epoch may be lost. To keep it, use **Stop after this epoch** and wait for the run to finish.
+- With YOLOv5, *Stop after this epoch* works the same way, and the epoch count starts from 1 as for the other models.
 
 ---
 
@@ -211,6 +219,7 @@ Results go to `exp_<model>/` (changed in Beta 2):
 
 | Backend | Weights |
 |---|---|
+| YOLOv5 | `<project>/exp_yolov5s/weights/best.pt` |
 | YOLO / RT-DETR | `<project>/exp_yolo11s/weights/best.pt` |
 | YOLO OBB | `<project>/exp_yolo11s-obb/weights/best.pt` |
 | torchvision | `<project>/exp_fasterrcnn/fasterrcnn_best.pt` |
@@ -222,7 +231,7 @@ Results go to `exp_<model>/` (changed in Beta 2):
 
 ## Other behaviour of the Training GUI
 
-- The training console shows **one line per epoch** instead of ~161 (ultralytics' progress-bar redraws used to arrive as separate lines).
+- The training console shows **one line per epoch** instead of ~161 (ultralytics' progress-bar redraws used to arrive as separate lines). From Beta 4, YOLOv5's progress bars are also shown one row each.
 - Training subprocesses use the Python interpreter YORU is running under, so training works when YORU is started from another directory, or when `python` is not the environment's interpreter.
 
 ---

@@ -15,7 +15,7 @@ order: 2
 
 **Q. Do I need to install the CUDA toolkit?**
 
-**A.** No. Only the NVIDIA driver is needed (527.41 or newer on Windows, 525.60.13 or newer on Linux). The PyTorch wheels carry their own CUDA runtime. Check the driver with `nvidia-smi`.
+**A.** No. Only the NVIDIA driver is needed (527.41 or newer on Windows, 525.60.13 or newer on Linux). The PyTorch wheels carry their own CUDA runtime. Check the driver with `nvidia-smi`. The CUDA 12.8 build that v2.0.0-beta.4 uses needs driver 570 or newer.
 
 **Q. A YORU screen closes immediately after it opens, and nothing is written to `yoru.log`.**
 
@@ -33,11 +33,15 @@ order: 2
 
 **A.** No. Beta 3 moved from Python 3.9 to 3.10, and updating an environment in place is not reliable across a Python version change. Recreate the environment, as described in the [Beta Install guide]({{ site.baseurl }}/beta-guides/01-install/#upgrading-from-beta-2). uv users only need to run `uv sync`.
 
+**Q. Can I keep using my Beta 3 conda environment for v2.0.0-beta.4?**
+
+**A.** Yes. Python stays at 3.10 and `YORU.yml` has not changed. Install the CUDA 12.8 build of PyTorch in it, as described in the [Beta Install guide]({{ site.baseurl }}/beta-guides/01-install/#upgrading-from-beta-3). uv users only need to run `uv sync`.
+
 ## GPU and compute device
 
 **Q. CUDA calls fail with `no kernel image is available` on an RTX 50-series (Blackwell) GPU.**
 
-**A.** The uv lockfile pins torch 2.6.0+cu124, which has no kernels for these cards. Either set `YORU_DEVICE=cpu`, or use the conda route and install a CUDA 12.8 build of PyTorch. [working-example.md](https://github.com/Kamikouchi-lab/YORU/blob/main/working-example.md) records a working RTX 5070 Ti setup on torch 2.8.0+cu128.
+**A.** The PyTorch build has no kernels for these cards. **v2.0.0-beta.4** uses the CUDA 12.8 build on both routes, which supports them: with uv, check out the tag and run `uv sync`; with conda, install it as in the [Beta Install guide]({{ site.baseurl }}/beta-guides/01-install/#fresh-install-with-conda). It needs driver 570 or newer. With v1.1.2 or an earlier beta on uv, whose lockfile pins a CUDA 12.4 build, set `YORU_DEVICE=cpu`, or use the conda route and install a CUDA 12.8 build of PyTorch.
 
 **Q. How do I choose between GPU and CPU?**
 
@@ -57,7 +61,7 @@ order: 2
 
 **A.** Both versions share the settings file `~/.labelImgSettings.pkl`. After the beta's bundled LabelImg has saved its settings there, the LabelImg used by v1.1.x can fail to start. Delete or rename `~/.labelImgSettings.pkl` (`%USERPROFILE%\.labelImgSettings.pkl` on Windows). It only stores LabelImg's preferences, not your labels.
 
-**Q. OBB training stops with `OBB dataset incorrectly formatted`.** (v2.0.0-beta.3)
+**Q. OBB training stops with `OBB dataset incorrectly formatted`.** (v2.0.0-beta.3 and later)
 
 **A.** The dataset mixes ordinary (5-field) and OBB (9-field) label files. In an OBB session, opening an ordinary label file switches LabelImg to plain YOLO, and boxes saved after that lose their angle. Relabel those files as rotated boxes, or remove them from the dataset. See [Beta: Training]({{ site.baseurl }}/beta-guides/02-training/#oriented-bounding-boxes-obb).
 
@@ -74,7 +78,7 @@ The cause is the dependency versions, not the choice of pip, conda, or uv.
 
 **Q. My YOLOv5 model does not load in the v2.0 beta.**
 
-**A.** The beta cannot load YOLOv5 `.pt` weights. Export the model to ONNX with the upstream YOLOv5 repository and point `yolo_model_path` at the `.onnx` file, retrain with YOLOv8 / YOLO11, or keep using the stable v1.1.2. See [Beta: Training]({{ site.baseurl }}/beta-guides/02-training/#existing-yolov5-projects).
+**A.** Use **v2.0.0-beta.4** or later. Betas 2 and 3 could not load YOLOv5 `.pt` weights; Beta 4 bundles YOLOv5 again, loads models trained with YORU v1, and gives the same boxes as v1. Leave `yolo_model_type` on `auto`, or set it to `yolov5`. See [Beta: Training]({{ site.baseurl }}/beta-guides/02-training/#yolov5).
 
 ## Real-time process
 
