@@ -2,17 +2,17 @@
   "referrers": [
     {
       "referrer": "Google",
-      "count": 12,
+      "count": 15,
       "uniques": 7
     },
     {
       "referrer": "github.com",
-      "count": 8,
-      "uniques": 4
+      "count": 11,
+      "uniques": 3
     },
     {
       "referrer": "kamikouchi-lab.github.io",
-      "count": 3,
+      "count": 4,
       "uniques": 2
     },
     {
@@ -26,5 +26,5 @@
       "uniques": 1
     }
   ],
-  "last_updated": "2026-10-08T08:53:40Z"
+  "last_updated": "2026-10-09T08:57:23Z"
 }
