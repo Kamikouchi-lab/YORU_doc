@@ -3,7 +3,7 @@
     {
       "path": "/Kamikouchi-lab/YORU",
       "title": "Overview",
-      "count": 48,
+      "count": 42,
       "uniques": 21
     },
     {
@@ -25,24 +25,6 @@
       "uniques": 1
     },
     {
-      "path": "/Kamikouchi-lab/YORU/actions",
-      "title": "/actions",
-      "count": 1,
-      "uniques": 1
-    },
-    {
-      "path": "/Kamikouchi-lab/YORU/actions/runs/36421384483",
-      "title": "/actions/runs/36421384483",
-      "count": 1,
-      "uniques": 1
-    },
-    {
-      "path": "/Kamikouchi-lab/YORU/blob/main/.github/FUNDING.yml",
-      "title": "/blob/main/.github/FUNDING.yml",
-      "count": 1,
-      "uniques": 1
-    },
-    {
       "path": "/Kamikouchi-lab/YORU/blob/main/docs/imgs/title_movie.gif",
       "title": "/blob/main/docs/imgs/title_movie.gif",
       "count": 1,
@@ -59,7 +41,25 @@
       "title": "/blob/main/yoru/libs/yolov5/utils/loss.py",
       "count": 1,
       "uniques": 1
+    },
+    {
+      "path": "/Kamikouchi-lab/YORU/releases/tag/v2.0.0-beta.2",
+      "title": "/releases/tag/v2.0.0-beta.2",
+      "count": 1,
+      "uniques": 1
+    },
+    {
+      "path": "/Kamikouchi-lab/YORU/releases/tag/v2.0.0-beta.4",
+      "title": "/releases/tag/v2.0.0-beta.4",
+      "count": 1,
+      "uniques": 1
+    },
+    {
+      "path": "/Kamikouchi-lab/YORU/tree/develop4",
+      "title": "/tree/develop4",
+      "count": 1,
+      "uniques": 1
     }
   ],
-  "last_updated": "2026-10-12T09:06:58Z"
+  "last_updated": "2026-10-13T09:21:04Z"
 }
