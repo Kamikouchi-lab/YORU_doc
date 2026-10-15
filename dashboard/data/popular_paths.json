@@ -3,8 +3,8 @@
     {
       "path": "/Kamikouchi-lab/YORU",
       "title": "Overview",
-      "count": 42,
-      "uniques": 21
+      "count": 38,
+      "uniques": 17
     },
     {
       "path": "/Kamikouchi-lab/YORU/releases",
@@ -15,8 +15,8 @@
     {
       "path": "/Kamikouchi-lab/YORU/releases/tag/v1.1.2",
       "title": "/releases/tag/v1.1.2",
-      "count": 3,
-      "uniques": 3
+      "count": 2,
+      "uniques": 2
     },
     {
       "path": "/Kamikouchi-lab/YORU/blob/main/yoru/libs/yolov5/utils/downloads.py",
@@ -61,5 +61,5 @@
       "uniques": 1
     }
   ],
-  "last_updated": "2026-10-14T07:31:35Z"
+  "last_updated": "2026-10-15T07:22:11Z"
 }
