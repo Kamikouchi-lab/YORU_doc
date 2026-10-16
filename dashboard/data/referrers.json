@@ -11,9 +11,14 @@
       "uniques": 2
     },
     {
-      "referrer": "kamikouchi-lab.github.io",
+      "referrer": "bio.nagoya-u.ac.jp",
       "count": 3,
       "uniques": 2
+    },
+    {
+      "referrer": "kamikouchi-lab.github.io",
+      "count": 2,
+      "uniques": 1
     },
     {
       "referrer": "Bing",
@@ -26,5 +31,5 @@
       "uniques": 1
     }
   ],
-  "last_updated": "2026-10-15T07:22:11Z"
+  "last_updated": "2026-10-16T07:05:34Z"
 }
