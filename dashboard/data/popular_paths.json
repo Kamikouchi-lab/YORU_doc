@@ -3,25 +3,37 @@
     {
       "path": "/Kamikouchi-lab/YORU",
       "title": "Overview",
-      "count": 40,
+      "count": 50,
       "uniques": 19
-    },
-    {
-      "path": "/Kamikouchi-lab/YORU/releases",
-      "title": "/releases",
-      "count": 4,
-      "uniques": 1
     },
     {
       "path": "/Kamikouchi-lab/YORU/releases/tag/v1.1.2",
       "title": "/releases/tag/v1.1.2",
-      "count": 2,
+      "count": 5,
+      "uniques": 5
+    },
+    {
+      "path": "/Kamikouchi-lab/YORU/releases",
+      "title": "/releases",
+      "count": 5,
+      "uniques": 2
+    },
+    {
+      "path": "/Kamikouchi-lab/YORU/tree/main/yoru",
+      "title": "/tree/main/yoru",
+      "count": 3,
       "uniques": 2
     },
     {
       "path": "/Kamikouchi-lab/YORU/blob/main/yoru/libs/yolov5/utils/downloads.py",
       "title": "/blob/main/yoru/libs/yolov5/utils/downloads.py",
       "count": 2,
+      "uniques": 1
+    },
+    {
+      "path": "/Kamikouchi-lab/YORU/blob/main/YORU.yml",
+      "title": "/blob/main/YORU.yml",
+      "count": 1,
       "uniques": 1
     },
     {
@@ -43,23 +55,11 @@
       "uniques": 1
     },
     {
-      "path": "/Kamikouchi-lab/YORU/releases/tag/v2.0.0-beta.2",
-      "title": "/releases/tag/v2.0.0-beta.2",
-      "count": 1,
-      "uniques": 1
-    },
-    {
-      "path": "/Kamikouchi-lab/YORU/releases/tag/v2.0.0-beta.4",
-      "title": "/releases/tag/v2.0.0-beta.4",
-      "count": 1,
-      "uniques": 1
-    },
-    {
-      "path": "/Kamikouchi-lab/YORU/tree/develop4",
-      "title": "/tree/develop4",
+      "path": "/Kamikouchi-lab/YORU/blob/v2.0.0-beta.4/docs/external_api.md",
+      "title": "/blob/v2.0.0-beta.4/docs/external_api.md",
       "count": 1,
       "uniques": 1
     }
   ],
-  "last_updated": "2026-10-16T07:05:34Z"
+  "last_updated": "2026-10-17T06:52:35Z"
 }
