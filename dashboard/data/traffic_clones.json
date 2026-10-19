@@ -1,6 +1,6 @@
 {
-  "count": 96,
-  "uniques": 41,
+  "count": 95,
+  "uniques": 40,
   "history": [
     {
       "date": "2026-03-31",
@@ -1006,7 +1006,12 @@
       "date": "2026-10-17",
       "count": 8,
       "uniques": 5
+    },
+    {
+      "date": "2026-10-18",
+      "count": 0,
+      "uniques": 0
     }
   ],
-  "last_updated": "2026-10-18T07:11:28Z"
+  "last_updated": "2026-10-19T07:42:13Z"
 }
