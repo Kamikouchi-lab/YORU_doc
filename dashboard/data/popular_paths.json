@@ -3,14 +3,20 @@
     {
       "path": "/Kamikouchi-lab/YORU",
       "title": "Overview",
-      "count": 50,
-      "uniques": 18
+      "count": 45,
+      "uniques": 15
     },
     {
-      "path": "/Kamikouchi-lab/YORU/releases/tag/v1.1.2",
-      "title": "/releases/tag/v1.1.2",
-      "count": 5,
-      "uniques": 5
+      "path": "/Kamikouchi-lab/YORU/tree/main",
+      "title": "/tree/main",
+      "count": 7,
+      "uniques": 1
+    },
+    {
+      "path": "/Kamikouchi-lab/YORU/tree/main/yoru",
+      "title": "/tree/main/yoru",
+      "count": 6,
+      "uniques": 2
     },
     {
       "path": "/Kamikouchi-lab/YORU/releases",
@@ -19,14 +25,26 @@
       "uniques": 2
     },
     {
-      "path": "/Kamikouchi-lab/YORU/tree/main/yoru",
-      "title": "/tree/main/yoru",
+      "path": "/Kamikouchi-lab/YORU/releases/tag/v1.1.2",
+      "title": "/releases/tag/v1.1.2",
+      "count": 4,
+      "uniques": 4
+    },
+    {
+      "path": "/Kamikouchi-lab/YORU/tree/main/yoru/labelimg",
+      "title": "/tree/main/yoru/labelimg",
       "count": 3,
-      "uniques": 2
+      "uniques": 1
     },
     {
       "path": "/Kamikouchi-lab/YORU/blob/main/yoru/libs/yolov5/utils/downloads.py",
       "title": "/blob/main/yoru/libs/yolov5/utils/downloads.py",
+      "count": 2,
+      "uniques": 1
+    },
+    {
+      "path": "/Kamikouchi-lab/YORU/tree/main/config",
+      "title": "/tree/main/config",
       "count": 2,
       "uniques": 1
     },
@@ -41,25 +59,7 @@
       "title": "/blob/main/docs/imgs/title_movie.gif",
       "count": 1,
       "uniques": 1
-    },
-    {
-      "path": "/Kamikouchi-lab/YORU/blob/main/yoru/libs/yolov5/utils/callbacks.py",
-      "title": "/blob/main/yoru/libs/yolov5/utils/callbacks.py",
-      "count": 1,
-      "uniques": 1
-    },
-    {
-      "path": "/Kamikouchi-lab/YORU/blob/main/yoru/libs/yolov5/utils/loss.py",
-      "title": "/blob/main/yoru/libs/yolov5/utils/loss.py",
-      "count": 1,
-      "uniques": 1
-    },
-    {
-      "path": "/Kamikouchi-lab/YORU/blob/v2.0.0-beta.4/docs/external_api.md",
-      "title": "/blob/v2.0.0-beta.4/docs/external_api.md",
-      "count": 1,
-      "uniques": 1
     }
   ],
-  "last_updated": "2026-10-21T07:32:18Z"
+  "last_updated": "2026-10-22T07:30:04Z"
 }
