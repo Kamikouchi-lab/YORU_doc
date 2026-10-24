@@ -3,8 +3,8 @@
     {
       "path": "/Kamikouchi-lab/YORU",
       "title": "Overview",
-      "count": 47,
-      "uniques": 16
+      "count": 41,
+      "uniques": 17
     },
     {
       "path": "/Kamikouchi-lab/YORU/tree/main",
@@ -16,12 +16,6 @@
       "path": "/Kamikouchi-lab/YORU/tree/main/yoru",
       "title": "/tree/main/yoru",
       "count": 6,
-      "uniques": 2
-    },
-    {
-      "path": "/Kamikouchi-lab/YORU/releases",
-      "title": "/releases",
-      "count": 5,
       "uniques": 2
     },
     {
@@ -59,7 +53,13 @@
       "title": "/blob/main/docs/imgs/title_movie.gif",
       "count": 1,
       "uniques": 1
+    },
+    {
+      "path": "/Kamikouchi-lab/YORU/blob/main/working-example.md",
+      "title": "/blob/main/working-example.md",
+      "count": 1,
+      "uniques": 1
     }
   ],
-  "last_updated": "2026-10-23T07:25:03Z"
+  "last_updated": "2026-10-24T07:14:34Z"
 }
