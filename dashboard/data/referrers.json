@@ -3,7 +3,7 @@
     {
       "referrer": "Google",
       "count": 11,
-      "uniques": 6
+      "uniques": 7
     },
     {
       "referrer": "Bing",
@@ -36,5 +36,5 @@
       "uniques": 1
     }
   ],
-  "last_updated": "2026-10-24T07:14:34Z"
+  "last_updated": "2026-10-25T07:32:35Z"
 }

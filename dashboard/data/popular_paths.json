@@ -3,7 +3,7 @@
     {
       "path": "/Kamikouchi-lab/YORU",
       "title": "Overview",
-      "count": 41,
+      "count": 40,
       "uniques": 17
     },
     {
@@ -31,21 +31,15 @@
       "uniques": 1
     },
     {
-      "path": "/Kamikouchi-lab/YORU/blob/main/yoru/libs/yolov5/utils/downloads.py",
-      "title": "/blob/main/yoru/libs/yolov5/utils/downloads.py",
+      "path": "/Kamikouchi-lab/YORU/blob/main/YORU.yml",
+      "title": "/blob/main/YORU.yml",
       "count": 2,
-      "uniques": 1
+      "uniques": 2
     },
     {
       "path": "/Kamikouchi-lab/YORU/tree/main/config",
       "title": "/tree/main/config",
       "count": 2,
-      "uniques": 1
-    },
-    {
-      "path": "/Kamikouchi-lab/YORU/blob/main/YORU.yml",
-      "title": "/blob/main/YORU.yml",
-      "count": 1,
       "uniques": 1
     },
     {
@@ -59,7 +53,13 @@
       "title": "/blob/main/working-example.md",
       "count": 1,
       "uniques": 1
+    },
+    {
+      "path": "/Kamikouchi-lab/YORU/blob/v2.0.0-beta.4/docs/external_api.md",
+      "title": "/blob/v2.0.0-beta.4/docs/external_api.md",
+      "count": 1,
+      "uniques": 1
     }
   ],
-  "last_updated": "2026-10-24T07:14:34Z"
+  "last_updated": "2026-10-25T07:32:35Z"
 }
