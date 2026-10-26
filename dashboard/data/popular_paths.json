@@ -3,7 +3,7 @@
     {
       "path": "/Kamikouchi-lab/YORU",
       "title": "Overview",
-      "count": 40,
+      "count": 39,
       "uniques": 17
     },
     {
@@ -43,12 +43,6 @@
       "uniques": 1
     },
     {
-      "path": "/Kamikouchi-lab/YORU/blob/main/docs/imgs/title_movie.gif",
-      "title": "/blob/main/docs/imgs/title_movie.gif",
-      "count": 1,
-      "uniques": 1
-    },
-    {
       "path": "/Kamikouchi-lab/YORU/blob/main/working-example.md",
       "title": "/blob/main/working-example.md",
       "count": 1,
@@ -59,7 +53,13 @@
       "title": "/blob/v2.0.0-beta.4/docs/external_api.md",
       "count": 1,
       "uniques": 1
+    },
+    {
+      "path": "/Kamikouchi-lab/YORU/releases",
+      "title": "/releases",
+      "count": 1,
+      "uniques": 1
     }
   ],
-  "last_updated": "2026-10-25T07:32:35Z"
+  "last_updated": "2026-10-26T07:44:25Z"
 }
