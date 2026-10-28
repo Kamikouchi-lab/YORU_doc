@@ -4,9 +4,356 @@ title: Beta Release Notes
 order: 10
 ---
 
-## YORU v2.0.0-beta.2
+## YORU v2.0.0-beta.4
 
 > **Pre-release software.** This version targets the `develop4` branch and may contain bugs. For general lab use, **v1.1.2 remains the recommended stable release**. Feedback and bug reports via [GitHub Issues](https://github.com/Kamikouchi-lab/YORU/issues) are welcome.
+
+Released 2026-10-08 — [release page](https://github.com/Kamikouchi-lab/YORU/releases/tag/v2.0.0-beta.4)
+
+To use this beta version, check out the corresponding tag:
+
+```
+git checkout v2.0.0-beta.4
+```
+
+Task-by-task instructions are in the [Beta Guides]({{ site.baseurl }}/beta-guides/00-overview/).
+
+### Highlights
+
+- **YOLOv5 is back, and models trained with YORU v1 load again.** Betas 2 and 3 sent the `yolov5` model type to ultralytics, which refuses YOLOv5 checkpoints, so no v1 model could be used. YOLOv5 is now bundled in `yoru/libs/yolov5/` and runs as it did in v1. On three v1 models, every box matches v1 exactly. YOLOv5 is back in the Training GUI too, as the default for new projects.
+- **RTX 50-series (Blackwell) GPUs work.** YORU now uses the CUDA 12.8 build of PyTorch, which covers every card from the GTX 10-series to the RTX 50-series, on the uv route as well as conda.
+- **Evaluation measures what it reports.** AP now ranks predictions by confidence across all images, and OBB labels are scored by the IoU of the rotated boxes. The *OBB evaluation ignores the angle* issue from Beta 3 is gone.
+- **A safer closed loop.** A trigger fires only on a fresh result from the frame just captured, never on boxes left over after detection is switched off, the model reloads or the camera stops. All real-time workers stop together, and the trigger output is reset when the process ends.
+- **An external API for sister applications.** `docs/external_api.md` in the repository lists the YORU names that sister applications such as [YORU Tracker](https://kamikouchi-lab.github.io/YORU-Tracker_doc/) may use, and tests pin each of them. YORU Tracker needs this beta.
+
+---
+
+### Installation and Upgrading
+
+#### Upgrading from Beta 3
+
+Python stays at 3.10 and `YORU.yml` has not changed, so there is **no need to recreate the conda environment**.
+
+```
+git fetch --tags
+git checkout v2.0.0-beta.4
+uv sync                      # uv
+# or, with conda:
+conda activate yoru
+pip install torch==2.8.0 torchvision==0.23.0 --index-url https://download.pytorch.org/whl/cu128
+```
+
+#### Upgrading from Beta 2 or Beta 1
+
+Recreate the conda environment, as Beta 3 moved from Python 3.9 to 3.10. See the [Beta Install guide]({{ site.baseurl }}/beta-guides/01-install/#upgrading-from-beta-2).
+
+#### Fresh install (conda)
+
+```
+git clone https://github.com/Kamikouchi-lab/YORU.git
+cd YORU
+git checkout v2.0.0-beta.4
+conda env create -f YORU.yml
+conda activate yoru
+# then install PyTorch (see the Beta Install guide)
+python -m yoru
+```
+
+#### With uv (Windows, Linux, macOS)
+
+No conda and no manual PyTorch step.
+
+```
+git clone https://github.com/Kamikouchi-lab/YORU.git
+cd YORU
+git checkout v2.0.0-beta.4
+uv sync
+uv run yoru
+```
+
+#### After upgrading, check
+
+1. The NVIDIA driver version (breaking change 1).
+2. Any comparison of `tracking_id` or evaluation figures with results from earlier versions (breaking changes 3 and 4).
+3. Any custom trigger plugin. It now receives one call with no detections when the process ends, and may define `close()`.
+
+---
+
+### Breaking Changes
+
+#### 1. PyTorch moves to the CUDA 12.8 build: NVIDIA driver 570 or newer
+
+`pyproject.toml` now takes torch ≥ 2.7 and torchvision ≥ 0.22 from the `cu128` index, where Beta 3 used `cu124`. The CUDA 12.8 build needs **driver 570 or newer** (572.xx on Windows); check yours with `nvidia-smi`.
+
+- **uv:** `uv sync` installs the new build.
+- **conda:** the environment keeps working, but install the CUDA 12.8 build to use an RTX 50-series card (see above).
+
+If the driver cannot be updated, the [Beta Install guide]({{ site.baseurl }}/beta-guides/01-install/#fresh-install-with-conda) describes a CUDA 12.6 fallback. That build has no kernels for the RTX 50-series.
+
+#### 2. New training projects start on YOLOv5
+
+A new project now defaults to YOLOv5 (`yolov5s.pt`), as in YORU v1, instead of YOLO11. Choose another version in the Training GUI as before. Ticking *Oriented Bounding Box* still switches the project to YOLO11, because YOLOv5 has no rotated-box head.
+
+#### 3. Re-analysing a movie can change `tracking_id`
+
+Video Analysis tracking was biased (see *Bug Fixes*), and every track that ended used up an ID. Now only real distances decide the matching, and IDs are numbered without gaps. Re-analysing a movie can therefore pair detections differently in frames where the number of animals changes, and gives lower IDs after a track has ended. Compare `tracking_id` only between results made with the same version.
+
+#### 4. Evaluation results differ from earlier betas
+
+The AP the Evaluation sub-module reported was wrong in several ways (see *Bug Fixes*). Do not compare figures from Beta 4 with those from earlier versions. For an OBB model, **run Prediction again**: `_yolo.txt` files written by earlier versions hold only the upright box around each rotated box, while Beta 4 writes all four corners.
+
+#### 5. Closing the Training window stops the training
+
+Closing the window used to skip its cleanup. Now it asks the run to stop at the end of the epoch, waits 3 s, and then ends the training process along with its data-loader workers. Checkpoints that are already saved remain, but the unfinished epoch may be lost. To keep it, use **Stop after this epoch** and wait for the run to finish.
+
+---
+
+### New Features
+
+#### YOLOv5, bundled as in v1
+
+- YOLOv5 checkpoints from YORU v1 load again. A checkpoint is recognised by its contents rather than its file name, so a v1 `best.pt` reaches the right backend.
+- Detection matches v1. Confidence thresholds above 0.25 are applied after NMS, as v1 did. With that, v1 and Beta 4 video analysis of the same video and model agree exactly at thresholds 0.25, 0.5 and 0.7, tracking IDs included.
+- The Training GUI offers YOLOv5 again and restores v1 projects as YOLOv5. *Stop after this epoch* works, epochs are shown counting from 1, and the GPU-memory estimate covers YOLOv5 n/s/m/l/x.
+- Opt-in RGB input: YORU v1 gave YOLOv5 the BGR frames OpenCV reads, and Beta 4 keeps that by default so that v1 models reproduce their results. Set `YORU_YOLOV5_RGB=1` (or pass `get_detector(..., rgb_input=True)`) to give them RGB frames instead. The channel order is printed and written to `yoru.log` each time a model loads.
+- ultralytics' YOLOv5u models (`yolov5su.pt` and the like) are a different network, and they stay on the ultralytics backend.
+- The training console shows one row per YOLOv5 progress bar instead of one per redraw.
+- See [Beta: Training]({{ site.baseurl }}/beta-guides/02-training/#yolov5).
+
+#### Video Analysis tracking
+
+- A new **Max move/frame (px)** setting limits how far a centre may move between frames. A detection that moves farther starts a new track. The default, 0, means no limit.
+
+#### Evaluation
+
+- AP is the all-point interpolated precision envelope, averaged over IoU 0.50:0.05:0.95. Predictions are ranked by confidence across all images, and each ground-truth box matches at most one prediction of its class.
+- IoU is computed on the polygons themselves, for ordinary and OBB labels alike, so both evaluate together.
+- A class without annotations reports AP `null` and is left out of the mAP. The results file adds the overall mAP@[.50:.05:.95] and names its IoU and AP methods.
+
+#### Real-time process and closed loop
+
+- A trigger fires only on fresh results: detection, the model and capture must all be running, and the frame must be at most `trigger.result_max_age` seconds old. This is a new optional key in the condition YAML (default `1.0`). The trigger, the recorded `_detect.csv` and the preview all use the same check, so old boxes disappear from the preview.
+- The workers are supervised together. When one exits or Quit is pressed, all are told to stop. One that is still running after 30 s is terminated and reported as an error.
+- When the process ends, the trigger plugin is called once with no detections, which bundled plugins take as output OFF. Then its `close()` is called if it has one. The bundled serial, display and NI-DAQ plugins now implement `close()`.
+- Recording runs on its own writer thread. If the disk falls behind, acquisition waits instead of dropping frames, and write errors are reported. The condition YAML is copied when recording starts rather than when it stops.
+- The camera opens with DirectShow, AVFoundation or V4L2 depending on the OS, and falls back to the automatic backend. It uses a one-frame driver buffer instead of 2000 frames. The camera settings dialog is Windows-only.
+- Screen capture runs at `hardware.camera_fps` instead of busy-waiting at 16 fps. The area selector accepts a drag in any direction, cancels on `Escape`, ignores a click that selects no area, and no longer forces 640×480.
+
+#### Windows and layout
+
+- Every screen closes the same way, whether through Quit, Back to Home, the window's close button or an error. Each one finishes its background work and cleanup and saves its layout before closing, and the launcher opens only after that. Prediction and AP calculation run in the background, so Quit can be pressed while they run.
+- **Frame Capture** is now three dockable windows: *Preview*, *Save Frame* and *Automatic Extraction*. You can resize them, re-tile them, or stack them into tabs. YORU remembers the arrangement, and **Window → Reset layout to default** restores it.
+
+#### For sister applications
+
+- `docs/external_api.md` is the supported surface for applications built on YORU: renaming anything it lists is a breaking change. `tests/test_public_api.py` pins every name, and also checks that YORU never imports `yoru_tracker`.
+- New: `yoru.libs.camera.open_camera`, which opens a camera the way real-time capture does, and `yoru.libs.plugins.list_detector_backends`, which lists the backend names `get_detector` accepts on this machine.
+
+---
+
+### Bug Fixes
+
+- **Video Analysis tracking favoured the top-left corner.** When two consecutive frames had different numbers of detections, the shorter side was padded with dummy points at (-1000, -1000), and the distance to them counted. As a result, the detection nearest the image's top-left corner was the one most likely to lose its ID. For example, an animal moving 70 px toward that corner could lose its ID to a newcomer far away.
+- **Evaluation AP:** predictions were sorted by class ID instead of confidence and never ranked across images. The precision envelope was built on a reversed array, and recall and precision were sorted separately. A prediction counted as a false positive when its best match was taken even if another free box overlapped. OBB boxes were compared by their upright envelopes. Overall precision/recall ignored overlap, and a class with no annotations divided by zero.
+- Evaluation also finds `.jpeg` and upper-case extensions, skips blank label lines, reports an unreadable image clearly, and draws its figures from a worker thread.
+- A trigger could fire on a result from a frame that was no longer current, and its timestamp was not the capture time.
+- Quit and Back to Home destroyed the GUI while the window was still being drawn, and the window's close button skipped its cleanup.
+- Windows: PyQt5 is pinned (5.15.11, with PyQt5-Qt5 5.15.2) to fix dependency resolution with uv.
+- The Beta 3 known issue *RTX 50-series GPUs with the uv route* is fixed by breaking change 1.
+
+---
+
+### Known Issues
+
+- **Keep ordinary (5-field) label files out of OBB projects.** In an OBB session, opening an axis-aligned label file switches LabelImg to plain YOLO, and boxes saved after that lose their angle. OBB training on such a mixed dataset stops with `OBB dataset incorrectly formatted`.
+- **A screen that crashes while starting up closes its console without writing to `yoru.log`.** Run it directly from a terminal to see the error, e.g. `python -m yoru.train_GUI`. Always launch YORU from the repository root.
+- The Training GUI's GPU-memory warning still appears when *Device* is set to `cpu`. Choose **Train anyway**.
+- Automatic Extraction names files `<frame name>_<frame number>.png`. A second run over the same range rewrites the frames that overlap, and the saved-frame counter counts them twice. Give each video its own frame name when several videos share one output folder.
+- The uv route covers Windows, Linux on x86_64 and macOS. There is no Linux aarch64 support, because dearpygui publishes no wheel for it.
+
+---
+
+### Notes
+
+- This release targets the `develop4` branch and is **not** the stable release. For general lab use, **v1.1.2** remains the recommended version.
+- CI runs the test suite on Windows, Linux and macOS. YOLOv5 parity with v1 was checked on v1 models. The GUIs, cameras, closed-loop hardware and training on real data still need testing on real rigs, and reports from actual experiments are especially valuable.
+
+<br>
+
+---
+
+## YORU v2.0.0-beta.3
+
+> Superseded by Beta 4 above. This version targets the `develop4` branch.
+
+Released 2026-09-28 — [release page](https://github.com/Kamikouchi-lab/YORU/releases/tag/v2.0.0-beta.3)
+
+To use this beta version, check out the corresponding tag:
+
+```
+git checkout v2.0.0-beta.3
+```
+
+Task-by-task instructions are in the [Beta Guides]({{ site.baseurl }}/beta-guides/00-overview/).
+
+### Highlights
+
+- **Oriented bounding boxes (OBB), end to end.** Tick *Oriented Bounding Box* when you create a project, and YORU labels, trains and detects with *rotated* boxes. This suits elongated animals that lie at any angle, such as flies, larvae and fish. It works with YOLOv8 and YOLO11 (`yolo11s-obb.pt`), and real-time and offline detection draw rotated rectangles.
+- **Faster labelling.** The Training GUI now opens YORU's own copy of LabelImg, already pointed at the project and set to the right format. Its new **Click to Box** tool (`C`) fits a box to an animal from a single click. The Frame Capture GUI adds **Automatic Extraction**, which picks a whole set of frames for labelling (`uniform` or `kmeans`, as in DeepLabCut).
+- **Windows fit the screen.** Every YORU screen now opens sized to the monitor it is on. A new **Window** menu fits or maximises the window, changes the text size, and saves or resets the layout.
+- **Everything from v1.1.2 is included:** automatic compute-device selection (CUDA, then Apple MPS, then CPU), macOS support through uv, runtime logs in `~/.yoru/logs/yoru.log`, and GUI errors shown on screen instead of being swallowed.
+
+---
+
+### Installation and Upgrading
+
+#### Upgrading from Beta 2 (conda)
+
+Python moved from 3.9 to 3.10 (breaking change 1), so **recreate the environment**:
+
+```
+git fetch --tags
+git checkout v2.0.0-beta.3
+conda deactivate
+conda env remove -n yoru
+conda env create -f YORU.yml
+conda activate yoru
+# then install PyTorch for your CUDA version (see the Beta Install guide)
+python -m yoru
+```
+
+#### Fresh install (conda)
+
+```
+git clone https://github.com/Kamikouchi-lab/YORU.git
+cd YORU
+git checkout v2.0.0-beta.3
+conda env create -f YORU.yml
+conda activate yoru
+# then install PyTorch for your CUDA version (see the Beta Install guide)
+python -m yoru
+```
+
+#### With uv (Windows, Linux, macOS)
+
+No conda and no manual PyTorch step. uv users upgrading from Beta 2 only need to run `uv sync`.
+
+```
+git clone https://github.com/Kamikouchi-lab/YORU.git
+cd YORU
+git checkout v2.0.0-beta.3
+uv sync
+uv run yoru
+```
+
+#### After upgrading, check
+
+1. Any script that reads analysis CSVs **by column position** (breaking change 2).
+2. Any custom trigger plugin that **unpacks** detection rows (breaking change 3).
+
+---
+
+### Breaking Changes
+
+#### 1. Python 3.10 is now required: recreate your conda environment
+
+Beta 2 used Python 3.9. `YORU.yml` and `pyproject.toml` now target **Python 3.10**, and NumPy is capped below 2.0 because `opencv-python` 4.10 is built against NumPy 1.x. Updating a Beta 2 environment in place is not reliable across a Python version change, so recreate it (see above), then reinstall PyTorch. **uv** users only need to run `uv sync`.
+
+#### 2. Analysis result CSVs have three new columns in the middle
+
+For **every** project, not only OBB ones, the Video Analysis tables now have `w, h, angle` between `y_center` and `confidence`. `confidence`, `class`, `class_name` and `tracking_id` therefore move three columns to the right.
+
+- Scripts that read the columns **by name** keep working.
+- Scripts that read them **by position** must be updated.
+- For a non-OBB model, `angle` is always `0`.
+
+#### 3. Real-time detection rows grew from 8 to 13 columns
+
+The real-time `*_detect.csv` gains `cx, cy, w, h, angle` at the **end**. The first eight columns keep their names and positions, and none of the bundled trigger plugins is affected.
+
+**If you wrote your own trigger plugin:** the rows in `m_dict["yolo_results"]` now have 13 entries. Indexing (`row[4]`, `row[6]`) still works. Unpacking exactly eight values (`x1, y1, x2, y2, conf, cls, name, t = row`) now raises `ValueError`, and when that happens the trigger stops firing. Unpack with `*rest` or index instead. Rows passed to `yoru.libs.drawing.draw_detections` changed the same way. See [Custom Trigger Plugins]({{ site.baseurl }}/beta-guides/06-trigger-plugins/).
+
+#### 4. Video Analysis window layout from Beta 2
+
+The panels on the Video Analysis screen now have stable internal names. If you have a `logs/custom_layout_analysis.ini` saved by Beta 2, the two panels can open on top of each other the first time. Choose **Window → Reset layout to default** once to fix it, or delete that file.
+
+---
+
+### New Features
+
+#### Oriented bounding boxes (OBB)
+
+- **Oriented Bounding Box** checkbox when creating a project in the Training GUI. The choice is stored as `task: obb` in the project's `config.yaml`, and every later step follows it.
+- LabelImg edits rotated boxes: `Z` / `X` turn the selected box 1°, and `Shift+Z` / `Shift+X` turn it 15°. Corners resize the box along its own axes, and the status bar shows its own width, height and angle.
+- Labels are saved as YOLO-OBB (`class x1 y1 x2 y2 x3 y3 x4 y4`, normalised), the format ultralytics reads for `task="obb"`. LabelImg tells it apart from ordinary YOLO labels by the number of fields on each line.
+- In an OBB project the weight gets an `-obb` suffix automatically. Only YOLOv8 and YOLO11 have a rotated-box head, so RT-DETR and the torchvision models cannot be trained on OBB.
+- Real-time and offline detection recognise an OBB model by themselves: leave `yolo_model_type: "auto"`. Rotated rectangles are drawn on screen and in rendered videos, and the angle is written to the CSVs (see breaking changes 2 and 3).
+- The Evaluation sub-module reads OBB label files. See *Known Issues* for how it scores them.
+- See [Beta: Training]({{ site.baseurl }}/beta-guides/02-training/#oriented-bounding-boxes-obb) for the full workflow.
+
+#### Labelling
+
+- The Training, Create Labels and Evaluation GUIs all open the **bundled** LabelImg (`python -m yoru.labelimg.labelimg`) instead of the one on `PATH`. It opens already pointed at the right image folder and `classes.txt`, and in the right format: YOLO for an ordinary project, YOLO-OBB for an OBB one. You no longer set the format by hand.
+- **Click to Box:** press `C` (or the *Click to Box* button) and click once on the animal. A box is fitted to its body, leaving out legs, wings and antennae. In an OBB project the box is rotated along the body. It works for dark animals on a light background and the reverse, needs no model, and runs on OpenCV alone.
+- The bundled LabelImg has a command line: `python -m yoru.labelimg.labelimg [image_dir] [classes_file] [save_dir] [--obb | --no-obb]`.
+
+#### Frame Capture
+
+- **Automatic Extraction** picks a whole set of frames at once. Set *Frames to pick*, choose an algorithm, and press **Extract Frames**. **Stop** interrupts a run and keeps the frames already saved.
+  - **uniform** draws frames at random. It is instant, and the sample mirrors how often each behaviour happens.
+  - **kmeans** clusters thumbnails by appearance and takes one frame per cluster, so rare postures are not swamped by long stretches of an animal sitting still.
+  - **Video range** (fractions of the video, e.g. `0.25`–`0.75`) skips handling at the start of a recording, or keeps part of the video back as unseen test material.
+- If the frame name is left blank, the video's file name is used.
+
+#### Windows and layout
+
+- Every screen opens sized to the monitor it is on, and centred. Windows can be resized and maximised freely; before, 1000×800 did not fit on a 1366×768 laptop.
+- The new **Window** menu has *Fit window to this screen*, *Maximize window*, *Text size* (Small / Normal / Large), *Save layout now* and *Reset layout to default*.
+- Window size, text size and, on Real-time Process and Video Analysis, the panel arrangement are remembered separately for each screen, in `logs/`.
+- Japanese and other non-ASCII text displays correctly, including in path fields.
+
+#### From v1.1.2 (merged into this beta)
+
+- **Automatic compute device:** CUDA, then Apple MPS, then CPU. Override it with the `YORU_DEVICE` environment variable, the `--device` flag of the training scripts, or the new device selector in the Training GUI. The selected device reaches the training subprocess and the detectors.
+- **macOS 14+ on Apple Silicon** is supported through the uv route, and a single `uv.lock` now covers Windows, Linux and macOS.
+- **Runtime logs** are written to `~/.yoru/logs/yoru.log` (relocatable with `YORU_HOME`). They hold the full traceback of every error the GUIs catch. The last-used condition file is now remembered in `~/.yoru/condition_file_log.json` and is migrated from `logs/` automatically.
+- **GUI errors are shown on screen** instead of being lost. Training failures show a popup with the last lines of the training output, and project loading checks its input first.
+- CI runs the test suite on Windows, Linux and macOS.
+
+---
+
+### Bug Fixes
+
+- **Frame Capture silently saved nothing into folders with Japanese (non-ASCII) names.** `cv2.imwrite` returns success there but writes no file. Frames are now written with `imencode` + `tofile`.
+- A video that reports no frame count now gives a clear error in Automatic Extraction instead of failing obscurely.
+- The labelImg settings file (`~/.labelImgSettings.pkl`) written by another labelImg build no longer breaks YORU's bundled copy.
+- From v1.1.2: NumPy is capped below 2 so that `import cv2` works on Python 3.10, and several error-handling gaps were closed.
+
+---
+
+### Known Issues
+
+- **OBB evaluation ignores the angle.** The Evaluation sub-module computes IoU on the upright box around each rotated box, so its mAP for an OBB model is not reliable, and for elongated, tilted animals it is usually too **high**. Quote the rotated mAP that ultralytics prints at the end of training instead.
+- **Keep ordinary (5-field) label files out of OBB projects.** In an OBB session, opening an axis-aligned label file switches LabelImg to plain YOLO, and boxes saved after that lose their angle. OBB training on such a mixed dataset stops with `OBB dataset incorrectly formatted`. Check the format button in LabelImg's toolbar if in doubt.
+- **A screen that crashes while starting up closes its console without writing to `yoru.log`** (the same as Beta 2). Run it directly from a terminal to see the error, e.g. `python -m yoru.train_GUI`. Always launch YORU from the repository root.
+- **RTX 50-series (Blackwell) GPUs with the uv route:** `uv.lock` pins torch 2.6.0+cu124, which has no kernels for these cards, so CUDA calls fail with `no kernel image is available`. Set `YORU_DEVICE=cpu`, or use the conda route with a CUDA 12.8 build (see `working-example.md`, torch 2.8.0+cu128).
+- The Training GUI's GPU-memory warning still appears when *Device* is set to `cpu`. Choose **Train anyway**.
+- Automatic Extraction names files `<frame name>_<frame number>.png`. A second run over the same range rewrites the frames that overlap, and the saved-frame counter counts them twice. Give each video its own frame name when several videos share one output folder.
+
+---
+
+### Notes
+
+- This release targets the `develop4` branch and is **not** the stable release. For general lab use, **v1.1.2** remains the recommended version.
+- The test suite passes on Windows, Linux and macOS in CI. The GUIs, cameras, closed-loop hardware and OBB training on real data still need testing on real rigs, and reports from actual experiments are especially valuable.
+
+<br>
+
+---
+
+## YORU v2.0.0-beta.2
+
+> Superseded by Beta 3 above. This version targets the `develop4` branch.
 
 Released 2026-08-19 — [release page](https://github.com/Kamikouchi-lab/YORU/releases/tag/v2.0.0-beta.2)
 
@@ -202,9 +549,9 @@ The detector exposes `.names` and `.detect(image)`, which takes a BGR image and 
 
 ### Notes
 
-- This release targets the `develop4` branch and is **not** the stable release. For general lab use, v1.1.2 remains the recommended version.
+- This release targeted the `develop4` branch and was **not** a stable release. At the time, v1.1.1 was the recommended version.
 - The GUI, camera, training and Arduino paths in this release were developed in an environment without a GPU, camera, display or Arduino — they need real-hardware testing. Reports from actual rigs are especially valuable right now.
-- **Task-by-task instructions for this release are in the [Beta Guides]({{ site.baseurl }}/beta-guides/00-overview/).** The [user guides]({{ site.baseurl }}/guides/01-install/) and step-by-step protocols elsewhere on this site describe the stable v1.1.2 workflow (Google Chrome, YOLOv5 training, `train/` output folder) and do not apply to Beta 2.
+- The [Beta Guides]({{ site.baseurl }}/beta-guides/00-overview/) now describe Beta 4. Everything in them about Beta 2 behaviour still applies, except where a page says it changed in Beta 3 or Beta 4.
 
 <br>
 
@@ -256,10 +603,12 @@ git checkout v2.0.0-beta.1
 
 | Version | Date | Notes |
 |---------|------|-------|
-| [v1.1.2](https://github.com/Kamikouchi-lab/YORU/releases/tag/v1.1.2) | 2026-09-04 | **Stable release** — uv environment on macOS and Linux, automatic device selection, `~/.yoru` logging |
+| [v2.0.0-beta.4](https://github.com/Kamikouchi-lab/YORU/releases/tag/v2.0.0-beta.4) | 2026-10-08 | Pre-release — YOLOv5 back (v1 models load), CUDA 12.8 PyTorch, corrected evaluation, safer closed loop, external API for sister applications |
+| [v2.0.0-beta.3](https://github.com/Kamikouchi-lab/YORU/releases/tag/v2.0.0-beta.3) | 2026-09-28 | Pre-release — oriented bounding boxes, Click to Box, Automatic Extraction, screen-fitted windows, Python 3.10 |
+| [v1.1.2](https://github.com/Kamikouchi-lab/YORU/releases/tag/v1.1.2) | 2026-09-04 | **Stable release** — macOS / Linux via uv, automatic compute device, `~/.yoru` logs, CI on three platforms |
 | [v2.0.0-beta.2](https://github.com/Kamikouchi-lab/YORU/releases/tag/v2.0.0-beta.2) | 2026-08-19 | Pre-release — native launcher, plugin / ONNX backends, YOLOv5 removed |
 | [v2.0.0-beta.1](https://github.com/Kamikouchi-lab/YORU/releases/tag/v2.0.0-beta.1) | 2026-03-14 | Pre-release — see above |
-| [v1.1.1](https://github.com/Kamikouchi-lab/YORU/releases/tag/v1.1.1) | 2026-03-14 | **Stable release** — PyTorch 2.6 fix, `uv` install support, path corrections |
+| [v1.1.1](https://github.com/Kamikouchi-lab/YORU/releases/tag/v1.1.1) | 2026-03-14 | PyTorch 2.6 fix, `uv` install support, path corrections |
 | [v1.1.0](https://github.com/Kamikouchi-lab/YORU/releases/tag/v1.1.0) | 2025-12-05 | Docs updates, GUI enhancements |
 | [v1.0.3](https://github.com/Kamikouchi-lab/YORU/releases/tag/v.1.0.3) | 2025-05-29 | Published DOI release |
 | [v1.0.2](https://github.com/Kamikouchi-lab/YORU/releases/tag/v1.0.2) | 2025-02-28 | Confidence threshold for video analysis |

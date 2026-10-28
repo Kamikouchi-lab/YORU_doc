@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  {% include head.html %}
+  <link rel="stylesheet" href="{{ '/public/css/ecosystem.css' | absolute_url }}">
+
+  <body class="theme-base-09 sidebar-overlay">
+
+    {% include sidebar.html %}
+
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="{{ site.baseurl }}/" title="Home">{{ site.title }}</a>
+            <small>{{ site.tagline }}</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="eco-container content">
+        <div class="page">
+          <h1 class="page-title">{{ page.title }}</h1>
+          {{ content }}
+        </div>
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script src='{{ site.baseurl }}/public/js/script.js'></script>
+    <script src='{{ site.baseurl }}/public/js/ecosystem.js'></script>
+  </body>
+</html>

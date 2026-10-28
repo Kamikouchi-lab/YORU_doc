@@ -1,0 +1,977 @@
+/*
+ * YORU Ecosystem page (ecosystem.html, _layouts/ecosystem.html)
+ *
+ * The page is drawn from _data/ecosystem.yml. Each system and kind brings its
+ * own colour as `--c`; everything below is written against that variable.
+ */
+
+.eco-container {
+  max-width: 60rem;
+  padding: 0 1.5rem;
+  margin: 0 auto 4rem;
+}
+
+.theme-base-09 .eco-container a {
+  color: #d28445;
+}
+
+.eco {
+  --navy: #0e274c;
+  --yellow: #f2d851;
+  --line: #e4e7eb;
+  --soft: #f6f7f9;
+  --muted: #6b7280;
+  --ink: #26303d;
+}
+
+.eco h2 {
+  margin-top: 3rem;
+  padding-top: .5rem;
+}
+
+.eco-lede {
+  font-size: 1.05rem;
+  max-width: 46rem;
+}
+
+.eco-intro,
+.eco-note {
+  max-width: 46rem;
+}
+
+.eco-note {
+  font-size: .8rem;
+  color: var(--muted);
+}
+
+.eco-icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 10px;
+  display: inline-grid;
+  place-items: center;
+  color: var(--c);
+  background: #f1f3f6;
+  background: color-mix(in srgb, var(--c) 12%, #fff);
+}
+
+.eco-icon svg {
+  width: 1.4rem;
+  height: 1.4rem;
+}
+
+/* On this page */
+
+.eco-toc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+  margin: 1.25rem 0 0;
+}
+
+.theme-base-09 .eco-container .eco-toc a {
+  font-size: .75rem;
+  padding: .2rem .7rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.theme-base-09 .eco-container .eco-toc a:hover {
+  border-color: #d28445;
+  color: #d28445;
+}
+
+/* ---------------------------------------------------------------- Map */
+
+.eco-map {
+  margin: 1.5rem 0 1rem;
+  padding: 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: linear-gradient(180deg, #fff 0%, var(--soft) 100%);
+}
+
+.eco-tier-label,
+.eco-slot-label {
+  font-size: .62rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.eco-tier-label {
+  color: var(--muted);
+  margin-bottom: .6rem;
+}
+
+.eco-apps {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.eco-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.eco-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 1.05rem .85rem;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--c);
+  border-radius: 10px;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, .05);
+}
+
+.eco-col--planned .eco-card {
+  background: transparent;
+  border: 2px dashed #c3c9d1;
+  box-shadow: none;
+}
+
+.eco-card-logo {
+  height: 3.2rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: .7rem;
+}
+
+.eco-card-logo img {
+  height: 100%;
+  width: auto;
+  max-width: 100%;
+  margin: 0;
+  border-radius: 0;
+  object-fit: contain;
+}
+
+.eco-card-name {
+  margin: 0 0 .4rem;
+  font-size: 1.1rem;
+  color: var(--ink);
+}
+
+.eco-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .3rem;
+  margin-bottom: .65rem;
+}
+
+.eco-pill,
+.theme-base-09 .eco-container a.eco-pill {
+  font-size: .62rem;
+  font-weight: 600;
+  line-height: 1.6;
+  padding: .05rem .5rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--soft);
+  color: #3b4452;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.eco-pill--kind {
+  background: var(--c);
+  border-color: transparent;
+  color: #fff;
+}
+
+.theme-base-09 .eco-container a.eco-pill--beta {
+  background: #fff7e0;
+  border-color: #f0d98a;
+  color: #7a5a00;
+}
+
+.eco-card-role {
+  font-size: .8rem;
+  line-height: 1.5;
+  margin-bottom: .6rem;
+}
+
+.eco-card-launch {
+  margin-bottom: .7rem;
+}
+
+.eco-card-launch code {
+  font-size: .68rem;
+  color: var(--navy);
+  background: var(--soft);
+}
+
+.eco-card-links {
+  display: flex;
+  gap: 1rem;
+  margin: auto 0 0;
+  padding-top: .4rem;
+  font-size: .75rem;
+  font-weight: 600;
+}
+
+/* Trigger plugins drawn inside the card of the system that loads them */
+
+.eco-slot {
+  margin: 0 0 .8rem;
+  padding: .55rem .6rem .6rem;
+  border: 1px dashed #e3b48c;
+  border-radius: 8px;
+  background: #fffaf4;
+}
+
+.eco-slot-label {
+  color: #a8652f;
+  margin-bottom: .4rem;
+}
+
+.eco-slot-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem;
+}
+
+.eco-plug,
+.theme-base-09 .eco-container a.eco-plug {
+  font-size: .68rem;
+  line-height: 1.5;
+  padding: .12rem .5rem;
+  border: 1px solid #ecd2bb;
+  border-radius: 6px;
+  background: #fff;
+  color: #7a4a22;
+  text-decoration: none;
+}
+
+.theme-base-09 .eco-container a.eco-plug {
+  font-weight: 600;
+  border-color: #d28445;
+}
+
+.eco-plug small {
+  color: #a8652f;
+}
+
+.theme-base-09 .eco-container a.eco-plug--yours {
+  font-weight: 400;
+  border-style: dashed;
+  border-color: #d9b48f;
+  color: var(--muted);
+}
+
+/* The connector under each card, pointing down to the package */
+
+.eco-stub {
+  display: none;
+  position: relative;
+  height: 2.8rem;
+  justify-content: center;
+}
+
+.eco-stub::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 7px;
+  left: 50%;
+  border-left: 2px solid var(--c);
+  transform: translateX(-1px);
+}
+
+.eco-stub::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 8px solid var(--c);
+}
+
+.eco-stub span {
+  position: relative;
+  align-self: center;
+  padding: .05rem .5rem;
+  font-size: .6rem;
+  white-space: nowrap;
+  color: var(--muted);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+}
+
+.eco-col--core .eco-stub::before {
+  border-left-width: 8px;
+  bottom: 0;
+  transform: translateX(-4px);
+}
+
+.eco-col--core .eco-stub::after {
+  display: none;
+}
+
+.eco-col--planned .eco-stub::before {
+  border-left-style: dashed;
+}
+
+/* The single connector that replaces the stubs when the cards stack */
+
+.eco-bridge {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  height: 2.6rem;
+}
+
+.eco-bridge::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 7px;
+  left: 50%;
+  border-left: 2px solid var(--navy);
+}
+
+.eco-bridge::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 8px solid var(--navy);
+}
+
+.eco-bridge span {
+  position: relative;
+  align-self: center;
+  padding: .05rem .5rem;
+  font-size: .6rem;
+  color: var(--muted);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  text-align: center;
+}
+
+@media (min-width: 56em) {
+  .eco-apps {
+    grid-template-columns: repeat(var(--n), minmax(0, 1fr));
+    gap: 1.1rem;
+  }
+  .eco-stub {
+    display: flex;
+  }
+  .eco-bridge {
+    display: none;
+  }
+}
+
+/* The yoru package */
+
+.eco-core {
+  padding: 1rem 1.1rem 1.1rem;
+  border-radius: 10px;
+  background: var(--navy);
+  color: #dfe5ee;
+}
+
+.eco-core code {
+  background: rgba(255, 255, 255, .1);
+  color: var(--yellow);
+}
+
+.eco-core-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: .4rem 1rem;
+  margin-bottom: .8rem;
+}
+
+.eco-core-title {
+  font-size: .95rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.eco-oneway {
+  font-size: .7rem;
+  color: #c3ccda;
+}
+
+.eco-oneway b {
+  color: var(--yellow);
+  margin-right: .2rem;
+}
+
+.eco-api {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10.5rem, 1fr));
+  gap: .5rem;
+}
+
+.eco-api li {
+  display: flex;
+  flex-direction: column;
+  gap: .15rem;
+  margin: 0;
+  padding: .55rem .65rem;
+  border: 1px solid rgba(255, 255, 255, .14);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, .05);
+}
+
+.eco-api strong {
+  font-size: .8rem;
+  color: #fff;
+}
+
+.eco-api code {
+  padding: 0;
+  background: none;
+  font-size: .6rem;
+  overflow-wrap: anywhere;
+}
+
+.eco-api span {
+  font-size: .68rem;
+  line-height: 1.4;
+  color: #c3ccda;
+}
+
+.eco-dots {
+  display: flex;
+  gap: .3rem;
+  margin-top: .3rem;
+  min-height: .6rem;
+}
+
+.eco-dots i,
+.eco-dots-legend i {
+  display: inline-block;
+  width: .6rem;
+  height: .6rem;
+  border-radius: 50%;
+  background: var(--c);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, .85);
+}
+
+.eco-dots-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .3rem 1.1rem;
+  margin: .8rem 0 0;
+  font-size: .68rem;
+  color: #c3ccda;
+}
+
+.eco-dots-legend i {
+  margin-right: .3rem;
+  vertical-align: -1px;
+}
+
+.eco-handoffs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .35rem .45rem;
+  margin-top: .9rem;
+  font-size: .7rem;
+  color: var(--muted);
+}
+
+.eco-handoffs > span:first-child {
+  font-weight: 700;
+  color: var(--ink);
+  margin-right: .2rem;
+}
+
+.eco-handoffs code {
+  font-size: .64rem;
+  color: var(--ink);
+  background: #fff;
+  border: 1px solid var(--line);
+}
+
+.eco-handoffs > span:last-child {
+  margin-left: .4rem;
+}
+
+/* ------------------------------------------------- From video to result */
+
+.eco-lanes {
+  margin: 1.25rem 0 .75rem;
+}
+
+.eco-stage {
+  display: none;
+}
+
+.eco-lanes-corner {
+  display: none;
+}
+
+.eco-lane-name {
+  margin: 1.1rem 0 .4rem;
+  padding: .45rem .65rem;
+  font-size: .82rem;
+  font-weight: 700;
+  color: var(--ink);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--c);
+  border-radius: 6px;
+}
+
+.eco-lane-name small {
+  display: block;
+  font-size: .6rem;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.eco-lane-name.is-planned {
+  border-left-style: dashed;
+  color: var(--muted);
+}
+
+.eco-cell {
+  display: flex;
+  flex-direction: column;
+  gap: .35rem;
+  margin-bottom: .35rem;
+  padding: .4rem;
+  border-radius: 6px;
+  background: var(--soft);
+  background: color-mix(in srgb, var(--c) 7%, #fff);
+}
+
+.eco-cell::before {
+  content: attr(data-stage);
+  font-size: .58rem;
+  font-weight: 700;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.eco-cell.is-empty {
+  display: none;
+}
+
+.eco-step {
+  padding: .35rem .5rem .4rem;
+  font-size: .72rem;
+  line-height: 1.35;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--c);
+  border-radius: 5px;
+}
+
+.eco-step-name {
+  display: block;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.eco-step-note {
+  display: block;
+  font-size: .62rem;
+  color: var(--muted);
+}
+
+.eco-files {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .25rem;
+  margin-top: .3rem;
+}
+
+.eco-file {
+  font-family: Menlo, Monaco, "Courier New", monospace;
+  font-size: .58rem;
+  line-height: 1.5;
+  padding: .02rem .35rem;
+  border: 1px solid #d6dbe1;
+  border-radius: 4px;
+  background: var(--soft);
+  color: #2b3442;
+  white-space: nowrap;
+  cursor: default;
+  transition: opacity .15s, box-shadow .15s;
+}
+
+.eco-file--out {
+  background: #fff8d9;
+  border-color: #ecd77a;
+}
+
+.eco-file--in {
+  background: #e7f4f2;
+  border-color: #9fd2c9;
+}
+
+.eco-dir {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: .9em;
+  color: var(--muted);
+}
+
+.eco-file.is-handoff {
+  border-style: solid;
+  border-width: 1px 1px 2px;
+}
+
+.eco-lanes.is-tracing .eco-file {
+  opacity: .25;
+}
+
+.eco-lanes.is-tracing .eco-file.is-linked {
+  opacity: 1;
+  box-shadow: 0 0 0 2px var(--navy);
+}
+
+.eco-lanes.is-tracing .eco-step {
+  transition: opacity .15s;
+}
+
+.eco-lane-planned {
+  padding: .6rem .8rem;
+  font-size: .72rem;
+  color: var(--muted);
+  border: 2px dashed #c3c9d1;
+  border-radius: 6px;
+}
+
+@media (min-width: 56em) {
+  .eco-lanes {
+    display: grid;
+    grid-template-columns: 7.5rem repeat(var(--stages), minmax(0, 1fr));
+    gap: 6px;
+  }
+  .eco-lanes-corner {
+    display: block;
+  }
+  .eco-stage {
+    display: block;
+    position: relative;
+    padding: .45rem .8rem .5rem 1.15rem;
+    color: #fff;
+    background: var(--navy);
+    clip-path: polygon(0 0, calc(100% - 9px) 0, 100% 50%, calc(100% - 9px) 100%, 0 100%, 9px 50%);
+  }
+  .eco-lanes-corner + .eco-stage {
+    padding-left: .7rem;
+    clip-path: polygon(0 0, calc(100% - 9px) 0, 100% 50%, calc(100% - 9px) 100%, 0 100%);
+    border-radius: 6px 0 0 6px;
+  }
+  .eco-stage strong {
+    display: block;
+    font-size: .8rem;
+    color: #fff;
+  }
+  .eco-stage small {
+    display: block;
+    font-size: .6rem;
+    color: #c3ccda;
+  }
+  .eco-stage-n {
+    float: right;
+    width: 1.1rem;
+    height: 1.1rem;
+    margin: .05rem .1rem 0 .3rem;
+    border-radius: 50%;
+    font-size: .6rem;
+    font-weight: 700;
+    line-height: 1.1rem;
+    text-align: center;
+    color: var(--navy);
+    background: var(--yellow);
+  }
+  .eco-lane-name {
+    margin: 0;
+  }
+  .eco-cell {
+    margin: 0;
+    min-height: 2.6rem;
+  }
+  .eco-cell::before {
+    display: none;
+  }
+  .eco-cell.is-empty {
+    display: block;
+    background: repeating-linear-gradient(135deg, transparent 0 6px, rgba(0, 0, 0, .025) 6px 12px);
+  }
+  .eco-lane-planned {
+    display: flex;
+    align-items: center;
+  }
+}
+
+/* ------------------------------------------------------------- Kinds */
+
+.eco-kinds,
+.eco-rules {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1rem;
+  margin: 1.25rem 0;
+}
+
+@media (min-width: 38em) {
+  .eco-rules {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 64em) {
+  .eco-rules {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.eco-kind {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 1.1rem;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--c);
+  border-radius: 10px;
+}
+
+.eco-kind h3 {
+  margin: .6rem 0 .3rem;
+  font-size: 1rem;
+  color: var(--ink);
+}
+
+.eco-kind p {
+  font-size: .8rem;
+  margin-bottom: .8rem;
+}
+
+.eco-kind dl {
+  margin: 0 0 .8rem;
+  font-size: .75rem;
+  line-height: 1.45;
+}
+
+.eco-kind dt {
+  font-size: .58rem;
+  font-weight: 700;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.eco-kind dd {
+  margin: 0 0 .55rem;
+}
+
+.theme-base-09 .eco-container a.eco-kind-guide {
+  margin-top: auto;
+  font-size: .78rem;
+  font-weight: 700;
+}
+
+/* ------------------------------------------------------------- Rules */
+
+.eco-rule {
+  padding: 1rem 1.1rem;
+  background: var(--soft);
+  border-radius: 10px;
+}
+
+.eco-rule h3 {
+  margin: .7rem 0 .3rem;
+  font-size: .92rem;
+  color: var(--ink);
+}
+
+.eco-rule p {
+  font-size: .78rem;
+  margin: 0;
+}
+
+.eco-rule-art {
+  min-height: 2.8rem;
+  font-size: .7rem;
+  line-height: 2;
+}
+
+.eco-rule-art code {
+  font-size: .62rem;
+}
+
+.eco-chip {
+  display: inline-block;
+  padding: 0 .5rem;
+  font-size: .64rem;
+  font-weight: 700;
+  line-height: 1.6;
+  color: var(--ink);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+}
+
+.eco-chip--teal {
+  color: #fff;
+  background: #00897b;
+  border-color: #00897b;
+}
+
+.eco-chip--navy {
+  color: #fff;
+  background: var(--navy);
+  border-color: var(--navy);
+}
+
+.eco-chip--yellow {
+  color: var(--navy);
+  background: var(--yellow);
+  border-color: #e3c53b;
+}
+
+.eco-arrow {
+  margin: 0 .35rem;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.eco-arrow--no {
+  color: #c0392b;
+}
+
+/* ---------------------------------------------- Where a feature goes */
+
+.eco-decide {
+  list-style: none;
+  margin: 1rem 0;
+  padding: 0;
+  max-width: 46rem;
+  counter-reset: eco-q;
+}
+
+.eco-decide li {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: .4rem;
+  margin: 0 0 1.6rem;
+  padding: .7rem .9rem .7rem 2.7rem;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  counter-increment: eco-q;
+}
+
+.eco-decide li::before {
+  content: counter(eco-q);
+  position: absolute;
+  left: .8rem;
+  top: .75rem;
+  width: 1.3rem;
+  height: 1.3rem;
+  border-radius: 50%;
+  font-size: .68rem;
+  font-weight: 700;
+  line-height: 1.3rem;
+  text-align: center;
+  color: var(--navy);
+  background: var(--yellow);
+}
+
+.eco-decide li:not(:last-child)::after {
+  content: "no \2193";
+  position: absolute;
+  left: 1.05rem;
+  bottom: -1.45rem;
+  font-size: .6rem;
+  color: var(--muted);
+}
+
+.eco-q {
+  margin: 0;
+  font-size: .8rem;
+}
+
+.eco-a {
+  margin: 0;
+  justify-self: start;
+  padding: .15rem .65rem .15rem .2rem;
+  font-size: .75rem;
+  font-weight: 700;
+  white-space: nowrap;
+  color: var(--c);
+  border: 1px solid var(--c);
+  border-radius: 999px;
+}
+
+.eco-a span {
+  display: inline-block;
+  margin-right: .35rem;
+  padding: 0 .45rem;
+  font-size: .6rem;
+  font-weight: 700;
+  color: #fff;
+  background: var(--c);
+  border-radius: 999px;
+}
+
+@media (min-width: 38em) {
+  .eco-decide li {
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+
+/* ------------------------------------------------------------ Versions */
+
+.eco-table-wrap {
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+.eco-versions {
+  font-size: .78rem;
+  margin: 0;
+}
+
+.eco-versions th {
+  font-size: .68rem;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.eco-versions-name {
+  font-weight: 700;
+  white-space: nowrap;
+  border-left: 4px solid var(--c) !important;
+}
+
+.eco-versions-links a + a {
+  margin-left: .7rem;
+}
+
+@media (max-width: 38em) {
+  .eco-versions th:nth-child(2),
+  .eco-versions td:nth-child(2) {
+    display: none;
+  }
+}

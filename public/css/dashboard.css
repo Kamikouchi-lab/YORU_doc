@@ -72,28 +72,71 @@
   height: 260px;
 }
 
-/* Tables */
-.dash-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.9rem;
+/* Range controls (interactive charts) */
+.range-controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.8rem;
 }
 
-.dash-table th,
-.dash-table td {
-  padding: 0.5rem 0.75rem;
-  text-align: left;
-  border-bottom: 1px solid #eee;
+.range-buttons {
+  display: inline-flex;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  overflow: hidden;
 }
 
-.dash-table th {
-  font-weight: 600;
+.range-buttons button {
+  font: inherit;
   color: #505050;
+  background: #fff;
+  border: 0;
+  border-left: 1px solid #eee;
+  padding: 0.25rem 0.6rem;
+  cursor: pointer;
+}
+
+.range-buttons button:first-child {
+  border-left: 0;
+}
+
+.range-buttons button:hover {
   background: #f9f9f9;
 }
 
-.dash-table td {
-  color: #313131;
+.range-buttons button.active {
+  color: #fff;
+  background: rgba(210,132,69,1);
+}
+
+.range-dates {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: #9a9a9a;
+}
+
+.range-dates input {
+  font: inherit;
+  color: #505050;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  padding: 0.15rem 0.35rem;
+}
+
+.chart-hint {
+  margin: 0.4rem 0 0;
+  font-size: 0.75rem;
+  color: #9a9a9a;
+  text-align: right;
+}
+
+.chart-wrap canvas {
+  touch-action: pan-y;
 }
 
 /* Empty / loading states */

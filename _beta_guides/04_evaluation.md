@@ -4,7 +4,7 @@ title: "Beta: Evaluation"
 order: 4
 ---
 
-> Applies to **v2.0.0-beta.2**. For the stable v1.1.1 procedure, see the [User Guides]({{ site.baseurl }}/guides/04-evaluation/).
+> Applies to **v2.0.0-beta.4**. For the stable v1.1.2 procedure, see the [User Guides]({{ site.baseurl }}/guides/04-evaluation/).
 
 ---
 
@@ -14,9 +14,11 @@ order: 4
 
 2. Load a project config.yaml file and a model.
 
-    > **Changed in Beta 2:** the model is in the **`exp_<model>/`** folder, not `train/`.
+    > The model is in the **`exp_<model>/`** folder, not `train/` (changed in Beta 2).
     >
+    > - YOLOv5: `<project>/exp_yolov5s/weights/best.pt`
     > - YOLO / RT-DETR: `<project>/exp_yolo11s/weights/best.pt`
+    > - YOLO OBB: `<project>/exp_yolo11s-obb/weights/best.pt`
     > - torchvision: `<project>/exp_fasterrcnn/fasterrcnn_best.pt`
     >
     > Repeat training runs go to `exp_yolo11s2`, `exp_yolo11s3`, … so make sure you pick the run you mean.
@@ -37,23 +39,46 @@ order: 4
 
       iii. Grab Current Frame or Alt key to save frame.
 
-   > Images that are not used for creating a model are better.
+   > Images that are not used for creating a model are better. **Automatic Extraction** (new in Beta 3) can pick them for you — set the *Video range* to a part of the video that the training frames did not come from. See [Automatic Extraction](../02-training/#automatic-extraction).
 
-   > **Changed in Beta 2:** Left / Right / Alt only fire when the YORU window has focus, and grabbing before an output folder has been chosen no longer crashes.
+   > Left / Right / Alt only fire when the YORU window has focus, and grabbing before an output folder has been chosen no longer crashes (changed in Beta 2).
 
-4. Run LabelImg and label the frames.
+4. Push "Run LabelImg" and label the frames.
 
-    > The detailed documents are accessible in [LabelImg](https://github.com/HumanSignal/labelImg).
+    > **Changed in Beta 3:** this button opens YORU's bundled LabelImg, like the Training GUI does. It opens the evaluation images in the project's format — YOLO-OBB for an OBB project — so OBB evaluation images can now be labelled. [Click to Box](../02-training/#click-to-box) is available here too.
 
-    > Save format is done in YOLO.
-
-    > It is easier to do so if Auto Save mode is turned on in the View tab.
+    > It is easier to label if Auto Save mode is turned on in the View tab.
 
 5. Push the "Prediction" button.
 
+    > For an OBB model, Prediction writes all four corners of each box to `_yolo.txt` (Beta 4). Files written by earlier versions hold only the upright box, so **run Prediction again** on an old evaluation dataset.
+
 6. Push the "Calculate APs" button.
 
-    > YORU calculates APs and IOUs.
+    > YORU calculates APs and IOUs. See [How AP is calculated](#how-ap-is-calculated-changed-in-beta-4) below.
+
+    > Prediction and the AP calculation run in the background (Beta 4), so Quit can be pressed while they run.
+
+---
+
+## How AP is calculated (changed in Beta 4)
+
+- Predictions are ranked by confidence across all evaluation images.
+- Each ground-truth box matches at most one prediction of the same class: the best one still free.
+- AP is the all-point interpolated precision envelope, averaged over IoU thresholds 0.50 to 0.95 in steps of 0.05.
+- IoU is the overlap of the two **polygons**, for ordinary and OBB labels alike, so the two can be evaluated together. An OBB model is scored by its rotated boxes: a 100×10 box at +45° and the same box at −45° now barely overlap, where Beta 3 gave them an IoU of 1.0.
+- A class with no ground-truth annotations reports AP `null` and is left out of the mAP. Overall precision and recall need a same-class match at IoU 0.50.
+- The results file gives the overall mAP@[.50:.05:.95] and names the IoU and AP methods it used.
+
+> **Figures from Beta 4 are not comparable with earlier ones.** Earlier versions sorted predictions by class ID instead of confidence, never ranked them across images, built the precision envelope on a reversed array, counted a prediction as a false positive when its best match was taken even if another free box overlapped, and compared OBB boxes by their upright envelopes. They can also differ from the validation score a training backend prints, because YORU evaluates the boxes its detector keeps after its own confidence and NMS settings.
+
+---
+
+## What changed in Beta 4
+
+- The AP calculation was corrected (see above).
+- `.jpeg` and upper-case extensions are found, blank label lines are skipped, and an unreadable image gives a clear error.
+- An empty IoU table no longer breaks the box plot.
 
 ---
 
@@ -63,7 +88,7 @@ order: 4
 - **Quit no longer raises** in the Evaluation and Create-Labels windows.
 - A **SciPy function that was removed in modern versions** is no longer used, so evaluation works on current SciPy.
 - `yoru.libs.file_operation_evaluation` was removed — it was a duplicate of `yoru.libs.file_operation_create_label`. This only matters if you import YORU from your own scripts.
-- Detection thresholds are uniform across backends (confidence 0.25, IoU 0.45). **AP and IoU numbers from Beta 2 are therefore not directly comparable with numbers produced under Beta 1**, especially for torchvision models.
+- Detection thresholds are uniform across backends (confidence 0.25, IoU 0.45). **AP and IoU numbers from the beta are therefore not directly comparable with numbers produced under Beta 1**, especially for torchvision models.
 
 <br>
 

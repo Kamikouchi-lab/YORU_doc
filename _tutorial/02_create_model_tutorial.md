@@ -73,7 +73,7 @@ title: Step2. Create a Model
 
 8. Check the "YAML Path" and select training conditions, such as epochs, networks and so on.
 
-9. Start training by push "Train YOLOv5".
+9. Start training by pushing "Train Model" ("Train YOLOv5" in v1.1.1 and earlier).
 
     >  In the terminal, you should check the initiation of training.
 

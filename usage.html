@@ -56,35 +56,24 @@ permalink: /usage/
     </div>
     <div class="chart-box">
       <h3>Daily Page Views</h3>
+      <div class="range-controls" id="views-range">
+        <div class="range-buttons">
+          <button type="button" data-months="1">1M</button>
+          <button type="button" data-months="3">3M</button>
+          <button type="button" data-months="6">6M</button>
+          <button type="button" data-months="12">1Y</button>
+          <button type="button" data-months="0">All</button>
+        </div>
+        <div class="range-dates">
+          <input type="date" data-role="from" aria-label="From date">
+          <span>&ndash;</span>
+          <input type="date" data-role="to" aria-label="To date">
+        </div>
+      </div>
       <div class="chart-wrap"><canvas id="views-chart"></canvas></div>
+      <p class="chart-hint">Drag to pan &middot; Ctrl + scroll or pinch to zoom</p>
       <p id="views-empty" class="dash-empty"></p>
     </div>
-  </div>
-
-  <!-- Top Referrers -->
-  <div class="chart-box" style="margin-bottom:1.5rem;">
-    <h3>Top Referrers</h3>
-    <table class="dash-table">
-      <thead>
-        <tr><th>Referrer</th><th>Views</th><th>Unique</th></tr>
-      </thead>
-      <tbody id="referrers-body">
-        <tr><td colspan="3" class="dash-empty">Loading...</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <!-- Popular Content -->
-  <div class="chart-box" style="margin-bottom:2rem;">
-    <h3>Popular Content</h3>
-    <table class="dash-table">
-      <thead>
-        <tr><th>Path</th><th>Views</th><th>Unique</th></tr>
-      </thead>
-      <tbody id="paths-body">
-        <tr><td colspan="3" class="dash-empty">Loading...</td></tr>
-      </tbody>
-    </table>
   </div>
 
   <!-- Last updated -->
@@ -111,12 +100,6 @@ permalink: /usage/
 
       <dt>Unique Cloners / Visitors (30d)</dt>
       <dd>Distinct users (by IP) who cloned or visited the repository within the last 30 days.</dd>
-
-      <dt>Top Referrers</dt>
-      <dd>Websites that directed the most traffic to the repository (last 14 days, GitHub Traffic API).</dd>
-
-      <dt>Popular Content</dt>
-      <dd>Most visited pages within the repository (last 14 days, GitHub Traffic API).</dd>
 
       <dt>Last Updated</dt>
       <dd>UTC timestamp of the most recent automated data collection via GitHub Actions.</dd>

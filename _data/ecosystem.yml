@@ -1,0 +1,181 @@
+# Data for the YORU Ecosystem page (ecosystem.html).
+#
+# Every diagram and table on that page is drawn from this file. Adding a
+# system is one new entry under `systems`; ecosystem.html does not change.
+#
+#   kind      the `id` of one of `kinds`
+#   status    stable | beta | pre-release | planned (planned: drawn dashed,
+#             with no steps, links or version row)
+#   color     the system's colour in every diagram
+#   logo      optional; without one the card shows a monogram
+#   host      plugins only: the `id` of the system that loads the plugin;
+#             the plugin is drawn inside that system's card
+#   uses      sister applications only: `id`s of `core_api` they import
+#   steps     what the system does, by `stage` (an `id` of `stages`).
+#             `in` / `out` are the files it reads / writes; give a file the
+#             same name in two systems and the page shows it as a hand-off.
+#
+# Links that start with "/" are pages of this site; anything else is a URL.
+
+stages:
+  - id: prepare
+    name: Prepare
+    hint: frames and labels
+  - id: train
+    name: Train
+    hint: a detector
+  - id: detect
+    name: Detect
+    hint: every frame
+  - id: track
+    name: Track
+    hint: identities over time
+  - id: use
+    name: Use
+    hint: act on it or export it
+
+kinds:
+  - id: core
+    label: YORU itself
+    short: Core application
+    color: "#0e274c"
+    stub: is the yoru package
+    summary: The YORU application and the yoru package that every other part is built on.
+    lives_in: The YORU repository
+    runs_as: "python -m yoru"
+    talks: "—"
+    belongs: Detection, training, evaluation, video analysis and real-time closed-loop experiments, and the general building blocks — detectors, oriented boxes, cameras, GUI — that more than one application needs.
+  - id: plugin
+    label: Trigger plugin
+    short: Trigger plugin
+    color: "#d28445"
+    summary: A Python file that YORU's Real-time Process loads, to act on what YORU detects while an experiment runs.
+    lives_in: "YORU's trigger_plugins/ folder (and its own repository, if it is shared)"
+    runs_as: Inside YORU's Real-time Process
+    talks: "The trigger plugin interface: trigger() and close()"
+    belongs: Switching hardware or a stimulus when a behaviour is detected.
+    guide: /beta-guides/06-trigger-plugins/
+    guide_label: Write a trigger plugin
+  - id: sister
+    label: Sister application
+    short: Sister application
+    color: "#00897b"
+    stub: builds on the external API
+    summary: A separate program with its own repository, window and command, built on YORU's external API.
+    lives_in: Its own repository, cloned next to YORU
+    runs_as: "Its own command, for example python -m yoru_tracker"
+    talks: "YORU's external API, and nothing else"
+    belongs: "A workflow of its own: identity, trajectories, state across many frames, or anything optional, expensive or model-heavy."
+    guide: https://github.com/Kamikouchi-lab/YORU/blob/v2.0.0-beta.4/docs/external_api.md
+    guide_label: Read YORU's external API
+
+# The names sister applications may import from YORU. The full list is
+# docs/external_api.md in the YORU repository.
+core_api:
+  - id: detectors
+    name: Detectors
+    module: yoru.libs.plugins
+    what: Load any model YORU can load.
+  - id: detections
+    name: Detection rows
+    module: yoru.libs.detector_base
+    what: One detection, and the columns of YORU's CSV files.
+  - id: obb
+    name: Oriented boxes
+    module: yoru.libs.obb
+    what: Corners, conversions, point-in-box.
+  - id: camera
+    name: Cameras
+    module: yoru.libs.camera
+    what: A camera opened the way Real-time Process opens it.
+  - id: gui
+    name: GUI primitives
+    module: yoru.gui_base · yoru.gui_layout · yoru.libs.gui_error
+    what: Theme, window session, error pop-ups.
+  - id: logs
+    name: Paths and logs
+    module: yoru.libs.user_paths
+    what: "~/.yoru/ and the shared log folder."
+
+systems:
+  - id: yoru
+    name: YORU
+    kind: core
+    color: "#0e274c"
+    logo: /logos/YORU_logo.png
+    role: Detects animal behaviours as objects — in recorded videos and in real time, with closed-loop control of hardware.
+    launch: python -m yoru
+    versions_from_site: true
+    bundled_plugins: serial, Arduino, NI-DAQ, display
+    requires: "—"
+    repo: https://github.com/Kamikouchi-lab/YORU
+    docs: /
+    steps:
+      - stage: prepare
+        name: Frame Capture
+      - stage: prepare
+        name: Labelling
+        note: LabelImg, bundled
+      - stage: train
+        name: Training
+        out: [best.pt]
+      - stage: train
+        name: Evaluation
+        note: AP and IoU
+      - stage: detect
+        name: Video Analysis
+        out: ["<video>.csv"]
+      - stage: detect
+        name: Real-time Process
+        out: ["*_detect.csv"]
+      - stage: use
+        name: Closed-loop triggers
+        note: serial, Arduino, NI-DAQ, display
+
+  - id: yoru-projector
+    name: YORU-projector
+    kind: plugin
+    host: yoru
+    color: "#d28445"
+    role: Draws on the arena with a projector, aligned to YORU's real-time detections by a camera–projector calibration.
+    repo: https://github.com/Kamikouchi-lab/YORU-projector-plugin
+    docs: /plugins/projector-trigger/
+    steps:
+      - stage: use
+        name: Projected stimulus
+        note: during Real-time Process
+
+  - id: yoru-tracker
+    name: YORU Tracker
+    kind: sister
+    status: pre-release
+    color: "#00897b"
+    logo: /logos/YORU_Tracker_logo.png
+    role: Gives every animal YORU detects a persistent ID, draws its trajectory, and exports per-animal tracks.
+    launch: python -m yoru_tracker
+    version: v0.1.0
+    release: https://github.com/Kamikouchi-lab/YORU-Tracker/releases/tag/v0.1.0
+    requires: YORU v2.0.0-beta.4 or later, below v3
+    repo: https://github.com/Kamikouchi-lab/YORU-Tracker
+    docs: https://kamikouchi-lab.github.io/YORU-Tracker_doc/
+    uses: [detectors, detections, obb, camera, gui, logs]
+    steps:
+      - stage: detect
+        name: Your YORU model
+        note: loaded through YORU's detectors
+        in: [best.pt]
+      - stage: track
+        name: Video, Realtime and Batch Tracking
+      - stage: track
+        name: Track YORU's recordings afterwards
+        in: ["<video>.csv", "*_detect.csv"]
+      - stage: use
+        name: Track export
+        out: ["*_tracks.csv", "*_tracks.json"]
+
+  - id: next
+    name: More to come
+    kind: sister
+    status: planned
+    color: "#8c96a3"
+    role: More sister applications are planned. Each will be built on the same external API, and will appear on this page.
