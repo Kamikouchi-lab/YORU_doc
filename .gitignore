@@ -1,1 +1,12 @@
 .DS_Store
+
+# Jekyll
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+
+# Editors and local tools
+.history/
+.Rhistory
+.claude/settings.local.json
