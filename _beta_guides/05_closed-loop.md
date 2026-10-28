@@ -36,7 +36,7 @@ Beta 1 loaded this value but never read it, so the trigger fired on **any** dete
 
 1. Edit a condition YAML file.
 
-    > [condition YAML file template](https://github.com/Kamikouchi-lab/YORU/blob/main/config/template.yaml)
+    > [condition YAML file template](https://github.com/Kamikouchi-lab/YORU/blob/v2.0.0-beta.4/config/template.yaml)
 
     > All shipped condition files under `config/` were rewritten in Beta 2: developer-machine paths and the dead `root:` key were removed, `export` defaults to `./results/`, a model path pointing at a non-existent file was fixed, `Arduino_COM: 13` (a pin number in the COM field) was fixed, curly quotes around `“COM3”` were fixed, a `trigger_style` naming a plugin that does not exist was fixed, and every key was given an inline comment.
 

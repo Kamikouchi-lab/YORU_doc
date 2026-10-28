@@ -21,16 +21,16 @@ title: Step1. Conditions
 
 - train_dataset_labels.zip: 1000 PNG images and 1000 labels text files
 
-- train_dataset_annotations.zip: Behavior annotation csv flies of each video by BORIS
+- train_dataset_annotations.zip: Behavior annotation CSV files of each video, made with BORIS
 
 <br>
 
 *Test dataset*  
-- train_dataset_videos.zip: 17 videos of fly copulation
+- test_dataset_videos.zip: 17 videos of fly copulation
 
 - test_dataset_labels.zip: 676 PNG images and 676 labels text files
 
-- test_dataset_annotations.zip:  Behavior annotation csv flies of each video by BORIS
+- test_dataset_annotations.zip: Behavior annotation CSV files of each video, made with BORIS
 
 
 >*Citation*
