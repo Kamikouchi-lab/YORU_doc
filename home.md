@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Home
+permalink: /
 ---
 
 ## YORU (Your Optimal Recognition Utility)
@@ -15,8 +16,8 @@ title: Home
 [![Contributions Welcome](https://img.shields.io/badge/Contributions-Welcome-brightgreen.svg)](https://github.com/Kamikouchi-lab/YORU/issues)
 </div>
 
-<img src="logos/YORU_logo.png" width="40%">
-<img src="imgs/title_movie.gif" width="50%">
+<img src="{{ '/logos/YORU_logo.png' | relative_url }}" width="40%" alt="YORU logo">
+<img src="{{ '/imgs/title_movie.gif' | relative_url }}" width="50%" alt="YORU demonstration">
 
 “YORU” (Your Optimal Recognition Utility) is an open-source animal behavior detection system using Python. YORU can detect animal behaviors, not only single-animal behaviors but also social behaviors. YORU also provides online/offline analysis and closed-loop manipulation.
 

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en-us">
 
-  {% include head.html %}
-  <link rel="stylesheet" href="{{ '/public/css/ecosystem.css' | absolute_url }}">
+  {% capture head_extra %}<link rel="stylesheet" href="{{ '/public/css/ecosystem.css' | absolute_url }}">{% endcapture %}
+  {% include head.html extra=head_extra %}
 
   <body class="theme-base-09 sidebar-overlay">
 
