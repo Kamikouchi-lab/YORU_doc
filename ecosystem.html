@@ -23,7 +23,7 @@ permalink: /ecosystem/
 
 <p class="eco-lede">
   YORU is growing into a family of programs. <strong>YORU</strong> itself detects animal behaviours.
-  <strong>Sister applications</strong> such as YORU Tracker build on YORU's detectors for work of their own, and
+  <strong>Sister applications</strong> such as YORU Tracker and YORU-Explain build on YORU's detectors for work of their own, and
   <strong>trigger plugins</strong> act on what YORU detects while an experiment runs.
   This page shows how the parts fit together. New parts are added to it as they appear.
 </p>
@@ -68,6 +68,8 @@ permalink: /ecosystem/
           <a class="eco-pill eco-pill--beta" href="{{ site.github.repo }}/releases/tag/{{ site.beta_version }}">Beta {{ site.beta_version }}</a>
           {%- elsif s.status == 'planned' %}
           <span class="eco-pill">Planned</span>
+          {%- elsif s.status == 'development' %}
+          <a class="eco-pill eco-pill--dev" href="{{ s.repo }}">In development</a>
           {%- elsif s.version %}
           <a class="eco-pill{% if s.status == 'pre-release' or s.status == 'beta' %} eco-pill--beta{% endif %}" href="{{ s.release }}">{% if s.status == 'pre-release' %}Pre-release {% elsif s.status == 'beta' %}Beta {% endif %}{{ s.version }}</a>
           {%- endif %}
@@ -248,7 +250,7 @@ permalink: /ecosystem/
   </div>
   <div class="eco-rule">
     <div class="eco-rule-art" aria-hidden="true">
-      <code>~/.yoru/logs/</code><br><code>yoru.log</code> <code>yoru_tracker.log</code>
+      <code>~/.yoru/logs/</code><br><code>yoru.log</code> <code>yoru_tracker.log</code> <code>yoru_explain.log</code>
     </div>
     <h3>One place for logs</h3>
     <p>Each program writes its own log file into YORU's log folder, so a problem report needs only one folder.</p>
@@ -262,6 +264,10 @@ permalink: /ecosystem/
   <li>
     <p class="eco-q">Is it about <strong>which animal is which</strong>: identities, trajectories, or state carried across many frames?</p>
     <p class="eco-a" style="--c: #00897b"><span>yes</span> YORU Tracker</p>
+  </li>
+  <li>
+    <p class="eco-q">Is it about <strong>why a detection scored as it did</strong>: which parts of the frame a model's score depends on?</p>
+    <p class="eco-a" style="--c: #c4408a"><span>yes</span> YORU-Explain</p>
   </li>
   <li>
     <p class="eco-q">Does it <strong>act on a detection during an experiment</strong>, for example by switching hardware or showing a stimulus?</p>
@@ -282,7 +288,7 @@ permalink: /ecosystem/
 </ol>
 <p class="eco-note">
   A feature never goes into YORU only because a sister application could use it there. YORU keeps general, stable building blocks.
-  Tracking logic, identity logic and tracking screens stay in YORU Tracker.
+  Tracking logic, identity logic and tracking screens stay in YORU Tracker; perturbation and attribution analysis stays in YORU-Explain.
 </p>
 
 <h2 id="versions">Versions that work together</h2>
@@ -305,6 +311,8 @@ permalink: /ecosystem/
         <a href="{{ site.github.repo }}/releases/tag/{{ site.beta_version }}">{{ site.beta_version }}</a> (beta)
         {%- elsif s.version -%}
         <a href="{{ s.release }}">{{ s.version }}</a>{% if s.status == 'pre-release' %} (pre-release){% elsif s.status == 'beta' %} (beta){% endif %}
+        {%- elsif s.status == 'development' -%}
+        In development, no release yet
         {%- else -%}&mdash;{%- endif -%}
       </td>
       <td>{% if s.requires %}{{ s.requires }}{% else %}&mdash;{% endif %}</td>

@@ -53,6 +53,16 @@
       {% endfor %}
     </details>
 
+    <!-- The sister applications' own sites, from _data/ecosystem.yml -->
+    <details>
+      <summary class="sidebar-nav-item">Sister Applications</summary>
+      {% for s in site.data.ecosystem.systems %}
+        {% if s.kind == "sister" and s.status != "planned" and s.docs %}
+          <a class="sidebar-nav-item" href="{% include eco-href.html url=s.docs %}">{{ s.name }}</a>
+        {% endif %}
+      {% endfor %}
+    </details>
+
     <!-- <details>
       <summary class="sidebar-nav-item">Tutorial</summary>
       <a class="sidebar-nav-item" href="#subitem2">TBA</a>

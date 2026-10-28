@@ -4,8 +4,9 @@
 # system is one new entry under `systems`; ecosystem.html does not change.
 #
 #   kind      the `id` of one of `kinds`
-#   status    stable | beta | pre-release | planned (planned: drawn dashed,
-#             with no steps, links or version row)
+#   status    stable | beta | pre-release | development | planned
+#             (development: usable from its repository, no release yet;
+#             planned: drawn dashed, with no steps, links or version row)
 #   color     the system's colour in every diagram
 #   logo      optional; without one the card shows a monogram
 #   host      plugins only: the `id` of the system that loads the plugin;
@@ -171,7 +172,30 @@ systems:
         in: ["<video>.csv", "*_detect.csv"]
       - stage: use
         name: Track export
-        out: ["*_tracks.csv", "*_tracks.json"]
+        out: ["*_tracks.csv", "*_tracks.json", "*_detections.csv"]
+
+  - id: yoru-explain
+    name: YORU-Explain
+    kind: sister
+    status: development
+    color: "#c4408a"
+    logo: /logos/YORU-Explain_logo.png
+    role: Measures which parts of a frame the score of one YORU detection depends on — occlusion sensitivity and verified Grad-CAM, for every YORU detection backend.
+    launch: python -m yoru_explain
+    requires: YORU v2.0.0-beta.4 or later, below v3
+    repo: https://github.com/Kamikouchi-lab/YORU-Explain
+    docs: https://kamikouchi-lab.github.io/YORU-Explain_doc/
+    uses: [detectors, gui, logs]
+    steps:
+      - stage: detect
+        name: Your YORU model
+        note: run as YORU runs it, checked against YORU
+        in: [best.pt]
+      - stage: use
+        name: Explain one detection
+        note: occlusion sensitivity, Grad-CAM
+        in: ["<video>.csv", "*_detections.csv"]
+        out: [results.csv]
 
   - id: next
     name: More to come
