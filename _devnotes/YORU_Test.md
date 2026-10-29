@@ -29,11 +29,11 @@ pytest -m "not gui and not hw and not slow"
 
 ---
 
-## 3) CLI basics (no‑patch add‑on tests)
-Assumes you have `tests_extra/test_cli_basics_nopatch.py` in your tree.
+## 3) CLI basics
+These tests are in YORU's `tests/` folder (v1.1.2 and the v2.0 betas).
 
 ```bash
-pytest -m "not hw" tests_extra/test_cli_basics_nopatch.py
+pytest -m "not hw" tests/test_cli_basics.py
 ```
 **What to look for**
 - `python -m yoru --help` exits **0** and prints text containing “YORU/yoru”
@@ -42,11 +42,11 @@ pytest -m "not hw" tests_extra/test_cli_basics_nopatch.py
 
 ---
 
-## 4) Trigger plugin API shape (no‑patch)
-Assumes you have `tests_extra/test_trigger_plugins_api.py` in your tree.
+## 4) Trigger plugin API shape
+These tests are in YORU's `tests/` folder (v1.1.2 and the v2.0 betas).
 
 ```bash
-pytest -m "not hw" tests_extra/test_trigger_plugins_api.py
+pytest -m "not hw" tests/test_trigger_plugins_api.py
 ```
 **Pass criteria** for each `trigger_plugins/*.py`:
 - A class named `trigger_condition` exists

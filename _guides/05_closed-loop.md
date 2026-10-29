@@ -6,7 +6,7 @@ order: 5
 
 1. Edit a condition YAML file.
 
-    > [condition YAML file template](https://github.com/Kamikouchi-lab/YORU/blob/main/config/template.yaml)
+    > [condition YAML file template](https://github.com/Kamikouchi-lab/YORU/blob/v1.1.2/config/template.yaml)
 
     > From v1.1.2, the launcher also has a **Create new config →** button under Real-time Process. It opens a tool that builds a condition file interactively.
 

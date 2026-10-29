@@ -190,6 +190,14 @@
   color: #7a5a00;
 }
 
+/* A system that runs from its repository but has no release yet */
+.theme-base-09 .eco-container a.eco-pill--dev {
+  background: #fff7e0;
+  border-color: #e0b84a;
+  border-style: dashed;
+  color: #7a5a00;
+}
+
 .eco-card-role {
   font-size: .8rem;
   line-height: 1.5;

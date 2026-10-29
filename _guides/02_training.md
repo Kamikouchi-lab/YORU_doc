@@ -4,7 +4,7 @@ title: Training
 order: 2
 ---
 
-1. Run the YORU's Training sub-module.
+1. Run YORU's Training sub-module.
 
 2. Create a project folder. (Step0)
 
@@ -53,7 +53,7 @@ order: 2
 
 7. Select classes.txt file and push "Add class info in YAML file". (Step5)
 
-    > The information in classes.txt will be entered into the config.yml file.
+    > The information in classes.txt will be entered into the `config.yaml` file.
 
 8. Check the "YAML Path" and select training conditions, such as the model, epochs, Image Size, Batch and **Device**.
 

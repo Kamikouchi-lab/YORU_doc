@@ -1,17 +1,14 @@
 # Setup
 title:               YORU
 tagline:             'Your Optimal Recognition Utility'
-description:         '“YORU” is an open-source sftware for animal behavior detection using an object detection. YORU classifies animal behavior as "behavior objects."' 
+description:         '“YORU” is open-source software for animal behavior detection using object detection. YORU classifies animal behaviors as "behavior objects."'
 url:                 "https://kamikouchi-lab.github.io"
 baseurl:             "/YORU_doc"
-paginate:            5
 permalink:           pretty
 markdown:            kramdown
 
-remote_theme: jekyll-theme-lanyon
+# The Lanyon layouts, includes and styles are all in this repository.
 plugins:
-  - jekyll-remote-theme
-  - jekyll-paginate
   - jekyll-seo-tag
   - jekyll-sitemap
 

@@ -10,7 +10,7 @@ order: 4
 
 ## Procedure
 
-1. Run the YORU's Evaluation sub-module.
+1. Run YORU's Evaluation sub-module.
 
 2. Load a project config.yaml file and a model.
 

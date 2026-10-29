@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Home
+permalink: /
 ---
 
 ## YORU (Your Optimal Recognition Utility)
@@ -15,8 +16,8 @@ title: Home
 [![Contributions Welcome](https://img.shields.io/badge/Contributions-Welcome-brightgreen.svg)](https://github.com/Kamikouchi-lab/YORU/issues)
 </div>
 
-<img src="logos/YORU_logo.png" width="40%">
-<img src="imgs/title_movie.gif" width="50%">
+<img src="{{ '/logos/YORU_logo.png' | relative_url }}" width="40%" alt="YORU logo">
+<img src="{{ '/imgs/title_movie.gif' | relative_url }}" width="50%" alt="YORU demonstration">
 
 “YORU” (Your Optimal Recognition Utility) is an open-source animal behavior detection system using Python. YORU can detect animal behaviors, not only single-animal behaviors but also social behaviors. YORU also provides online/offline analysis and closed-loop manipulation.
 
@@ -62,9 +63,9 @@ See the [release page](https://github.com/Kamikouchi-lab/YORU/releases/tag/v1.1.
 
 - Closed-Loop Manipulation: Enables interactive experiments with live feedback control.
 
-- User-Friendly Interface: Provide the GUI-based software.
+- User-Friendly Interface: Provides a GUI.
 
-- Customizable: Allows you to customize various hardware manipulations in closed-loop system.
+- Customizable: Allows you to customize various hardware manipulations in closed-loop systems.
 
 # Quick install
 
@@ -153,7 +154,9 @@ These steps install the stable release (v1.1.2). The [Install guide]({{ site.bas
 
 - [YORU Tracker](https://kamikouchi-lab.github.io/YORU-Tracker_doc/) — the tracking sister application: persistent IDs, trajectories and per-animal tracks on top of YORU's detectors (needs v2.0.0-beta.4 or later)
 
-- [YORU Ecosystem]({{ site.baseurl }}/ecosystem/) — how YORU, YORU Tracker and the trigger plugins fit together
+- [YORU-Explain](https://kamikouchi-lab.github.io/YORU-Explain_doc/) — the explanation sister application: which parts of a frame one detection's score depends on (occlusion sensitivity, Grad-CAM); in development, needs v2.0.0-beta.4 or later
+
+- [YORU Ecosystem]({{ site.baseurl }}/ecosystem/) — how YORU, its sister applications and the trigger plugins fit together
 
 - [Step-by-Step Tutorial]({{ site.baseurl }}/tutorial/01-preparation-tutorial/)
 
@@ -184,14 +187,14 @@ These steps install the stable release (v1.1.2). The [Install guide]({{ site.bas
 - Memory: DDR4 32 GB
 
 # Reference
- - Hayato M. Yamanouchi et al. ,YORU: Animal behavior detection with object-based approach for real-time closed-loop feedback.Sci. Adv.12,eadw2109(2026). DOI:10.1126/sciadv.adw2109
+ - Hayato M. Yamanouchi et al., YORU: Animal behavior detection with object-based approach for real-time closed-loop feedback. *Sci. Adv.* 12, eadw2109 (2026). [DOI:10.1126/sciadv.adw2109](https://www.science.org/doi/10.1126/sciadv.adw2109)
  
  - Yamanouchi, H. M., Takeuchi, R. F., Chiba, N., Hashimoto, K., Shimizu, T., Tanaka, R., & Kamikouchi, A. (2024). YORU: social behavior detection based on user-defined animal appearance using deep learning. bioRxiv (p. 2024.11.12.623320). https://doi.org/10.1101/2024.11.12.623320
 
 
 # License:
 
-AGPL-3.0 License:  YORU is intended for research/academic/personal use only. See the [LICENSE](LICENSE) file for more details.
+AGPL-3.0 License:  YORU is intended for research/academic/personal use only. See the [LICENSE](https://github.com/Kamikouchi-lab/YORU/blob/main/LICENSE) file for more details.
 
 # Third-Party Libraries and Licenses
 

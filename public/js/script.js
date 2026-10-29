@@ -13,9 +13,3 @@
     checkbox.checked = false;
   }, false);
 })(document);
-
-document.querySelectorAll('details').forEach((details) => {
-  details.addEventListener('toggle', () => {
-    console.log(`${details.querySelector('summary').textContent} が${details.open ? '展開' : '閉鎖'}されました`);
-  });
-});

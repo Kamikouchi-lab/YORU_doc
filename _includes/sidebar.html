@@ -6,7 +6,7 @@
 <div class="sidebar" id="sidebar">
     <!-- Sidebar logo -->
     <div class="sidebar-logo" style="text-align: center;">
-      <img src="/YORU_doc/logos/YORU_logo_sns.png" width="60%">
+      <img src="{{ '/logos/YORU_logo_sns.png' | relative_url }}" width="60%" alt="YORU">
     </div>
 
   <div class="sidebar-item">
@@ -50,6 +50,16 @@
       {% for d in devs %}
         <a class="sidebar-nav-item{% if page.url == d.url %} active{% endif %}"
           href="{{ d.url | absolute_url }}">{{ d.title }}</a>
+      {% endfor %}
+    </details>
+
+    <!-- The sister applications' own sites, from _data/ecosystem.yml -->
+    <details>
+      <summary class="sidebar-nav-item">Sister Applications</summary>
+      {% for s in site.data.ecosystem.systems %}
+        {% if s.kind == "sister" and s.status != "planned" and s.docs %}
+          <a class="sidebar-nav-item" href="{% include eco-href.html url=s.docs %}">{{ s.name }}</a>
+        {% endif %}
       {% endfor %}
     </details>
 
