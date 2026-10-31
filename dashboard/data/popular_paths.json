@@ -3,19 +3,13 @@
     {
       "path": "/Kamikouchi-lab/YORU",
       "title": "Overview",
-      "count": 41,
+      "count": 32,
       "uniques": 16
     },
     {
       "path": "/Kamikouchi-lab/YORU/tree/main",
       "title": "/tree/main",
       "count": 7,
-      "uniques": 1
-    },
-    {
-      "path": "/Kamikouchi-lab/YORU/tree/main/yoru",
-      "title": "/tree/main/yoru",
-      "count": 5,
       "uniques": 1
     },
     {
@@ -31,16 +25,16 @@
       "uniques": 1
     },
     {
-      "path": "/Kamikouchi-lab/YORU/tree/main/yoru/labelimg",
-      "title": "/tree/main/yoru/labelimg",
+      "path": "/Kamikouchi-lab/YORU/tree/main/yoru",
+      "title": "/tree/main/yoru",
       "count": 3,
       "uniques": 1
     },
     {
-      "path": "/Kamikouchi-lab/YORU/blob/main/YORU.yml",
-      "title": "/blob/main/YORU.yml",
-      "count": 2,
-      "uniques": 2
+      "path": "/Kamikouchi-lab/YORU/tree/main/yoru/labelimg",
+      "title": "/tree/main/yoru/labelimg",
+      "count": 3,
+      "uniques": 1
     },
     {
       "path": "/Kamikouchi-lab/YORU/issues/31",
@@ -59,7 +53,13 @@
       "title": "/tree/main/web",
       "count": 2,
       "uniques": 2
+    },
+    {
+      "path": "/Kamikouchi-lab/YORU/blob/main/docs/install.md",
+      "title": "/blob/main/docs/install.md",
+      "count": 2,
+      "uniques": 1
     }
   ],
-  "last_updated": "2026-10-30T08:33:09Z"
+  "last_updated": "2026-10-31T08:21:52Z"
 }

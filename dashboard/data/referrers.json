@@ -2,8 +2,8 @@
   "referrers": [
     {
       "referrer": "Google",
-      "count": 17,
-      "uniques": 7
+      "count": 13,
+      "uniques": 6
     },
     {
       "referrer": "aocr.org",
@@ -16,12 +16,12 @@
       "uniques": 4
     },
     {
-      "referrer": "Bing",
-      "count": 3,
-      "uniques": 1
+      "referrer": "kamikouchi-lab.github.io",
+      "count": 2,
+      "uniques": 2
     },
     {
-      "referrer": "kamikouchi-lab.github.io",
+      "referrer": "Bing",
       "count": 1,
       "uniques": 1
     },
@@ -31,5 +31,5 @@
       "uniques": 1
     }
   ],
-  "last_updated": "2026-10-30T08:33:09Z"
+  "last_updated": "2026-10-31T08:21:52Z"
 }
