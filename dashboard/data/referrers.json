@@ -2,8 +2,8 @@
   "referrers": [
     {
       "referrer": "Google",
-      "count": 13,
-      "uniques": 6
+      "count": 14,
+      "uniques": 7
     },
     {
       "referrer": "aocr.org",
@@ -31,5 +31,5 @@
       "uniques": 1
     }
   ],
-  "last_updated": "2026-10-31T08:21:52Z"
+  "last_updated": "2026-11-01T09:09:26Z"
 }

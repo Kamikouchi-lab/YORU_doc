@@ -43,6 +43,12 @@
       "uniques": 2
     },
     {
+      "path": "/Kamikouchi-lab/YORU/releases/tag/v1.0.2",
+      "title": "/releases/tag/v1.0.2",
+      "count": 2,
+      "uniques": 2
+    },
+    {
       "path": "/Kamikouchi-lab/YORU/tree/main/docs",
       "title": "/tree/main/docs",
       "count": 2,
@@ -53,13 +59,7 @@
       "title": "/tree/main/web",
       "count": 2,
       "uniques": 2
-    },
-    {
-      "path": "/Kamikouchi-lab/YORU/blob/main/docs/install.md",
-      "title": "/blob/main/docs/install.md",
-      "count": 2,
-      "uniques": 1
     }
   ],
-  "last_updated": "2026-10-31T08:21:52Z"
+  "last_updated": "2026-11-01T09:09:26Z"
 }
