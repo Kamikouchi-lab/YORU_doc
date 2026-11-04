@@ -3,37 +3,13 @@
     {
       "path": "/Kamikouchi-lab/YORU",
       "title": "Overview",
-      "count": 32,
-      "uniques": 18
-    },
-    {
-      "path": "/Kamikouchi-lab/YORU/tree/main",
-      "title": "/tree/main",
-      "count": 7,
-      "uniques": 1
-    },
-    {
-      "path": "/Kamikouchi-lab/YORU/tree/main/config",
-      "title": "/tree/main/config",
-      "count": 4,
-      "uniques": 2
+      "count": 28,
+      "uniques": 19
     },
     {
       "path": "/Kamikouchi-lab/YORU/pulls",
       "title": "/pulls",
       "count": 4,
-      "uniques": 1
-    },
-    {
-      "path": "/Kamikouchi-lab/YORU/tree/main/yoru",
-      "title": "/tree/main/yoru",
-      "count": 3,
-      "uniques": 1
-    },
-    {
-      "path": "/Kamikouchi-lab/YORU/tree/main/yoru/labelimg",
-      "title": "/tree/main/yoru/labelimg",
-      "count": 3,
       "uniques": 1
     },
     {
@@ -49,17 +25,41 @@
       "uniques": 2
     },
     {
-      "path": "/Kamikouchi-lab/YORU/tree/main/docs",
-      "title": "/tree/main/docs",
+      "path": "/Kamikouchi-lab/YORU/blob/main/docs/install.md",
+      "title": "/blob/main/docs/install.md",
       "count": 2,
-      "uniques": 2
+      "uniques": 1
     },
     {
-      "path": "/Kamikouchi-lab/YORU/tree/main/web",
-      "title": "/tree/main/web",
+      "path": "/Kamikouchi-lab/YORU/tree/main/config",
+      "title": "/tree/main/config",
       "count": 2,
-      "uniques": 2
+      "uniques": 1
+    },
+    {
+      "path": "/Kamikouchi-lab/YORU/tree/main/tests",
+      "title": "/tree/main/tests",
+      "count": 2,
+      "uniques": 1
+    },
+    {
+      "path": "/Kamikouchi-lab/YORU/blame/main/docs/install.md",
+      "title": "/blame/main/docs/install.md",
+      "count": 1,
+      "uniques": 1
+    },
+    {
+      "path": "/Kamikouchi-lab/YORU/blob/main/YORU.yml",
+      "title": "/blob/main/YORU.yml",
+      "count": 1,
+      "uniques": 1
+    },
+    {
+      "path": "/Kamikouchi-lab/YORU/blob/main/config/template.yaml",
+      "title": "/blob/main/config/template.yaml",
+      "count": 1,
+      "uniques": 1
     }
   ],
-  "last_updated": "2026-11-03T09:27:55Z"
+  "last_updated": "2026-11-04T09:03:47Z"
 }
