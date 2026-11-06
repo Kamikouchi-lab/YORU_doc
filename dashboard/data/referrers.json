@@ -6,22 +6,22 @@
       "uniques": 7
     },
     {
-      "referrer": "science.org",
-      "count": 5,
-      "uniques": 5
+      "referrer": "aocr.org",
+      "count": 6,
+      "uniques": 6
     },
     {
-      "referrer": "aocr.org",
+      "referrer": "science.org",
       "count": 4,
       "uniques": 4
     },
     {
-      "referrer": "kamikouchi-lab.github.io",
-      "count": 3,
-      "uniques": 3
+      "referrer": "Bing",
+      "count": 2,
+      "uniques": 2
     },
     {
-      "referrer": "Bing",
+      "referrer": "kamikouchi-lab.github.io",
       "count": 2,
       "uniques": 2
     },
@@ -31,5 +31,5 @@
       "uniques": 2
     }
   ],
-  "last_updated": "2026-11-05T09:24:01Z"
+  "last_updated": "2026-11-06T09:18:33Z"
 }
