@@ -16,6 +16,11 @@
       "uniques": 4
     },
     {
+      "referrer": "search.brave.com",
+      "count": 3,
+      "uniques": 3
+    },
+    {
       "referrer": "Bing",
       "count": 2,
       "uniques": 2
@@ -24,12 +29,7 @@
       "referrer": "kamikouchi-lab.github.io",
       "count": 2,
       "uniques": 2
-    },
-    {
-      "referrer": "search.brave.com",
-      "count": 2,
-      "uniques": 2
     }
   ],
-  "last_updated": "2026-11-07T08:41:56Z"
+  "last_updated": "2026-11-08T08:55:38Z"
 }
