@@ -3,20 +3,14 @@
     {
       "path": "/Kamikouchi-lab/YORU",
       "title": "Overview",
-      "count": 19,
-      "uniques": 14
-    },
-    {
-      "path": "/Kamikouchi-lab/YORU/pulls",
-      "title": "/pulls",
-      "count": 4,
-      "uniques": 1
+      "count": 18,
+      "uniques": 13
     },
     {
       "path": "/Kamikouchi-lab/YORU/issues/31",
       "title": "/issues/31",
-      "count": 3,
-      "uniques": 3
+      "count": 2,
+      "uniques": 2
     },
     {
       "path": "/Kamikouchi-lab/YORU/releases/tag/v1.0.2",
@@ -29,6 +23,12 @@
       "title": "/releases/tag/v1.1.2",
       "count": 2,
       "uniques": 2
+    },
+    {
+      "path": "/Kamikouchi-lab/YORU/pulls",
+      "title": "/pulls",
+      "count": 2,
+      "uniques": 1
     },
     {
       "path": "/Kamikouchi-lab/YORU/blob/main/README.md",
@@ -49,17 +49,17 @@
       "uniques": 1
     },
     {
-      "path": "/Kamikouchi-lab/YORU/pull/40",
-      "title": "/pull/40",
+      "path": "/Kamikouchi-lab/YORU/tree/main/logos",
+      "title": "/tree/main/logos",
       "count": 1,
       "uniques": 1
     },
     {
-      "path": "/Kamikouchi-lab/YORU/pull/43",
-      "title": "/pull/43",
+      "path": "/Kamikouchi-lab/YORU/tree/main/web",
+      "title": "/tree/main/web",
       "count": 1,
       "uniques": 1
     }
   ],
-  "last_updated": "2026-11-11T09:17:35Z"
+  "last_updated": "2026-11-12T09:43:53Z"
 }

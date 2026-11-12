@@ -1,13 +1,8 @@
 {
   "referrers": [
     {
-      "referrer": "aocr.org",
-      "count": 6,
-      "uniques": 6
-    },
-    {
       "referrer": "Google",
-      "count": 6,
+      "count": 5,
       "uniques": 5
     },
     {
@@ -16,20 +11,25 @@
       "uniques": 3
     },
     {
-      "referrer": "search.brave.com",
-      "count": 3,
-      "uniques": 3
+      "referrer": "aocr.org",
+      "count": 4,
+      "uniques": 4
     },
     {
       "referrer": "Bing",
-      "count": 2,
+      "count": 3,
       "uniques": 2
     },
     {
       "referrer": "science.org",
       "count": 2,
       "uniques": 2
+    },
+    {
+      "referrer": "search.brave.com",
+      "count": 2,
+      "uniques": 2
     }
   ],
-  "last_updated": "2026-11-11T09:17:35Z"
+  "last_updated": "2026-11-12T09:43:52Z"
 }
