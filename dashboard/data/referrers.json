@@ -11,25 +11,25 @@
       "uniques": 3
     },
     {
-      "referrer": "aocr.org",
+      "referrer": "search.brave.com",
       "count": 4,
-      "uniques": 4
+      "uniques": 3
     },
     {
       "referrer": "Bing",
-      "count": 3,
+      "count": 2,
+      "uniques": 2
+    },
+    {
+      "referrer": "aocr.org",
+      "count": 2,
       "uniques": 2
     },
     {
       "referrer": "science.org",
       "count": 2,
       "uniques": 2
-    },
-    {
-      "referrer": "search.brave.com",
-      "count": 2,
-      "uniques": 2
     }
   ],
-  "last_updated": "2026-11-12T09:43:52Z"
+  "last_updated": "2026-11-13T09:27:28Z"
 }
