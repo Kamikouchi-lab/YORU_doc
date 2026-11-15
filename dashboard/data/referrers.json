@@ -2,8 +2,8 @@
   "referrers": [
     {
       "referrer": "Google",
-      "count": 8,
-      "uniques": 7
+      "count": 7,
+      "uniques": 6
     },
     {
       "referrer": "search.brave.com",
@@ -29,7 +29,12 @@
       "referrer": "science.org",
       "count": 2,
       "uniques": 2
+    },
+    {
+      "referrer": "github.com",
+      "count": 2,
+      "uniques": 1
     }
   ],
-  "last_updated": "2026-11-14T08:55:09Z"
+  "last_updated": "2026-11-15T09:16:16Z"
 }
