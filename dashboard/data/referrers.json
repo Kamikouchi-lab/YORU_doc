@@ -2,13 +2,13 @@
   "referrers": [
     {
       "referrer": "Google",
-      "count": 21,
-      "uniques": 17
+      "count": 20,
+      "uniques": 16
     },
     {
       "referrer": "science.org",
-      "count": 4,
-      "uniques": 4
+      "count": 5,
+      "uniques": 5
     },
     {
       "referrer": "Bing",
@@ -36,5 +36,5 @@
       "uniques": 1
     }
   ],
-  "last_updated": "2026-11-23T10:40:38Z"
+  "last_updated": "2026-11-24T12:23:17Z"
 }
