@@ -21,11 +21,6 @@
       "uniques": 2
     },
     {
-      "referrer": "kamikouchi-lab.github.io",
-      "count": 2,
-      "uniques": 2
-    },
-    {
       "referrer": "github.com",
       "count": 2,
       "uniques": 1
@@ -34,7 +29,12 @@
       "referrer": "DuckDuckGo",
       "count": 1,
       "uniques": 1
+    },
+    {
+      "referrer": "kamikouchi-lab.github.io",
+      "count": 1,
+      "uniques": 1
     }
   ],
-  "last_updated": "2026-11-24T12:23:17Z"
+  "last_updated": "2026-11-25T11:11:25Z"
 }
